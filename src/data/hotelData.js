@@ -15,52 +15,61 @@ export const HOTEL_DATA = {
     footer: "https://cartagenapremium.com/wp-content/uploads/2020/03/logo-footer-1.png",
     graphicAccent: "https://cartagenapremium.com/wp-content/uploads/2018/06/graphic-img-3-1-1.png"
   },
+  // Breathtaking royalty-free luxury photography (Unsplash high-res)
   heroSlides: [
     {
+      id: 1,
       title: "El Lujo Caribeño Redefinido",
-      subtitle: "Despierta con la brisa cálida de Bocagrande y los atardeceres dorados más memorables de Colombia.",
+      subtitle: "Despierta con la brisa cálida de Bocagrande y los atardeceres dorados más memorables del Caribe colombiano.",
       badge: "VISTA PRIVILEGIADA AL MAR Y A LA BAHÍA",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/IMG-20211202-WA0062.jpg"
+      shortLabel: "01 · Atardecer en Bocagrande",
+      image: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=2000&q=85"
     },
     {
-      title: "El Descanso Que Mereces",
-      subtitle: "Ubicación incomparable en la prestigiosa Avenida San Martín, en el epicentro de la sofisticación.",
-      badge: "EXCELENCIA Y HOSPITALIDAD 5 ESTRELLAS",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/razones-invertir-cartagena-colombia-scaled.jpg"
+      id: 2,
+      title: "Rooftop Sky Pool & Sunsets",
+      subtitle: "Piscina infinity suspendida en las alturas, camas balinesas y coctelería de autor frente al horizonte.",
+      badge: "SANTUARIO PANORÁMICO EXCLUSIVO",
+      shortLabel: "02 · Rooftop & Infinity Pool",
+      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85"
     },
     {
+      id: 3,
       title: "A 10 Minutos de la Historia",
-      subtitle: "Conéctate al instante con las murallas coloniales, la alta gastronomía y la cultura viva de Cartagena.",
-      badge: "PATRIMONIO DE LA HUMANIDAD",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/centro-historico-imperialtour.com_.co_.jpg"
+      subtitle: "Conéctate en minutos con las murallas coloniales, los balcones floridos y la alta gastronomía de Cartagena.",
+      badge: "PATRIMONIO HISTÓRICO DE LA HUMANIDAD",
+      shortLabel: "03 · Ciudad Amurallada",
+      image: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=2000&q=85"
     },
     {
-      title: "Playa, Sol & Sofisticación",
-      subtitle: "Un refugio exclusivo diseñado para quienes aprecian la privacidad, el confort y la elegancia.",
-      badge: "BOCAGRANDE EXCLUSIVE RETREAT",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
+      id: 4,
+      title: "Suites de Descanso Sublime",
+      subtitle: "Arquitectura contemporánea, lencería egipcia de 400 hilos y balcones privados con vista al mar.",
+      badge: "EXPERIENCIA BOUTIQUE 5 ESTRELLAS",
+      shortLabel: "04 · Confort de Alta Costura",
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=85"
     }
   ],
   pillars: [
     {
       number: "24/7",
       label: "Servicio de Concierge",
-      description: "Atención personalizada continua para coordinar cada detalle de tu estadía."
+      description: "Atención personalizada continua para coordinar traslados VIP, yates privados y reservas gastronómicas."
     },
     {
       number: "10 min",
       label: "Del Centro Histórico",
-      description: "Acceso inmediato a la Ciudad Amurallada, restaurantes de autor y monumentos."
+      description: "Acceso inmediato a la Ciudad Amurallada, Torre del Reloj, museos coloniales y vida nocturna."
     },
     {
       number: "360°",
       label: "Vistas al Mar & Bahía",
-      description: "Habitaciones panorámicas con terrazas privadas orientadas hacia el horizonte caribeño."
+      description: "Suites con terrazas privadas orientadas hacia las aguas mansas de la bahía y el mar abierto de Bocagrande."
     },
     {
       number: "Rooftop",
       label: "Piscina Infinity & Sky Lounge",
-      description: "El punto de encuentro más exclusivo para disfrutar del atardecer con coctelería de autor."
+      description: "El punto de encuentro más exclusivo para contemplar los atardeceres con coctelería de autor y DJ set."
     }
   ],
   suites: [
@@ -69,38 +78,38 @@ export const HOTEL_DATA = {
       title: "Master Suite Vista al Mar",
       tier: "SIGNATURE DELUXE",
       capacity: "2 a 3 Huéspedes",
-      size: "52 m²",
+      size: "54 m²",
       bed: "1 Cama King Size Simmons + Sofá Cama",
       view: "Vista directa frontal al Mar Caribe",
       priceCOP: 480000,
       priceUSD: 125,
       featured: true,
-      image: "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7157.jpeg",
+      image: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
       gallery: [
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7157.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/pic-balcon.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/BANO-TIPO-1-1.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/closet-tipo-1-1.jpeg"
+        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85"
       ],
       description: "Nuestra suite insignia ofrece ventanales de piso a techo, balcón privado amoblado, baño tipo spa con acabados en mármol y una vista abierta hacia el mar Caribe.",
-      amenities: ["Balcón Privado", "Wi-Fi 6 de Alta Velocidad", "Aire Acondicionado Silencioso", "Smart TV 55\" 4K", "Caja Fuerte Digital", "Minibar Selección Gourmet", "Cafetera Nespresso", "Room Service 24h"]
+      amenities: ["Balcón Privado Frente al Mar", "Wi-Fi 6 de Alta Velocidad", "Aire Acondicionado Silencioso", "Smart TV 55\" 4K", "Caja Fuerte Digital", "Minibar Selección Gourmet", "Cafetera Nespresso", "Room Service 24h"]
     },
     {
       id: "junior-bay-suite",
       title: "Junior Suite Bahía de Cartagena",
       tier: "PREMIUM SELECTION",
       capacity: "2 Huéspedes",
-      size: "42 m²",
+      size: "44 m²",
       bed: "1 Cama King Size o 2 Camas Queen",
       view: "Vista panorámica a la bahía y skyline",
       priceCOP: 395000,
       priceUSD: 105,
       featured: true,
-      image: "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7160.jpeg",
+      image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
       gallery: [
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7160.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/pic-hab.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/TIPO-1-.jpeg"
+        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
       ],
       description: "Equilibrio perfecto entre serenidad y refinamiento. Contempla el movimiento de veleros y yates sobre las aguas mansas de la bahía desde la comodidad de tu suite.",
       amenities: ["Ventanales Acústicos", "Wi-Fi 6", "Desayuno Buffet Incluido", "Smart TV 50\"", "Bata y Pantuflas de Lujo", "Room Service", "Amenidades L'Occitane"]
@@ -110,19 +119,19 @@ export const HOTEL_DATA = {
       title: "Deluxe Balcony Room",
       tier: "DELUXE COMFORT",
       capacity: "2 Huéspedes",
-      size: "36 m²",
+      size: "38 m²",
       bed: "1 Cama Queen Size de Alta Gama",
       view: "Balcón privado con vista lateral al mar",
       priceCOP: 340000,
       priceUSD: 90,
       featured: false,
-      image: "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7166.jpeg",
+      image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
       gallery: [
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7166.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/HAB-SENCILLA-TIPO-1-2.jpeg",
-        "https://cartagenapremium.com/wp-content/uploads/2020/03/cartagena-premium.hotel-15.jpg"
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
       ],
-      description: "Diseñada para estancias placenteras o de negocios. Integra un escritorio de trabajo ergonómico, balcón exterior y lencería egipcia de 400 hilos.",
+      description: "Diseñada para estancias placenteras o de negocios. Integra un escritorio de trabajo ergonómico, balcón exterior y lencería de algodón egipcio.",
       amenities: ["Balcón al Aire Libre", "Escritorio Ejecutivo", "Wi-Fi Premium", "Cafetera de Cortesía", "Ducha de Lluvia", "Secador Iónico", "Cerradura RFID"]
     },
     {
@@ -130,20 +139,20 @@ export const HOTEL_DATA = {
       title: "Family Grand Suite",
       tier: "FAMILY LUXURY",
       capacity: "4 Huéspedes",
-      size: "65 m²",
-      bed: "2 Camas Queen + Sala de Estar",
-      view: "Doble vista Bahía y Mar",
+      size: "68 m²",
+      bed: "2 Camas Queen + Sala de Estar Separada",
+      view: "Doble vista panorámica Bahía y Mar",
       priceCOP: 590000,
       priceUSD: 155,
       featured: false,
-      image: "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_8793-scaled.jpg",
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
       gallery: [
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_8793-scaled.jpg",
-        "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_8809-scaled.jpg",
-        "https://cartagenapremium.com/wp-content/uploads/2020/03/cartagena-premium.hotel-18-scaled.jpg"
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
       ],
       description: "Espacio generoso para familias o grupos selectos que valoran la amplitud, privacidad e independencia con dos ambientes independientes.",
-      amenities: ["Dos Ambientes Separados", "2 Baños Completos", "Comedor Privado", "Frigobar Extendido", "2 Smart TV", "Servicio de Cuna a Solicitud"]
+      amenities: ["Dos Ambientes Separados", "2 Baños Completos de Mármol", "Comedor Privado", "Frigobar Extendido", "2 Smart TV 4K", "Servicio de Cuna a Solicitud"]
     }
   ],
   rooftop: {
@@ -151,16 +160,16 @@ export const HOTEL_DATA = {
     subtitle: "Rooftop Pool, Sunset Bar & Lounge",
     description: "En el último nivel de Hotel Cartagena Premium, el cielo de Cartagena se funde con el azul profundo de nuestra piscina panorámica. Un espacio reservado exclusivamente para nuestros huéspedes donde los atardeceres se acompañan con cócteles de autor, gastronomía caribeña fusión y música lounge curada.",
     images: {
-      poolMain: "https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png",
-      poolView: "https://cartagenapremium.com/wp-content/uploads/2025/08/vista-piscina-400x500.jpeg",
-      terraceNight: "https://cartagenapremium.com/wp-content/uploads/2023/04/8339dc8a-4030-4c42-971a-0481f1350403.jpg"
+      poolMain: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=85",
+      poolView: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=85",
+      terraceNight: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85"
     },
     hours: "09:00 AM – 10:00 PM",
     videoUrl: "https://www.youtube.com/embed/y2TCHQ36MDs",
     highlights: [
-      "Piscina panorámica con vista 360° a la bahía y el mar",
-      "Camas balinesas y servicio de toallas premium",
-      "Coctelería de autor con rones colombianos y frutas tropicales",
+      "Piscina infinity con vista 360° a la bahía y el mar Caribe",
+      "Camas balinesas privadas y servicio de toallas premium",
+      "Coctelería de autor con rones colombianos y frutas exóticas",
       "Menú de tapas gourmet servido junto al agua",
       "Atardeceres musicales con DJ set en fines de semana"
     ]
@@ -170,19 +179,19 @@ export const HOTEL_DATA = {
       title: "Ciudad Amurallada & Centro Histórico",
       time: "A solo 10 minutos",
       description: "Recorre callejones adoquinados, balcones florecidos de buganvilias, catedrales históricas y restaurantes de clase mundial galardonados.",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/centro-historico-imperialtour.com_.co_.jpg"
+      image: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1000&q=85"
     },
     {
       title: "Playas de Bocagrande & Paseo Marítimo",
       time: "A 2 minutos a pie",
       description: "El sector más exclusivo y cosmopolita de Cartagena: compras de lujo, cafés modernos y la playa a escasos metros de tu lobby.",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
+      image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85"
     },
     {
-      title: "Circuito Cultural & Museos Destacados",
-      time: "Convenio Exclusivo",
-      description: "Acceso privilegiado a los museos y galerías insignias: Museo Naval del Caribe, MAM Cartagena, MUHCA, Caribe Jewelry y La Presentación.",
-      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/cuadro-palenquera-con-logo-lobby.jpeg"
+      title: "Islas del Rosario & Navegación Privada",
+      time: "Salida desde Muelle (10 min)",
+      description: "Coordinamos tu escape en catamarán o yate privado hacia aguas cristalinas, playas de arena blanca y arrecifes de coral protegidos.",
+      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1000&q=85"
     }
   ],
   culturalPartners: [
@@ -194,14 +203,14 @@ export const HOTEL_DATA = {
     { name: "La Presentación Centro Cultural", url: "https://lapresentacion.art/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/lapresentacion-color.png" }
   ],
   gallery: [
-    { src: "https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png", title: "Piscina Panorámica en Rooftop", tag: "Rooftop" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7157.jpeg", title: "Master Suite con Balcón", tag: "Habitaciones" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2025/08/pic-balcon.jpeg", title: "Atardecer desde el Balcón", tag: "Vistas" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2025/08/recep-400x500.jpeg", title: "Lobby & Recepción Deluxe", tag: "Interiores" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2023/04/cuadro-palenquera-con-logo-lobby.jpeg", title: "Arte & Identidad Cartagenera", tag: "Cultura" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2025/08/vista-piscina-400x500.jpeg", title: "Solárium y Vista a la Bahía", tag: "Rooftop" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2025/08/IMG_7160.jpeg", title: "Suite Ejecutiva con Luz Natural", tag: "Habitaciones" },
-    { src: "https://cartagenapremium.com/wp-content/uploads/2023/04/foto-bocagrande--scaled.jpg", title: "El Litoral de Bocagrande", tag: "Destino" }
+    { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85", title: "Piscina Panorámica en Rooftop", tag: "Rooftop" },
+    { src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=85", title: "Master Suite con Balcón al Mar", tag: "Habitaciones" },
+    { src: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85", title: "Atardecer Dorado sobre Bocagrande", tag: "Vistas" },
+    { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85", title: "Solárium y Vista a la Bahía", tag: "Rooftop" },
+    { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85", title: "Baño Spa con Mármol", tag: "Interiores" },
+    { src: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85", title: "Calles Históricas de Cartagena", tag: "Vistas" },
+    { src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85", title: "Junior Suite con Luz Cálida", tag: "Habitaciones" },
+    { src: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=85", title: "Sky Bar & Coctelería de Autor", tag: "Interiores" }
   ],
   reviews: [
     {
