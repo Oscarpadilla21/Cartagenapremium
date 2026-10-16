@@ -15,10 +15,8 @@ export default function HabitacionesPage({ onOpenBooking, currency }) {
   ];
 
   const filteredSuites = HOTEL_DATA.suites.filter((s) => {
-    if (activeFilter === 'sea') return s.view.toLowerCase().includes('mar');
-    if (activeFilter === 'balcony') return s.amenities.some((a) => a.toLowerCase().includes('balcón'));
-    if (activeFilter === 'family') return parseInt(s.capacity) >= 3 || s.id.includes('family');
-    return true;
+    if (activeFilter === 'all') return true;
+    return s.category === activeFilter;
   });
 
   const totalPages = Math.ceil(filteredSuites.length / itemsPerPage);

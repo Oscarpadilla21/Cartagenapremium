@@ -79,8 +79,9 @@ export const HOTEL_DATA = {
   suites: [
     {
       id: "master-ocean-suite",
-      title: "Master Suite Vista al Mar",
-      tier: "SIGNATURE DELUXE",
+      category: "sea",
+      title: "Master Suite Imperial Frente al Mar",
+      tier: "SIGNATURE OCEANFRONT",
       capacity: "2 a 3 Huéspedes",
       size: "54 m²",
       bed: "1 Cama King Size Simmons + Sofá Cama",
@@ -92,71 +93,115 @@ export const HOTEL_DATA = {
       gallery: [
         "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1400&q=85"
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
       ],
-      description: "Nuestra suite insignia ofrece ventanales de piso a techo, balcón privado amoblado, baño tipo spa con acabados en mármol y una vista abierta hacia el mar Caribe.",
-      amenities: ["Balcón Privado Frente al Mar", "Wi-Fi 6 de Alta Velocidad", "Aire Acondicionado Silencioso", "Smart TV 55\" 4K", "Caja Fuerte Digital", "Minibar Selección Gourmet", "Cafetera Nespresso", "Room Service 24h"]
+      description: "Nuestra suite insignia frente a las olas de Bocagrande. Ventanales panorámicos de piso a techo, baño en mármol con tina de hidromasaje y atardeceres frente al océano.",
+      amenities: ["Ventanales Panorámicos Frente al Mar", "Cama King Size Simmons", "Tina de Hidromasaje", "Wi-Fi 6 de Alta Velocidad", "Smart TV 55\" 4K", "Cafetera Nespresso", "Room Service 24h"]
     },
     {
-      id: "junior-bay-suite",
-      title: "Junior Suite Bahía de Cartagena",
-      tier: "PREMIUM SELECTION",
+      id: "penthouse-ocean-suite",
+      category: "sea",
+      title: "Royal Penthouse Suite Panorámica Caribe",
+      tier: "PRESIDENTIAL OCEANFRONT",
       capacity: "2 Huéspedes",
-      size: "44 m²",
-      bed: "1 Cama King Size o 2 Camas Queen",
-      view: "Vista panorámica a la bahía y skyline",
-      priceCOP: 395000,
-      priceUSD: 105,
+      size: "62 m²",
+      bed: "1 Cama King Size Premium",
+      view: "Piso 18 con vista 180° a mar abierto",
+      priceCOP: 620000,
+      priceUSD: 160,
       featured: true,
+      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+      gallery: [
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1400&q=85"
+      ],
+      description: "Ubicada en el nivel superior del hotel con la panorámica más imponente del Caribe colombiano. Acabados de lujo, sala de estar independiente y servicio de mayordomo bajo solicitud.",
+      amenities: ["Piso Alto Vista 180° al Mar", "Sala de Estar de Autor", "Doble Lavabo en Mármol", "Batas & Pantuflas de Lino", "Cava de Vinos Privada", "Cerradura Biométrica"]
+    },
+    {
+      id: "deluxe-terrace-suite",
+      category: "balcony",
+      title: "Suite Deluxe con Terraza & Balcón Privado",
+      tier: "PRIVATE BALCONY & TERRACE",
+      capacity: "2 Huéspedes",
+      size: "48 m²",
+      bed: "1 Cama King Size o 2 Queen",
+      view: "Balcón amoblado exterior de 14m² con solárium privado",
+      priceCOP: 390000,
+      priceUSD: 100,
+      featured: false,
+      image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
+      gallery: [
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
+      ],
+      description: "Su gran balcón privado amoblado con tumbonas y mesa para desayunos al aire libre permite disfrutar la brisa tibia de Cartagena con total intimidad.",
+      amenities: ["Balcón Privado Amoblado", "Desayuno en Terraza Opcional", "Tumbonas de Descanso", "Wi-Fi Premium", "Escritorio Ejecutivo", "Cafetera Nespresso"]
+    },
+    {
+      id: "junior-balcony-suite",
+      category: "balcony",
+      title: "Junior Suite Balcón Skyline & Bahía",
+      tier: "PREMIUM BALCONY",
+      capacity: "2 Huéspedes",
+      size: "42 m²",
+      bed: "1 Cama Queen Size de Alta Gama",
+      view: "Balcón privado con vista al skyline de Bocagrande",
+      priceCOP: 345000,
+      priceUSD: 90,
+      featured: false,
       image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
       gallery: [
         "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
       ],
-      description: "Equilibrio perfecto entre serenidad y refinamiento. Contempla el movimiento de veleros y yates sobre las aguas mansas de la bahía desde la comodidad de tu suite.",
-      amenities: ["Ventanales Acústicos", "Wi-Fi 6", "Desayuno Buffet Incluido", "Smart TV 50\"", "Bata y Pantuflas de Lujo", "Room Service", "Amenidades L'Occitane"]
-    },
-    {
-      id: "deluxe-balcony-room",
-      title: "Deluxe Balcony Room",
-      tier: "DELUXE COMFORT",
-      capacity: "2 Huéspedes",
-      size: "38 m²",
-      bed: "1 Cama Queen Size de Alta Gama",
-      view: "Balcón privado con vista lateral al mar",
-      priceCOP: 340000,
-      priceUSD: 90,
-      featured: false,
-      image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
-      gallery: [
-        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
-      ],
-      description: "Diseñada para estancias placenteras o de negocios. Integra un escritorio de trabajo ergonómico, balcón exterior y lencería de algodón egipcio.",
-      amenities: ["Balcón al Aire Libre", "Escritorio Ejecutivo", "Wi-Fi Premium", "Cafetera de Cortesía", "Ducha de Lluvia", "Secador Iónico", "Cerradura RFID"]
+      description: "Equilibrio ideal para parejas o ejecutivos. Balcón privado exterior con vista a las luces nocturnas de Bocagrande y al muelle turístico.",
+      amenities: ["Balcón Exterior Privado", "Aislamiento Acústico", "Ducha de Lluvia Española", "Amenidades L'Occitane", "Minibar Selección Gourmet"]
     },
     {
       id: "family-grand-suite",
-      title: "Family Grand Suite",
-      tier: "FAMILY LUXURY",
+      category: "family",
+      title: "Family Grand Suite 2 Ambientes Separados",
+      tier: "FAMILY LUXURY SUITE",
       capacity: "4 Huéspedes",
       size: "68 m²",
       bed: "2 Camas Queen + Sala de Estar Separada",
       view: "Doble vista panorámica Bahía y Mar",
       priceCOP: 590000,
       priceUSD: 155,
-      featured: false,
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+      featured: true,
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85",
       gallery: [
+        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
+        "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85"
       ],
-      description: "Espacio generoso para familias o grupos selectos que valoran la amplitud, privacidad e independencia con dos ambientes independientes.",
-      amenities: ["Dos Ambientes Separados", "2 Baños Completos de Mármol", "Comedor Privado", "Frigobar Extendido", "2 Smart TV 4K", "Servicio de Cuna a Solicitud"]
+      description: "Espacio generoso para familias que valoran la amplitud, privacidad e independencia con dos dormitorios independientes y dos baños completos de mármol.",
+      amenities: ["2 Dormitorios Independientes", "2 Baños Completos de Mármol", "Comedor Privado Familiar", "Frigobar Extendido", "2 Smart TV 4K", "Cuna de Cortesía"]
+    },
+    {
+      id: "family-duplex-suite",
+      category: "family",
+      title: "Family Master Dúplex Confort 3 Camas",
+      tier: "FAMILY RETREAT",
+      capacity: "5 Huéspedes",
+      size: "74 m²",
+      bed: "1 Cama King + 2 Camas Twin + Sofá Cama",
+      view: "Vista a la piscina rooftop y la bahía",
+      priceCOP: 680000,
+      priceUSD: 175,
+      featured: false,
+      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85",
+      gallery: [
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85"
+      ],
+      description: "La suite más espaciosa del complejo hotelero. Diseñada para familias numerosas con área de juegos para niños, comedor y múltiples ambientes climatizados.",
+      amenities: ["Capacidad hasta 5 Personas", "3 Camas Distribuidas", "Área de Estar Amplia", "Desayuno Buffet Familiar Incluido", "Microondas y Frigobar Familiar"]
     }
   ],
   rooftop: {
