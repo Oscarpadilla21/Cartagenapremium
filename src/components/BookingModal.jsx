@@ -120,10 +120,10 @@ export default function BookingModal({ isOpen, onClose, initialSuite, currency }
           </div>
         ) : (
           /* Booking Form */
-          <form onSubmit={handleWhatsAppBooking} className="p-6 sm:p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <form onSubmit={handleWhatsAppBooking} className="p-4 sm:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
               {/* Left Column: Form Fields */}
-              <div className="lg:col-span-7 space-y-5">
+              <div className="lg:col-span-7 space-y-4 sm:space-y-5">
                 {/* Suite Selector */}
                 <div>
                   <label className="text-[11px] font-semibold uppercase tracking-wider text-[#745729] block mb-1">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Phone, Mail, MapPin, ShieldCheck, Heart } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -9,17 +10,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
           {/* Column 1: Brand & Identity */}
           <div className="lg:col-span-4 space-y-4 text-center md:text-left">
-            <img
-              src={HOTEL_DATA.logos.footer}
-              alt="Hotel Cartagena Premium"
-              className="h-16 w-auto mx-auto md:mx-0 object-contain filter brightness-110"
-            />
-            <img
-              src={HOTEL_DATA.logos.graphicAccent}
-              alt="Adorno"
-              className="h-3 w-auto mx-auto md:mx-0 object-contain opacity-70"
-            />
-            <p className="text-xs sm:text-sm text-stone-400 font-sans leading-relaxed max-w-sm">
+            <div className="inline-block">
+              <Logo />
+            </div>
+            <p className="text-xs sm:text-sm text-stone-400 font-sans leading-relaxed max-w-sm mt-3">
               En pleno Caribe, <strong>Hotel Cartagena Premium</strong> con confortables suites y solárium en rooftop, está ubicado en lo más exclusivo de Bocagrande.
             </p>
             {/* Social Icons */}

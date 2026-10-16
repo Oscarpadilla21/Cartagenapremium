@@ -89,23 +89,23 @@ export default function Hero({ onOpenBooking }) {
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-[#C5A880]/15 rounded-full blur-3xl pointer-events-none z-10" />
 
       {/* Hero Content Container */}
-      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center pb-24 sm:pb-28">
-        <div key={currentSlide} className="max-w-3xl space-y-5 animate-in fade-in duration-500">
+      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center pt-20 sm:pt-24 pb-20 sm:pb-28">
+        <div key={currentSlide} className="max-w-3xl space-y-4 sm:space-y-5 animate-in fade-in duration-500">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#C5A880]/40 text-[#C5A880] shadow-sm">
-            <Compass className="w-3.5 h-3.5 text-[#C5A880]" />
-            <span className="text-[11px] font-sans font-semibold tracking-[0.25em] uppercase text-white">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-[#C5A880]/40 text-[#C5A880] shadow-sm max-w-full">
+            <Compass className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
+            <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-white truncate">
               {slide.badge}
             </span>
           </div>
 
           {/* Main Title with Serif Luxury Typography */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-white leading-[1.08] tracking-tight drop-shadow-md">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif text-white leading-[1.12] sm:leading-[1.08] tracking-tight drop-shadow-md">
             {slide.title}
           </h1>
 
           {/* Evocative Subtitle */}
-          <p className="text-base sm:text-xl text-stone-200 font-sans font-light leading-relaxed max-w-2xl drop-shadow">
+          <p className="text-sm sm:text-lg lg:text-xl text-stone-200 font-sans font-light leading-relaxed max-w-2xl drop-shadow line-clamp-3 sm:line-clamp-none">
             {slide.subtitle}
           </p>
 

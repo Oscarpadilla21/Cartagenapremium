@@ -44,8 +44,8 @@ export default function SuitesSection({ onSelectSuite, currency }) {
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
+          {/* Filter Pills with horizontal scroll on mobile */}
+          <div className="flex overflow-x-auto pb-2 md:pb-0 md:flex-wrap gap-2 mt-4 md:mt-0 max-w-full">
             {filters.map((f) => (
               <button
                 key={f.id}

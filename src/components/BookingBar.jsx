@@ -22,7 +22,7 @@ export default function BookingBar({ onSearch, defaultRoom = '' }) {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 -mt-16 sm:-mt-20 relative z-30">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 -mt-8 sm:-mt-20 relative z-30">
       <form
         onSubmit={handleSubmit}
         className="glass-gold rounded-2xl p-4 sm:p-6 shadow-deluxe-lg border border-[#C5A880]/40 backdrop-blur-xl"

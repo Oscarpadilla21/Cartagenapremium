@@ -10,9 +10,9 @@ import GallerySection from './components/GallerySection';
 import ReviewsSection from './components/ReviewsSection';
 import LocationSection from './components/LocationSection';
 import BookingModal from './components/BookingModal';
+import WhatsAppButton from './components/WhatsAppButton';
 import Footer from './components/Footer';
 import { HOTEL_DATA } from './data/hotelData';
-import { MessageCircle } from 'lucide-react';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -31,16 +31,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] flex flex-col selection:bg-[#C5A880]/30 selection:text-[#0E1E2E]">
-      {/* Fixed Luxury Navigation */}
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] flex flex-col selection:bg-[#C5A880]/30 selection:text-[#0E1E2E] overflow-x-hidden">
+      {/* Fixed Luxury Navigation Bar */}
       <Navbar
         onOpenBooking={() => handleOpenBooking()}
         currency={currency}
         setCurrency={setCurrency}
       />
 
-      <main className="flex-1">
-        {/* Hero with Panorama Slides */}
+      <main className="flex-1 w-full overflow-hidden">
+        {/* Hero with Dynamic Ken Burns Slides and Countdown Bar */}
         <Hero onOpenBooking={() => handleOpenBooking()} />
 
         {/* Floating Coastal Glassmorphism Booking Bar */}
@@ -82,19 +82,8 @@ export default function App() {
         currency={currency}
       />
 
-      {/* Floating Direct VIP WhatsApp Concierge Button */}
-      <a
-        href={`https://wa.me/${HOTEL_DATA.whatsapp}?text=Hola,%20deseo%20consultar%20sobre%20una%20reserva%20en%20Hotel%20Cartagena%20Premium`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl border-2 border-white/80 transition-all duration-300 transform hover:scale-110 flex items-center gap-2 group"
-        aria-label="Contactar por WhatsApp"
-      >
-        <MessageCircle className="w-6 h-6 fill-current" />
-        <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 text-xs font-semibold tracking-wider uppercase pr-1">
-          WhatsApp Concierge
-        </span>
-      </a>
+      {/* Official Floating VIP WhatsApp Concierge Widget */}
+      <WhatsAppButton />
     </div>
   );
 }

@@ -18,13 +18,13 @@ export default function StatsPillars() {
           <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {HOTEL_DATA.pillars.map((pillar, idx) => {
             const Icon = icons[idx];
             return (
               <div
                 key={idx}
-                className="bg-white p-7 rounded-lg border border-[#C5A880]/20 shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 transform hover:-translate-y-1 relative group"
+                className="bg-white p-6 sm:p-7 rounded-xl border border-[#C5A880]/20 shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 transform hover:-translate-y-1 relative group"
               >
                 <div className="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#C5A880]/30 flex items-center justify-center text-[#A88653] mb-4 group-hover:bg-[#0E1E2E] group-hover:text-[#C5A880] transition-colors">
                   <Icon className="w-5 h-5" />
