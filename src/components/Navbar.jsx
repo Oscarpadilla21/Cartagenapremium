@@ -38,13 +38,13 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Suites & Habitaciones', path: '/habitaciones', badge: 'Catálogo' },
-    { name: 'Rooftop & Servicios', path: '/servicios', badge: 'Piscina 360°' },
-    { name: 'Sitios & Experiencias', path: '/experiencias', badge: 'Cartagena' },
-    { name: 'Galería', path: '/galeria', badge: 'Fotos' },
-    { name: 'Ubicación', path: '/ubicacion', badge: 'Bocagrande' },
-    { name: 'Contacto & Concierge', path: '/contacto', badge: '24/7' },
+    { name: 'Inicio', desktopName: 'Inicio', path: '/' },
+    { name: 'Suites & Habitaciones', desktopName: 'Habitaciones', path: '/habitaciones', badge: 'Catálogo' },
+    { name: 'Rooftop & Servicios', desktopName: 'Servicios', path: '/servicios', badge: 'Piscina 360°' },
+    { name: 'Sitios & Experiencias', desktopName: 'Experiencias', path: '/experiencias', badge: 'Cartagena' },
+    { name: 'Galería de Fotos', desktopName: 'Galería', path: '/galeria', badge: 'Fotos' },
+    { name: 'Ubicación Bocagrande', desktopName: 'Ubicación', path: '/ubicacion', badge: 'Bocagrande' },
+    { name: 'Contacto & Concierge', desktopName: 'Contacto', path: '/contacto', badge: '24/7' },
   ];
 
   return (
@@ -52,38 +52,38 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
       <header
         className={`fixed top-0 left-0 right-0 w-full z-40 transition-all duration-300 max-w-[100vw] overflow-x-clip ${
           isScrolled
-            ? 'bg-[#0E1E2E]/95 backdrop-blur-md shadow-2xl py-2 sm:py-2.5 border-b border-[#C5A880]/30'
-            : 'bg-gradient-to-b from-[#0E1E2E]/95 via-[#0E1E2E]/70 to-transparent py-2.5 sm:py-3.5'
+            ? 'bg-[#0E1E2E]/95 backdrop-blur-md shadow-2xl py-2.5 sm:py-3 border-b border-[#C5A880]/30'
+            : 'bg-gradient-to-b from-[#0E1E2E]/95 via-[#0E1E2E]/75 to-transparent py-3 sm:py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-2 sm:gap-3 w-full">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
+          <div className="flex items-center justify-between gap-4 xl:gap-8 w-full">
             {/* Logo Link */}
             <Link
               to="/"
-              className="shrink min-w-0 max-w-[calc(100%-142px)] sm:max-w-none block group"
+              className="shrink-0 min-w-0 max-w-[calc(100%-140px)] sm:max-w-none block group"
               title="Hotel Cartagena Premium - Inicio"
             >
               <Logo />
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden xl:flex items-center space-x-5 2xl:space-x-6">
+            {/* Desktop Navigation Links: Spacious, Refined Luxury Spacing */}
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-7 2xl:gap-8">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.path}
                   className={({ isActive }) =>
-                    `text-[11px] 2xl:text-[12px] uppercase tracking-[0.14em] font-medium transition-colors duration-200 relative group py-1 ${
+                    `text-[11.5px] xl:text-[12.5px] 2xl:text-[13px] uppercase tracking-[0.14em] font-semibold transition-colors duration-200 relative group py-1.5 whitespace-nowrap ${
                       isActive
-                        ? 'text-[#D4AF37] font-bold'
-                        : 'text-stone-200 hover:text-[#C5A880]'
+                        ? 'text-[#D4AF37]'
+                        : 'text-stone-300 hover:text-[#C5A880]'
                     }`
                   }
                 >
                   {({ isActive }) => (
                     <>
-                      <span>{link.name}</span>
+                      <span>{link.desktopName}</span>
                       <span
                         className={`absolute bottom-0 left-0 h-0.5 bg-[#D4AF37] transition-all duration-300 ${
                           isActive ? 'w-full' : 'w-0 group-hover:w-full'
@@ -95,22 +95,22 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
               ))}
             </nav>
 
-            {/* Desktop Right Action Bar */}
-            <div className="hidden lg:flex items-center space-x-2.5 shrink-0">
+            {/* Desktop Right Action Bar: Balanced, Non-crowded */}
+            <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
               {/* Phone Concierge Pill */}
               <a
                 href={`tel:${HOTEL_DATA.phones[0].replace(/\s+/g, '')}`}
-                className="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-[#C5A880]/35 text-stone-200 hover:text-white transition-all duration-300 flex items-center gap-2 group shadow-sm"
-                title="Llamar directamente a Concierge"
+                className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-[#C5A880]/35 text-stone-200 hover:text-white transition-all duration-300 flex items-center gap-2 group shadow-sm shrink-0"
+                title="Llamar directamente a Concierge 24/7"
               >
                 <div className="w-5 h-5 rounded-full bg-[#C5A880]/20 flex items-center justify-center text-[#C5A880] group-hover:bg-[#C5A880] group-hover:text-[#0E1E2E] transition-colors">
                   <Phone className="w-3 h-3" />
                 </div>
                 <div className="text-left">
-                  <span className="block text-[8px] uppercase tracking-wider text-[#C5A880] font-bold leading-none">
-                    Concierge
+                  <span className="hidden xl:block text-[8px] uppercase tracking-wider text-[#C5A880] font-bold leading-none">
+                    Concierge 24/7
                   </span>
-                  <span className="text-[11px] font-semibold tracking-wider text-stone-100">
+                  <span className="text-xs font-semibold tracking-wider text-stone-100">
                     {HOTEL_DATA.phones[0]}
                   </span>
                 </div>
@@ -118,8 +118,8 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
 
               {/* Currency Toggle Switch (COP | USD) */}
               <div
-                className="flex items-center p-0.5 rounded-full bg-[#091420] border border-[#C5A880]/40 shadow-inner"
-                title="Seleccionar divisa"
+                className="flex items-center p-0.5 rounded-full bg-[#08131E] border border-[#C5A880]/40 shadow-inner shrink-0"
+                title="Seleccionar divisa para tarifas"
               >
                 <button
                   type="button"
@@ -149,7 +149,7 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
               <button
                 type="button"
                 onClick={() => onOpenBooking()}
-                className="relative overflow-hidden px-4 py-2 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#AA771C] text-[#0E1E2E] font-bold text-xs tracking-[0.16em] uppercase shadow-[0_4px_16px_rgba(212,175,55,0.35)] hover:shadow-[0_6px_22px_rgba(212,175,55,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5 group cursor-pointer border border-[#FFF8DC]/60"
+                className="relative overflow-hidden px-5 py-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#AA771C] text-[#0E1E2E] font-bold text-xs tracking-[0.16em] uppercase shadow-[0_4px_16px_rgba(212,175,55,0.35)] hover:shadow-[0_6px_22px_rgba(212,175,55,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group cursor-pointer border border-[#FFF8DC]/60 shrink-0"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
                 <Calendar className="w-3.5 h-3.5 text-[#0E1E2E]" />
@@ -157,7 +157,7 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
               </button>
             </div>
 
-            {/* Mobile Header Controls: Strictly constrained, never overflows right boundary */}
+            {/* Mobile Header Controls */}
             <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
               <button
                 type="button"
