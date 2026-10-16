@@ -112,25 +112,52 @@ export default function ExperienciasPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {HOTEL_DATA.culturalPartners.map((partner, idx) => (
               <a
                 key={idx}
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-lg bg-[#FAF8F5] border border-stone-200 hover:border-[#C5A880] transition-all flex flex-col items-center justify-center text-center group"
-                title={`Visitar ${partner.name}`}
+                className="group rounded-xl overflow-hidden bg-[#FAF8F5] border border-stone-200/90 hover:border-[#C5A880] transition-all duration-300 hover:shadow-lg flex flex-col"
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-10 sm:h-12 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-105"
-                />
-                <span className="text-[11px] text-stone-700 font-sans font-medium mt-2 leading-tight flex items-center gap-1 group-hover:text-[#A88653]">
-                  <span>{partner.name}</span>
-                  <ExternalLink className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </span>
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={partner.image}
+                    alt={partner.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  
+                  <div className="absolute top-3 left-3">
+                    <span className="px-2.5 py-1 rounded bg-[#0E1E2E]/80 backdrop-blur-md text-[#C5A880] text-[10px] font-bold uppercase tracking-wider border border-[#C5A880]/30">
+                      {partner.category}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-2.5 right-3">
+                    <span className="text-[10px] text-white/90 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded font-medium">
+                      {partner.distance}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h4 className="text-sm font-serif font-bold text-[#0E1E2E] group-hover:text-[#A88653] transition-colors flex items-center justify-between">
+                      <span>{partner.name}</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-[#A88653] shrink-0 opacity-70 group-hover:opacity-100" />
+                    </h4>
+                    <p className="text-xs text-stone-600 font-sans mt-1.5 leading-relaxed">
+                      {partner.description}
+                    </p>
+                  </div>
+                  
+                  <div className="pt-3 mt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-semibold text-[#A88653]">
+                    <span>Asistencia en Concierge</span>
+                    <span className="text-[10px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">Ver Sitio →</span>
+                  </div>
+                </div>
               </a>
             ))}
           </div>

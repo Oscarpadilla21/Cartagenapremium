@@ -112,17 +112,15 @@ export default function UbicacionPage({ onOpenBooking }) {
             </div>
           </div>
 
-          {/* Interactive Google Map Embed */}
+          {/* Interactive Map Embed */}
           <div className="lg:col-span-7 bg-white p-2 rounded-2xl border border-stone-200 shadow-sm overflow-hidden h-[420px] sm:h-[480px]">
             <iframe
-              title="Mapa Hotel Cartagena Premium"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.3643034947936!2d-75.55745492419463!3d10.392330766155682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f741165cb07%3A0x6b44f0b2f5d96f9a!2sHotel%20Cartagena%20Premium!5e0!3m2!1ses!2sco!4v1710000000000!5m2!1ses!2sco"
+              title="Mapa Ubicación Hotel Cartagena Premium"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5640%2C10.3950%2C-75.5510%2C10.4060&amp;layer=mapnik&amp;marker=10.4005%2C-75.5569"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '12px' }}
-              allowFullScreen=""
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>

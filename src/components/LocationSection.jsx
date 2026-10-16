@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
-import { MapPin, Navigation, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Navigation, Phone, Mail, Clock, ExternalLink, Map, Layers } from 'lucide-react';
 
 export default function LocationSection() {
+  const [mapMode, setMapMode] = useState('interactive'); // 'interactive' | 'aerial'
+
   const points = [
     { name: 'Playa de Bocagrande', distance: '150 metros (2 min a pie)', desc: 'Acceso directo a sol, arena y deportes acuáticos.' },
     { name: 'Ciudad Amurallada & Torre del Reloj', distance: '3.5 km (8-10 min en taxi)', desc: 'Arquitectura colonial, plazas históricas y vida nocturna.' },
@@ -78,32 +80,105 @@ export default function LocationSection() {
                 ))}
               </div>
             </div>
+
+            {/* Direct Map Actions */}
+            <div className="pt-2 flex flex-wrap gap-3">
+              <a
+                href="https://maps.google.com/?q=Hotel+Cartagena+Premium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-full bg-[#0E1E2E] hover:bg-[#1A334B] text-[#C5A880] text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+              >
+                <span>Abrir en Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://waze.com/ul?q=Hotel+Cartagena+Premium"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-full bg-white border border-stone-300 hover:border-[#C5A880] text-stone-700 hover:text-[#0E1E2E] text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+              >
+                <span>Navegar con Waze</span>
+                <Navigation className="w-3.5 h-3.5 text-cyan-600" />
+              </a>
+            </div>
           </div>
 
-          {/* Right Map Visual */}
+          {/* Right Map Visual with Dual Mode: Interactive OSM Map & Aerial Satellite Photo */}
           <div className="lg:col-span-6 relative">
-            <div className="rounded-2xl overflow-hidden border border-[#C5A880]/30 shadow-deluxe relative h-[480px]">
-              {/* Custom Styled Map Embed or Visual */}
-              <iframe
-                title="Mapa Hotel Cartagena Premium"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.9749508518884!2d-75.55674062408991!3d10.399587489727407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef62f7481a53b51%3A0xe54ef90a1b6c8ba8!2sHotel%20Cartagena%20Premium!5e0!3m2!1ses!2sco!4v1710000000000!5m2!1ses!2sco"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: 'contrast(1.05) saturate(0.95)' }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="rounded-2xl overflow-hidden border border-[#C5A880]/30 shadow-deluxe relative h-[480px] bg-stone-100">
+              {/* Map Mode Tabs */}
+              <div className="absolute top-4 right-4 z-20 flex items-center p-1 rounded-lg bg-[#0E1E2E]/90 backdrop-blur-md border border-[#C5A880]/40 shadow-lg">
+                <button
+                  type="button"
+                  onClick={() => setMapMode('interactive')}
+                  className={`px-3 py-1.5 text-[11px] font-bold rounded flex items-center gap-1.5 transition-all cursor-pointer ${
+                    mapMode === 'interactive'
+                      ? 'bg-[#C5A880] text-[#0E1E2E] shadow-sm'
+                      : 'text-stone-300 hover:text-white'
+                  }`}
+                >
+                  <Map className="w-3.5 h-3.5" />
+                  <span>Mapa Callejero</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMapMode('aerial')}
+                  className={`px-3 py-1.5 text-[11px] font-bold rounded flex items-center gap-1.5 transition-all cursor-pointer ${
+                    mapMode === 'aerial'
+                      ? 'bg-[#C5A880] text-[#0E1E2E] shadow-sm'
+                      : 'text-stone-300 hover:text-white'
+                  }`}
+                >
+                  <Layers className="w-3.5 h-3.5" />
+                  <span>Vista Aérea Bocagrande</span>
+                </button>
+              </div>
+
+              {mapMode === 'interactive' ? (
+                /* Live, reliable OpenStreetMap embed centered at Hotel Cartagena Premium */
+                <iframe
+                  title="Mapa Callejero Hotel Cartagena Premium"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-75.5640%2C10.3950%2C-75.5510%2C10.4060&amp;layer=mapnik&amp;marker=10.4005%2C-75.5569"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                />
+              ) : (
+                /* High-Res Aerial Satellite View with Pulsing Beacon */
+                <div className="relative w-full h-full">
+                  <img
+                    src="https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85"
+                    alt="Vista Aérea Bocagrande Cartagena"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+                  
+                  {/* Pulsing Beacon on Bocagrande */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <span className="relative flex h-6 w-6">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D4AF37] opacity-75" />
+                      <span className="relative inline-flex rounded-full h-6 w-6 bg-[#D4AF37] border-2 border-white items-center justify-center text-[#0E1E2E] font-black text-[10px]">
+                        ★
+                      </span>
+                    </span>
+                    <span className="mt-2 px-3 py-1 rounded bg-[#0E1E2E]/90 text-white text-xs font-serif font-bold shadow-lg border border-[#C5A880]/50 whitespace-nowrap">
+                      Hotel Cartagena Premium
+                    </span>
+                  </div>
+                </div>
+              )}
 
               {/* Floating Pin Card */}
-              <div className="absolute top-4 left-4 bg-[#0E1E2E]/95 backdrop-blur-md text-white p-3.5 rounded-lg border border-[#C5A880]/40 shadow-xl max-w-xs">
+              <div className="absolute bottom-4 left-4 z-20 bg-[#0E1E2E]/95 backdrop-blur-md text-white p-3.5 rounded-xl border border-[#C5A880]/40 shadow-xl max-w-xs">
                 <span className="text-[10px] uppercase tracking-widest text-[#C5A880] font-bold block">
-                  Ubicación Premium
+                  Ubicación Estratégica
                 </span>
                 <span className="text-xs font-serif font-semibold block text-stone-100">
                   Hotel Cartagena Premium
                 </span>
-                <span className="text-[11px] text-stone-300 block">Av. San Martín nº. 11-113</span>
+                <span className="text-[11px] text-stone-300 block">Av. San Martín nº. 11-113 · Bocagrande</span>
               </div>
             </div>
           </div>

@@ -199,12 +199,60 @@ export const HOTEL_DATA = {
     }
   ],
   culturalPartners: [
-    { name: "Museo Naval del Caribe", url: "https://museonavaldelcaribe.com/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/museo-naval-color.png" },
-    { name: "Museo de Arte Moderno", url: "https://mamcartagena.org/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/museo-moderno-color.png" },
-    { name: "MUHCA - Museo Histórico", url: "http://www.muhca.gov.co/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/muca-color.png" },
-    { name: "Caribe Jewelry & Emeralds", url: "https://caribejewelry.com/es", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/caribe-jewelry-color.png" },
-    { name: "Santuario San Pedro Claver", url: "https://sanpedroclaver.co/home/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/san-pedro-color.png" },
-    { name: "La Presentación Centro Cultural", url: "https://lapresentacion.art/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/lapresentacion-color.png" }
+    {
+      name: "Museo Naval del Caribe",
+      category: "Historia Marítima Colonial",
+      url: "https://museonavaldelcaribe.com/",
+      logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/museo-naval-color.png",
+      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
+      distance: "8 min en taxi",
+      description: "Antiguo colegio de los jesuitas del siglo XVII con galeones, maquetas de batallas navales y armamento colonial."
+    },
+    {
+      name: "Museo de Arte Moderno (MAMC)",
+      category: "Artes Plásticas & Vanguardia",
+      url: "https://mamcartagena.org/",
+      logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/museo-moderno-color.png",
+      image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+      distance: "Plaza San Pedro",
+      description: "Colección permanente de maestros colombianos (Grau, Obregón) en salas coloniales con vista a la plaza."
+    },
+    {
+      name: "MUHCA - Palacio de la Inquisición",
+      category: "Patrimonio Virreinal & Archivos",
+      url: "http://www.muhca.gov.co/",
+      logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/muca-color.png",
+      image: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=800&q=80",
+      distance: "Parque de Bolívar",
+      description: "Magnífica fachada barroca, patios coloniales y salas históricas de la Cartagena del siglo XVIII."
+    },
+    {
+      name: "Caribe Jewelry & Museo de la Esmeralda",
+      category: "Orfebrería & Gemas Preciosas",
+      url: "https://caribejewelry.com/es",
+      logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/caribe-jewelry-color.png",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
+      distance: "Bocagrande (3 min)",
+      description: "Taller artesanal y réplicas exactas de túneles mineros con esmeraldas puras colombianas certificadas."
+    },
+    {
+      name: "Santuario y Claustro San Pedro Claver",
+      category: "Templo Colonial del Siglo XVII",
+      url: "https://sanpedroclaver.co/home/",
+      logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/san-pedro-color.png",
+      image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80",
+      distance: "Baluartes Centro",
+      description: "Patios arbolados de piedra coralina, museo de arte religioso y vistas hacia la bahía de las Ánimas."
+    },
+    {
+      name: "Centro Cultural La Presentación",
+      category: "Jardines, Café & Exposiciones",
+      url: "https://lapresentacion.art/",
+      logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/lapresentacion-color.png",
+      image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
+      distance: "Calle Estanco del Aguardiente",
+      description: "Exposiciones rotativas de diseño caribeño contemporáneo, conciertos al aire libre y tienda de autor."
+    }
   ],
   gallery: [
     { src: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85", title: "Skyline de Bocagrande al Atardecer", tag: "Destino" },

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Compass, Star, Play, Pause, MapPin } from 'lucide-react';
 import { HOTEL_DATA } from '../data/hotelData';
 
@@ -123,12 +124,19 @@ export default function Hero({ onOpenBooking }) {
             >
               Reservar Estadía
             </button>
-            <a
-              href="#suites"
-              className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-full border border-white/50 text-white hover:border-[#C5A880] hover:text-[#C5A880] font-sans font-medium text-[11px] sm:text-xs uppercase tracking-[0.2em] backdrop-blur-sm transition-all hover:bg-white/5"
+            <Link
+              to="/habitaciones"
+              onClick={(e) => {
+                const suitesEl = document.getElementById('suites');
+                if (suitesEl) {
+                  e.preventDefault();
+                  suitesEl.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-full border border-white/60 text-white hover:border-[#D4AF37] hover:text-[#D4AF37] font-sans font-medium text-[11px] sm:text-xs uppercase tracking-[0.2em] backdrop-blur-sm transition-all hover:bg-white/10 flex items-center gap-1.5 cursor-pointer"
             >
-              Explorar Suites
-            </a>
+              <span>Explorar Suites</span>
+            </Link>
           </div>
 
           {/* Social Proof Mini Bar */}
