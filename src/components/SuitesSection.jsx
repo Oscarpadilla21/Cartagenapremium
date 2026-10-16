@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Users, Maximize2, Bed, Check, ArrowRight, Eye, ShieldCheck } from 'lucide-react';
 
@@ -42,6 +43,15 @@ export default function SuitesSection({ onSelectSuite, currency }) {
             <p className="text-stone-600 font-sans text-sm sm:text-base mt-3 leading-relaxed">
               Diseñadas para fundir el confort contemporáneo con las vistas más hermosas de la bahía y el mar Caribe de Bocagrande.
             </p>
+            <div className="mt-3">
+              <Link
+                to="/habitaciones"
+                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-bold text-[#A88653] hover:text-[#0E1E2E] transition-colors"
+              >
+                <span>Ver Catálogo con Paginación</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </div>
 
           {/* Filter Pills with horizontal scroll on mobile */}

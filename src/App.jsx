@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import BookingBar from './components/BookingBar';
-import StatsPillars from './components/StatsPillars';
-import SuitesSection from './components/SuitesSection';
-import RooftopSection from './components/RooftopSection';
-import ExperiencesSection from './components/ExperiencesSection';
-import GallerySection from './components/GallerySection';
-import ReviewsSection from './components/ReviewsSection';
-import LocationSection from './components/LocationSection';
+import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import WhatsAppButton from './components/WhatsAppButton';
-import Footer from './components/Footer';
-import { HOTEL_DATA } from './data/hotelData';
+import ScrollToTop from './components/ScrollToTop';
+
+import HomePage from './pages/HomePage';
+import HabitacionesPage from './pages/HabitacionesPage';
+import ServiciosPage from './pages/ServiciosPage';
+import ExperienciasPage from './pages/ExperienciasPage';
+import GaleriaPage from './pages/GaleriaPage';
+import UbicacionPage from './pages/UbicacionPage';
+import ContactoPage from './pages/ContactoPage';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -24,66 +24,87 @@ export default function App() {
     setIsBookingOpen(true);
   };
 
-  const handleSearchFromBar = (params) => {
-    const suite = HOTEL_DATA.suites.find((s) => s.id === params.suiteId) || null;
-    setSelectedSuite(suite);
-    setIsBookingOpen(true);
-  };
-
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] flex flex-col selection:bg-[#C5A880]/30 selection:text-[#0E1E2E] overflow-x-hidden">
-      {/* Fixed Luxury Navigation Bar */}
-      <Navbar
-        onOpenBooking={() => handleOpenBooking()}
-        currency={currency}
-        setCurrency={setCurrency}
-      />
+    <HashRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] flex flex-col selection:bg-[#C5A880]/30 selection:text-[#0E1E2E] overflow-x-hidden max-w-full">
+        {/* Fixed Luxury Navigation Bar with Multi-Page Routing */}
+        <Navbar
+          onOpenBooking={() => handleOpenBooking()}
+          currency={currency}
+          setCurrency={setCurrency}
+        />
 
-      <main className="flex-1 w-full overflow-hidden">
-        {/* Hero with Dynamic Ken Burns Slides and Countdown Bar */}
-        <Hero onOpenBooking={() => handleOpenBooking()} />
+        {/* Dynamic Multi-Page Content with Dedicated Pagination & Routes */}
+        <main className="flex-1 w-full overflow-hidden">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  onOpenBooking={handleOpenBooking}
+                  currency={currency}
+                />
+              }
+            />
+            <Route
+              path="/habitaciones"
+              element={
+                <HabitacionesPage
+                  onOpenBooking={handleOpenBooking}
+                  currency={currency}
+                />
+              }
+            />
+            <Route
+              path="/servicios"
+              element={
+                <ServiciosPage
+                  onOpenBooking={handleOpenBooking}
+                />
+              }
+            />
+            <Route
+              path="/experiencias"
+              element={<ExperienciasPage />}
+            />
+            <Route
+              path="/galeria"
+              element={<GaleriaPage />}
+            />
+            <Route
+              path="/ubicacion"
+              element={
+                <UbicacionPage
+                  onOpenBooking={handleOpenBooking}
+                />
+              }
+            />
+            <Route
+              path="/contacto"
+              element={
+                <ContactoPage
+                  onOpenBooking={handleOpenBooking}
+                />
+              }
+            />
+          </Routes>
+        </main>
 
-        {/* Floating Coastal Glassmorphism Booking Bar */}
-        <BookingBar onSearch={handleSearchFromBar} />
+        {/* Luxury Footer with Router Links */}
+        <Footer />
 
-        {/* Deluxe Architectural Pillars */}
-        <StatsPillars />
-
-        {/* High-End Suites Showcase */}
-        <SuitesSection
-          onSelectSuite={(suite) => handleOpenBooking(suite)}
+        {/* Interactive Reservation Drawer / Modal */}
+        <BookingModal
+          isOpen={isBookingOpen}
+          onClose={() => setIsBookingOpen(false)}
+          initialSuite={selectedSuite}
           currency={currency}
         />
 
-        {/* The Sanctuary: Rooftop Pool & Sunset Bar */}
-        <RooftopSection />
-
-        {/* Curated Cartagena Experiences & Cultural Circuit */}
-        <ExperiencesSection />
-
-        {/* Curated Visual Gallery */}
-        <GallerySection />
-
-        {/* Verified Guest Reviews */}
-        <ReviewsSection />
-
-        {/* Prime Location & Map in Bocagrande */}
-        <LocationSection />
-      </main>
-
-      {/* Luxury Footer */}
-      <Footer />
-
-      {/* Interactive Reservation Drawer / Modal */}
-      <BookingModal
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
-        initialSuite={selectedSuite}
-        currency={currency}
-      />
-
-      {/* Official Floating VIP WhatsApp Concierge Widget */}
-      <WhatsAppButton />
-    </div>
+        {/* Official Floating VIP WhatsApp Concierge Widget */}
+        <WhatsAppButton />
+      </div>
+    </HashRouter>
   );
 }

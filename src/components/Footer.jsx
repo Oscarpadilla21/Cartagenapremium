@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Phone, Mail, MapPin, ShieldCheck, Heart } from 'lucide-react';
 import Logo from './Logo';
@@ -59,34 +60,34 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-sans">
               <li>
-                <a href="#suites" className="hover:text-[#C5A880] transition-colors">
-                  Suites & Habitaciones Deluxe
-                </a>
+                <Link to="/habitaciones" className="hover:text-[#C5A880] transition-colors">
+                  Suites & Habitaciones Deluxe (Paginadas)
+                </Link>
               </li>
               <li>
-                <a href="#rooftop" className="hover:text-[#C5A880] transition-colors">
+                <Link to="/servicios" className="hover:text-[#C5A880] transition-colors">
                   Rooftop Pool & Sky Lounge
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#experiencias" className="hover:text-[#C5A880] transition-colors">
-                  Experiencias en Cartagena
-                </a>
+                <Link to="/experiencias" className="hover:text-[#C5A880] transition-colors">
+                  Sitios & Experiencias en Cartagena
+                </Link>
               </li>
               <li>
-                <a href="#galeria" className="hover:text-[#C5A880] transition-colors">
+                <Link to="/galeria" className="hover:text-[#C5A880] transition-colors">
                   Galería Fotográfica
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#ubicacion" className="hover:text-[#C5A880] transition-colors">
+                <Link to="/ubicacion" className="hover:text-[#C5A880] transition-colors">
                   Ubicación en Bocagrande
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#opiniones" className="hover:text-[#C5A880] transition-colors">
-                  Reseñas de Huéspedes
-                </a>
+                <Link to="/contacto" className="hover:text-[#C5A880] transition-colors">
+                  Contacto & Concierge VIP 24/7
+                </Link>
               </li>
             </ul>
           </div>
