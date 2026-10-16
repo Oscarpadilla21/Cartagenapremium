@@ -13,6 +13,8 @@ import ExperienciasPage from './pages/ExperienciasPage';
 import GaleriaPage from './pages/GaleriaPage';
 import UbicacionPage from './pages/UbicacionPage';
 import ContactoPage from './pages/ContactoPage';
+import AvisoLegalPage from './pages/AvisoLegalPage';
+import PoliticaPrivacidadPage from './pages/PoliticaPrivacidadPage';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -87,6 +89,14 @@ export default function App() {
                   onOpenBooking={handleOpenBooking}
                 />
               }
+            />
+            <Route
+              path="/aviso-legal"
+              element={<AvisoLegalPage />}
+            />
+            <Route
+              path="/politica-privacidad"
+              element={<PoliticaPrivacidadPage />}
             />
           </Routes>
         </main>

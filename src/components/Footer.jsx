@@ -126,21 +126,28 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Regulatory Protection Notice */}
+        <div className="pt-6 pb-2 text-[10px] text-stone-500 leading-relaxed border-t border-stone-800/80 max-w-4xl">
+          <p>
+            Hotel Cartagena Premium advierte al turista que en Colombia la explotación y el abuso sexual de menores de edad es sancionado penal y administrativamente conforme a la <strong>Ley 679 de 2001</strong> y <strong>Ley 1336 de 2009</strong>. Tratamiento de datos personales protegido bajo la <strong>Ley 1581 de 2012</strong> (Habeas Data).
+          </p>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 font-sans space-y-2 sm:space-y-0">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-400 font-sans space-y-2 sm:space-y-0">
           <div>
             © {new Date().getFullYear()} Hotel Cartagena Premium. Todos los derechos reservados.
           </div>
-          <div className="flex items-center space-x-4">
-            <a href="https://cartagenapremium.com/en/aviso-legal/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-300">
-              Aviso Legal
-            </a>
+          <div className="flex items-center space-x-3 sm:space-x-4">
+            <Link to="/aviso-legal" className="hover:text-[#C5A880] transition-colors underline-offset-4 hover:underline">
+              Aviso Legal & RNT
+            </Link>
             <span>·</span>
-            <a href="https://cartagenapremium.com/politica-de-cookies" target="_blank" rel="noopener noreferrer" className="hover:text-stone-300">
+            <Link to="/politica-privacidad" className="hover:text-[#C5A880] transition-colors underline-offset-4 hover:underline">
               Política de Privacidad
-            </a>
+            </Link>
             <span>·</span>
-            <span className="text-[#A88653]">Rediseño Deluxe Prototipo</span>
+            <span className="text-[#A88653]">Deluxe Prototype</span>
           </div>
         </div>
       </div>
