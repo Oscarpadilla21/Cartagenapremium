@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { ShieldCheck, Lock, Eye, FileText, Mail, Phone, MapPin, Database, ChevronRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ export default function PoliticaPrivacidadPage() {
       <div className="relative py-14 sm:py-20 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://cartagenapremium.com/wp-content/uploads/2025/08/recep-400x500.jpeg"
+            src="/images/hotel/recep-400x500.jpeg"
             alt="Política de Privacidad Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
@@ -185,3 +185,4 @@ export default function PoliticaPrivacidadPage() {
     </div>
   );
 }
+

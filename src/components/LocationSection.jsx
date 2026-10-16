@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { MapPin, Navigation, Phone, Mail, Clock, ExternalLink, Map, Layers } from 'lucide-react';
 
@@ -149,7 +149,7 @@ export default function LocationSection() {
                 /* High-Res Aerial Satellite View with Pulsing Beacon */
                 <div className="relative w-full h-full">
                   <img
-                    src="https://cartagenapremium.com/wp-content/uploads/2023/04/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
+                    src="/images/hotel/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
                     alt="Vista Aérea Bocagrande Cartagena - Hotel Cartagena Premium"
                     className="w-full h-full object-cover"
                   />
@@ -187,3 +187,4 @@ export default function LocationSection() {
     </section>
   );
 }
+

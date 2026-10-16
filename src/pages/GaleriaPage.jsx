@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -30,7 +30,7 @@ export default function GaleriaPage() {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png"
+            src="/images/hotel/piscina.png"
             alt="Galería Cartagena"
             className="w-full h-full object-cover"
           />
@@ -191,3 +191,4 @@ export default function GaleriaPage() {
     </div>
   );
 }
+

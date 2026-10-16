@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2, HelpCircle, ChevronDown } from 'lucide-react';
 
@@ -52,7 +52,7 @@ export default function ContactoPage({ onOpenBooking }) {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://cartagenapremium.com/wp-content/uploads/2025/08/recep-400x500.jpeg"
+            src="/images/hotel/recep-400x500.jpeg"
             alt="Contacto Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
@@ -329,3 +329,4 @@ export default function ContactoPage({ onOpenBooking }) {
     </div>
   );
 }
+

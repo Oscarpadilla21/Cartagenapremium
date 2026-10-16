@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Users, Maximize2, Bed, Check, ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
@@ -41,7 +41,7 @@ export default function HabitacionesPage({ onOpenBooking, currency }) {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://cartagenapremium.com/wp-content/uploads/2025/08/pic-hab.jpeg"
+            src="/images/hotel/pic-hab.jpeg"
             alt="Habitaciones Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
@@ -253,3 +253,4 @@ export default function HabitacionesPage({ onOpenBooking, currency }) {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Play, Sparkles, Utensils, Wine, Clock, Check, Coffee, Waves, ShieldCheck } from 'lucide-react';
 
@@ -11,28 +11,28 @@ export default function ServiciosPage({ onOpenBooking }) {
       title: "Piscina Infinity en Rooftop",
       desc: "Ubicada en el último piso con vista de 360 grados al mar Caribe y a la bahía de Cartagena. Cuenta con solárium privado y camas balinesas.",
       hours: "09:00 AM – 10:00 PM",
-      image: "https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png",
+      image: "/images/hotel/piscina.png",
       badge: "Piso Superior Panorámico"
     },
     {
       title: "Restaurante Fusión Caribeña & Salón",
       desc: "Propuesta culinaria inspirada en la pesca fresca del día, frutos tropicales y cocina tradicional cartagenera contemporánea.",
       hours: "07:00 AM – 10:30 PM",
-      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/cartagena-premium.hotel-18-scaled.jpg",
+      image: "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
       badge: "Gastronomía Local"
     },
     {
       title: "Sky Bar & Atardeceres en Azotea",
       desc: "Mixología tropical con rones añejos colombianos, ginebras botánicas y selección de tapas gourmet servidas junto a la piscina.",
       hours: "04:00 PM – 11:30 PM",
-      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/bocagrande-in-the-night-2.jpg",
+      image: "/images/hotel/bocagrande-in-the-night-2.jpg",
       badge: "Sunset Sessions"
     },
     {
       title: "Desayuno Buffet & Áreas de Estar",
       desc: "Incluido de cortesía en todas las suites: arepas tradicionales, frutas exóticas de temporada, café colombiano y panes horneados.",
       hours: "07:00 AM – 10:00 AM",
-      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/cartagena-premium.hotel-15.jpg",
+      image: "/images/hotel/cartagena-premium.hotel-15.jpg",
       badge: "Cortesía Huéspedes"
     }
   ];
@@ -43,7 +43,7 @@ export default function ServiciosPage({ onOpenBooking }) {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png"
+            src="/images/hotel/piscina.png"
             alt="Servicios Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
@@ -158,3 +158,4 @@ export default function ServiciosPage({ onOpenBooking }) {
     </div>
   );
 }
+

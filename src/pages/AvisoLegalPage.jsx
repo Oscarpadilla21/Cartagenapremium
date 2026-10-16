@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { ShieldAlert, FileText, Scale, Phone, Mail, MapPin, CheckCircle2, ChevronRight, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ export default function AvisoLegalPage() {
       <div className="relative py-14 sm:py-20 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://cartagenapremium.com/wp-content/uploads/2023/04/cuadro-palenquera-con-logo-lobby.jpeg"
+            src="/images/hotel/cuadro-palenquera-con-logo-lobby.jpeg"
             alt="Aviso Legal Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
@@ -175,3 +175,4 @@ export default function AvisoLegalPage() {
     </div>
   );
 }
+
