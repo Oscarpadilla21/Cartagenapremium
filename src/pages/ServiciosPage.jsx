@@ -11,28 +11,28 @@ export default function ServiciosPage({ onOpenBooking }) {
       title: "Piscina Infinity en Rooftop",
       desc: "Ubicada en el último piso con vista de 360 grados al mar Caribe y a la bahía de Cartagena. Cuenta con solárium privado y camas balinesas.",
       hours: "09:00 AM – 10:00 PM",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85",
+      image: "https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png",
       badge: "Piso Superior Panorámico"
     },
     {
-      title: "Restaurante Fusión Caribeña",
-      desc: "Propuesta culinaria de autor inspirada en la pesca fresca del día, frutos tropicales y cocina tradicional cartagenera contemporánea.",
+      title: "Restaurante Fusión Caribeña & Salón",
+      desc: "Propuesta culinaria inspirada en la pesca fresca del día, frutos tropicales y cocina tradicional cartagenera contemporánea.",
       hours: "07:00 AM – 10:30 PM",
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85",
-      badge: "Gastronomía de Autor"
+      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/cartagena-premium.hotel-18-scaled.jpg",
+      badge: "Gastronomía Local"
     },
     {
-      title: "Sky Bar & Coctelería de Autor",
+      title: "Sky Bar & Atardeceres en Azotea",
       desc: "Mixología tropical con rones añejos colombianos, ginebras botánicas y selección de tapas gourmet servidas junto a la piscina.",
       hours: "04:00 PM – 11:30 PM",
-      image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=85",
-      badge: "Sunset Sessions & DJ"
+      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/bocagrande-in-the-night-2.jpg",
+      badge: "Sunset Sessions"
     },
     {
-      title: "Desayuno Buffet Tropical",
-      desc: "Incluido de cortesía en todas las suites: arepas de huevo artesanales, frutas exóticas de temporada, café colombiano y panes horneados.",
+      title: "Desayuno Buffet & Áreas de Estar",
+      desc: "Incluido de cortesía en todas las suites: arepas tradicionales, frutas exóticas de temporada, café colombiano y panes horneados.",
       hours: "07:00 AM – 10:00 AM",
-      image: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1000&q=85",
+      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/cartagena-premium.hotel-15.jpg",
       badge: "Cortesía Huéspedes"
     }
   ];
@@ -43,7 +43,7 @@ export default function ServiciosPage({ onOpenBooking }) {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85"
+            src="https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png"
             alt="Servicios Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />

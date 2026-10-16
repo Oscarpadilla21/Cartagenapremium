@@ -30,7 +30,7 @@ export default function GaleriaPage() {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=2000&q=85"
+            src="https://cartagenapremium.com/wp-content/uploads/2025/08/piscina.png"
             alt="Galería Cartagena"
             className="w-full h-full object-cover"
           />

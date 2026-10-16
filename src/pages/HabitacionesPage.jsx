@@ -41,7 +41,7 @@ export default function HabitacionesPage({ onOpenBooking, currency }) {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=2000&q=85"
+            src="https://cartagenapremium.com/wp-content/uploads/2025/08/pic-hab.jpeg"
             alt="Habitaciones Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
