@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Deluxe Custom Utilities */
+.glass-gold {
+  background: rgba(251, 249, 245, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.glass-dark {
+  background: rgba(14, 30, 46, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.25);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #c5a880 0%, #e2cfb4 50%, #a88653 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border: 1px solid rgba(197, 168, 128, 0.3);
+}
+
+.gold-border-strong {
+  border: 1px solid rgba(197, 168, 128, 0.6);
+}
+
+.shadow-deluxe {
+  box-shadow: 0 20px 45px -15px rgba(24, 23, 22, 0.08), 0 4px 12px -2px rgba(168, 134, 83, 0.06);
+}
+
+.shadow-deluxe-lg {
+  box-shadow: 0 30px 60px -20px rgba(14, 30, 46, 0.2), 0 8px 24px -4px rgba(168, 134, 83, 0.12);
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A880;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A88653;
+}
