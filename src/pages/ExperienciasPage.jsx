@@ -8,25 +8,25 @@ export default function ExperienciasPage() {
       title: "Ciudad Amurallada & Centro Histórico",
       tag: "A 10 min del Hotel",
       desc: "Patrimonio de la Humanidad por la UNESCO. Calles adoquinadas, balcones florecidos de buganvilias, la Plaza Santo Domingo, la Torre del Reloj y catedrales del siglo XVI.",
-      image: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85"
+      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/centro-historico-imperialtour.com_.co_.jpg"
     },
     {
       title: "Castillo San Felipe de Barajas",
       tag: "A 8 min en taxi",
       desc: "La mayor fortificación militar colonial erigida por los españoles en América. Explora su laberinto de túneles acústicos y su vista panorámica sobre toda la bahía.",
-      image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=85"
+      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/razones-invertir-cartagena-colombia-scaled.jpg"
     },
     {
-      title: "Islas del Rosario & Playa Blanca",
-      tag: "Salida desde Muelle La Bodeguita",
-      desc: "Archipiélago de 28 islas de aguas cristalinas, arena blanca y arrecifes de coral protegidos. Coordinamos veleros, yates privados o catamaranes de lujo.",
-      image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85"
+      title: "Playas de Bocagrande & Marina",
+      tag: "A 2 min a pie",
+      desc: "Frente al hotel con acceso directo a la playa de arena dorada, deportes náuticos y paseos al atardecer frente al Mar Caribe.",
+      image: "https://cartagenapremium.com/wp-content/uploads/2023/04/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
     },
     {
-      title: "Baluartes y Murallas al Atardecer",
-      tag: "Café del Mar & Alrededores",
-      desc: "Recorrer las murallas de piedra coralina al caer la tarde es el ritual más emblemático de Cartagena, acompañado de la brisa marina y música en vivo.",
-      image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=85"
+      title: "Bocagrande Nocturno & Terrazas",
+      tag: "En el entorno del Hotel",
+      desc: "La vida nocturna, restaurantes de gastronomía caribeña e internacional y la vibrante iluminación de la bahía de Cartagena.",
+      image: "https://cartagenapremium.com/wp-content/uploads/2020/03/bocagrande-in-the-night-2.jpg"
     }
   ];
 
@@ -36,7 +36,7 @@ export default function ExperienciasPage() {
       <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
-            src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=2000&q=85"
+            src="https://cartagenapremium.com/wp-content/uploads/2023/04/foto-bocagrande--scaled.jpg"
             alt="Sitios Emblemáticos de Cartagena"
             className="w-full h-full object-cover"
           />

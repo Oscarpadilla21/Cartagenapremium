@@ -149,8 +149,8 @@ export default function LocationSection() {
                 /* High-Res Aerial Satellite View with Pulsing Beacon */
                 <div className="relative w-full h-full">
                   <img
-                    src="https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85"
-                    alt="Vista Aérea Bocagrande Cartagena"
+                    src="https://cartagenapremium.com/wp-content/uploads/2023/04/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
+                    alt="Vista Aérea Bocagrande Cartagena - Hotel Cartagena Premium"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />

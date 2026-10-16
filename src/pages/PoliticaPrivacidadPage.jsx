@@ -10,7 +10,7 @@ export default function PoliticaPrivacidadPage() {
       <div className="relative py-14 sm:py-20 bg-[#0E1E2E] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=2000&q=85"
+            src="https://cartagenapremium.com/wp-content/uploads/2025/08/recep-400x500.jpeg"
             alt="Política de Privacidad Hotel Cartagena Premium"
             className="w-full h-full object-cover"
           />
