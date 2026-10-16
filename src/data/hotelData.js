@@ -15,39 +15,43 @@ export const HOTEL_DATA = {
     footer: "https://cartagenapremium.com/wp-content/uploads/2020/03/logo-footer-1.png",
     graphicAccent: "https://cartagenapremium.com/wp-content/uploads/2018/06/graphic-img-3-1-1.png"
   },
-  // Breathtaking royalty-free luxury photography (Unsplash high-res)
+  // Real iconic sites in Cartagena de Indias (High-res royalty-free)
   heroSlides: [
     {
       id: 1,
       title: "El Lujo Caribeño Redefinido",
-      subtitle: "Despierta con la brisa cálida de Bocagrande y los atardeceres dorados más memorables del Caribe colombiano.",
-      badge: "VISTA PRIVILEGIADA AL MAR Y A LA BAHÍA",
-      shortLabel: "01 · Atardecer en Bocagrande",
+      subtitle: "Despierta con la brisa cálida de Bocagrande y los atardeceres dorados más memorables de la bahía de Cartagena.",
+      badge: "BOCAGRANDE · VISTA AL MAR Y BAHÍA",
+      shortLabel: "01 · Bocagrande Skyline",
+      siteName: "Bahía de Bocagrande",
       image: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=2000&q=85"
     },
     {
       id: 2,
-      title: "Rooftop Sky Pool & Sunsets",
-      subtitle: "Piscina infinity suspendida en las alturas, camas balinesas y coctelería de autor frente al horizonte.",
-      badge: "SANTUARIO PANORÁMICO EXCLUSIVO",
-      shortLabel: "02 · Rooftop & Infinity Pool",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=85"
-    },
-    {
-      id: 3,
       title: "A 10 Minutos de la Historia",
-      subtitle: "Conéctate en minutos con las murallas coloniales, los balcones floridos y la alta gastronomía de Cartagena.",
+      subtitle: "Conéctate en minutos con las murallas coloniales, los balcones florecidos de buganvilias y el centro histórico.",
       badge: "PATRIMONIO HISTÓRICO DE LA HUMANIDAD",
-      shortLabel: "03 · Ciudad Amurallada",
+      shortLabel: "02 · Ciudad Amurallada",
+      siteName: "Centro Histórico Colonial",
       image: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=2000&q=85"
     },
     {
+      id: 3,
+      title: "Castillo San Felipe & Baluartes",
+      subtitle: "Descubre la grandeza de la mayor fortaleza militar española en América, custodia eterna de Cartagena.",
+      badge: "MONUMENTO EMBLEMÁTICO DE COLOMBIA",
+      shortLabel: "03 · Castillo San Felipe",
+      siteName: "Castillo San Felipe de Barajas",
+      image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=2000&q=85"
+    },
+    {
       id: 4,
-      title: "Suites de Descanso Sublime",
-      subtitle: "Arquitectura contemporánea, lencería egipcia de 400 hilos y balcones privados con vista al mar.",
-      badge: "EXPERIENCIA BOUTIQUE 5 ESTRELLAS",
-      shortLabel: "04 · Confort de Alta Costura",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=2000&q=85"
+      title: "Murallas Coloniales & Océano",
+      subtitle: "Los atardeceres sobre los baluartes del Caribe se disfrutan mejor con el sosiego y confort de nuestro resort.",
+      badge: "CARIBE COLOMBIANO INCOMPARABLE",
+      shortLabel: "04 · Murallas al Atardecer",
+      siteName: "Baluartes & Murallas",
+      image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=2000&q=85"
     }
   ],
   pillars: [
@@ -69,7 +73,7 @@ export const HOTEL_DATA = {
     {
       number: "Rooftop",
       label: "Piscina Infinity & Sky Lounge",
-      description: "El punto de encuentro más exclusivo para contemplar los atardeceres con coctelería de autor y DJ set."
+      description: "El punto de encuentro más exclusivo para contemplar los atardeceres con coctelería de autor y música lounge."
     }
   ],
   suites: [
@@ -89,7 +93,7 @@ export const HOTEL_DATA = {
         "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85"
+        "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1400&q=85"
       ],
       description: "Nuestra suite insignia ofrece ventanales de piso a techo, balcón privado amoblado, baño tipo spa con acabados en mármol y una vista abierta hacia el mar Caribe.",
       amenities: ["Balcón Privado Frente al Mar", "Wi-Fi 6 de Alta Velocidad", "Aire Acondicionado Silencioso", "Smart TV 55\" 4K", "Caja Fuerte Digital", "Minibar Selección Gourmet", "Cafetera Nespresso", "Room Service 24h"]
@@ -108,7 +112,7 @@ export const HOTEL_DATA = {
       image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
       gallery: [
         "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1400&q=85",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1400&q=85",
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1400&q=85",
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1400&q=85"
       ],
       description: "Equilibrio perfecto entre serenidad y refinamiento. Contempla el movimiento de veleros y yates sobre las aguas mansas de la bahía desde la comodidad de tu suite.",
@@ -176,21 +180,21 @@ export const HOTEL_DATA = {
   },
   experiences: [
     {
-      title: "Ciudad Amurallada & Centro Histórico",
+      title: "Ciudad Amurallada & Calles Coloniales",
       time: "A solo 10 minutos",
-      description: "Recorre callejones adoquinados, balcones florecidos de buganvilias, catedrales históricas y restaurantes de clase mundial galardonados.",
+      description: "Recorre callejones empedrados bajo balcones vestidos de buganvilias, plazas coloniales, iglesias históricas y restaurantes de alta cocina.",
       image: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1000&q=85"
     },
     {
-      title: "Playas de Bocagrande & Paseo Marítimo",
-      time: "A 2 minutos a pie",
-      description: "El sector más exclusivo y cosmopolita de Cartagena: compras de lujo, cafés modernos y la playa a escasos metros de tu lobby.",
-      image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85"
+      title: "Castillo San Felipe de Barajas",
+      time: "A 8 minutos",
+      description: "Visita la imponente fortaleza defensiva de la época virreinal, sus túneles subterráneos y una vista de 360 grados sobre toda Cartagena.",
+      image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1000&q=85"
     },
     {
-      title: "Islas del Rosario & Navegación Privada",
+      title: "Islas del Rosario & Aguas Turquesas",
       time: "Salida desde Muelle (10 min)",
-      description: "Coordinamos tu escape en catamarán o yate privado hacia aguas cristalinas, playas de arena blanca y arrecifes de coral protegidos.",
+      description: "Coordinamos tu escape en catamarán o yate privado hacia el archipiélago de arrecifes coralinos y playas de arena blanca.",
       image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1000&q=85"
     }
   ],
@@ -203,13 +207,13 @@ export const HOTEL_DATA = {
     { name: "La Presentación Centro Cultural", url: "https://lapresentacion.art/", logo: "https://cartagenapremium.com/wp-content/uploads/2020/03/lapresentacion-color.png" }
   ],
   gallery: [
+    { src: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85", title: "Skyline de Bocagrande al Atardecer", tag: "Destino" },
+    { src: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85", title: "Calles de la Ciudad Amurallada", tag: "Vistas" },
+    { src: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=85", title: "Castillo San Felipe de Barajas", tag: "Destino" },
+    { src: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=85", title: "Murallas Históricas sobre el Caribe", tag: "Vistas" },
     { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85", title: "Piscina Panorámica en Rooftop", tag: "Rooftop" },
     { src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=85", title: "Master Suite con Balcón al Mar", tag: "Habitaciones" },
-    { src: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?auto=format&fit=crop&w=1200&q=85", title: "Atardecer Dorado sobre Bocagrande", tag: "Vistas" },
-    { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85", title: "Solárium y Vista a la Bahía", tag: "Rooftop" },
-    { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85", title: "Baño Spa con Mármol", tag: "Interiores" },
-    { src: "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1200&q=85", title: "Calles Históricas de Cartagena", tag: "Vistas" },
-    { src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85", title: "Junior Suite con Luz Cálida", tag: "Habitaciones" },
+    { src: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85", title: "Catamarán en Islas del Rosario", tag: "Destino" },
     { src: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=85", title: "Sky Bar & Coctelería de Autor", tag: "Interiores" }
   ],
   reviews: [

@@ -15,31 +15,34 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent background scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: 'Suites & Habitaciones', href: '#suites' },
     { name: 'Rooftop & Piscina', href: '#rooftop' },
-    { name: 'Experiencias', href: '#experiencias' },
-    { name: 'Galería', href: '#galeria' },
-    { name: 'Ubicación', href: '#ubicacion' },
+    { name: 'Sitios & Experiencias', href: '#experiencias' },
+    { name: 'Galería de Cartagena', href: '#galeria' },
+    { name: 'Ubicación Bocagrande', href: '#ubicacion' },
     { name: 'Opiniones', href: '#opiniones' },
   ];
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? 'bg-[#0E1E2E]/95 backdrop-blur-md shadow-2xl py-2.5 sm:py-3 border-b border-[#C5A880]/30'
             : 'bg-gradient-to-b from-[#0E1E2E]/95 via-[#0E1E2E]/70 to-transparent py-3 sm:py-4'
@@ -47,7 +50,7 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-3">
-            {/* Logo with Emblem Presentation */}
+            {/* Logo */}
             <a href="#" className="shrink-0">
               <Logo />
             </a>
@@ -128,42 +131,52 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
               </button>
             </div>
 
-            {/* Mobile Header Controls: Clean, Non-crowded, Generously Spaced */}
+            {/* Mobile Header Controls: Clean, Non-crowded */}
             <div className="flex lg:hidden items-center gap-2">
-              {/* Mobile Golden Reserve Button */}
               <button
                 type="button"
                 onClick={() => onOpenBooking()}
-                className="px-3.5 py-1.5 text-[11px] uppercase tracking-wider font-extrabold rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#AA771C] text-[#0E1E2E] shadow-[0_2px_10px_rgba(212,175,55,0.4)] border border-[#FFF8DC]/70 active:scale-95 transition-transform"
+                className="px-3.5 py-1.5 text-[11px] uppercase tracking-wider font-extrabold rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#AA771C] text-[#0E1E2E] shadow-md border border-[#FFF8DC]/70 active:scale-95 transition-transform"
               >
                 Reservar
               </button>
 
-              {/* Mobile Hamburger Button */}
               <button
                 type="button"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() => setMobileMenuOpen(true)}
                 className="p-2 text-stone-200 hover:text-[#C5A880] rounded-lg bg-white/5 border border-white/10 focus:outline-none"
-                aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+                aria-label="Abrir menú"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5 text-[#C5A880]" /> : <Menu className="w-5 h-5" />}
+                <Menu className="w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Drawer (Full-screen, Airy, Elegant) */}
+      {/* Mobile Menu Drawer (Completely self-contained, 100dvh, zero overflow) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0A141F]/98 backdrop-blur-xl flex flex-col pt-24 px-5 pb-8 lg:hidden animate-in fade-in duration-200 overflow-y-auto">
-          {/* Top Bar with Currency & Close Info */}
-          <div className="flex justify-between items-center mb-6 pb-4 border-b border-[#C5A880]/20">
-            <div className="flex items-center gap-1.5 text-xs text-stone-400">
-              <Globe className="w-3.5 h-3.5 text-[#C5A880]" />
-              <span>Moneda de tarifas:</span>
+        <div className="fixed inset-0 z-[100] w-full h-[100dvh] bg-[#0A141F] flex flex-col p-5 overflow-y-auto overflow-x-hidden box-border lg:hidden animate-in fade-in duration-200">
+          {/* Top Bar with Logo & Explicit Close Button */}
+          <div className="flex items-center justify-between pb-4 border-b border-[#C5A880]/20 shrink-0">
+            <Logo />
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#C5A880]/20 text-white flex items-center justify-center border border-white/20 active:scale-90 transition-transform"
+              aria-label="Cerrar menú"
+            >
+              <X className="w-5 h-5 text-[#C5A880]" />
+            </button>
+          </div>
+
+          {/* Currency Selector Row in Mobile Drawer */}
+          <div className="flex justify-between items-center my-4 py-3 px-3.5 rounded-xl bg-white/5 border border-stone-800 shrink-0">
+            <div className="flex items-center gap-2 text-xs text-stone-300">
+              <Globe className="w-4 h-4 text-[#C5A880]" />
+              <span className="font-medium">Moneda para tarifas:</span>
             </div>
             
-            {/* Dual Currency Pill on Mobile */}
             <div className="flex items-center p-0.5 rounded-full bg-black/60 border border-[#C5A880]/40">
               <button
                 type="button"
@@ -190,44 +203,44 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
             </div>
           </div>
 
-          {/* Quick Concierge Phone Card in Drawer */}
+          {/* Quick Concierge Phone Card */}
           <a
             href={`tel:${HOTEL_DATA.phones[0].replace(/\s+/g, '')}`}
-            className="mb-6 p-4 rounded-xl bg-white/5 border border-[#C5A880]/30 flex items-center justify-between text-stone-200 active:bg-white/10 transition-colors"
+            className="mb-5 p-3.5 rounded-xl bg-white/5 border border-[#C5A880]/30 flex items-center justify-between text-stone-200 active:bg-white/10 transition-colors shrink-0"
           >
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#C5A880]/20 text-[#C5A880] flex items-center justify-center">
+              <div className="w-9 h-9 rounded-full bg-[#C5A880]/20 text-[#C5A880] flex items-center justify-center shrink-0">
                 <Phone className="w-4 h-4" />
               </div>
-              <div>
-                <span className="text-[10px] uppercase tracking-wider text-[#C5A880] block font-bold">
+              <div className="min-w-0">
+                <span className="text-[10px] uppercase tracking-wider text-[#C5A880] block font-bold truncate">
                   Concierge Directo 24 Horas
                 </span>
-                <span className="text-sm font-semibold">{HOTEL_DATA.phones[0]}</span>
+                <span className="text-sm font-semibold truncate block">{HOTEL_DATA.phones[0]}</span>
               </div>
             </div>
-            <span className="text-[10px] uppercase font-bold text-[#0E1E2E] bg-[#C5A880] px-3 py-1 rounded-full shadow-sm">
+            <span className="text-[10px] uppercase font-bold text-[#0E1E2E] bg-[#C5A880] px-3 py-1 rounded-full shadow-sm shrink-0 ml-2">
               Llamar
             </span>
           </a>
 
-          {/* Navigation Links with generous tap padding */}
-          <nav className="flex flex-col space-y-2 mb-6">
+          {/* Navigation Links */}
+          <nav className="flex flex-col space-y-1 mb-6 flex-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-stone-200 hover:text-[#C5A880] text-base font-serif flex items-center justify-between py-3 px-2 border-b border-stone-800/80 active:bg-white/5 rounded transition-colors"
+                className="text-stone-200 hover:text-[#C5A880] text-base font-serif flex items-center justify-between py-3 px-3 border-b border-stone-800/80 active:bg-white/5 rounded transition-colors"
               >
                 <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 text-[#C5A880]/60" />
+                <ChevronRight className="w-4 h-4 text-[#C5A880]/60 shrink-0" />
               </a>
             ))}
           </nav>
 
-          {/* Bottom CTAs */}
-          <div className="mt-auto space-y-3 pt-4 border-t border-[#C5A880]/20">
+          {/* Bottom Action in Drawer */}
+          <div className="pt-2 border-t border-[#C5A880]/20 shrink-0 space-y-2">
             <button
               type="button"
               onClick={() => {
