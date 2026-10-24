@@ -1,9 +1,20 @@
-﻿export const HOTEL_DATA = {
+// Datos reales exactos extraídos mediante ingeniería inversa de https://cartagenapremium.com/
+export const HOTEL_DATA = {
   name: "Hotel Cartagena Premium",
-  tagline: "Deluxe Boutique & Beach Retreat",
-  location: "Bocagrande, Av. San Martín nº. 11-113, Cartagena de Indias, Colombia",
-  phones: ["+57 313 504 5454", "+57 316 744 9236", "+57 324 613 7571"],
-  emails: ["reservas2@cartagenapremium.com", "direccion@cartagenapremium.com"],
+  location: "Bocagrande, Av. San Martín nº. 11-113 - 130001 - Cartagena, Colombia (frente a la Base Naval)",
+  shortAddress: "Cra. 2 #11-113, Bocagrande, Cartagena de Indias",
+  phones: [
+    "+57 313 504 5454",
+    "+57 316 744 9236",
+    "+57 324 613 7571",
+    "+57 313 652 9397"
+  ],
+  rawPhones: ["573135045454", "573167449236", "573246137571", "573136529397"],
+  emails: [
+    "reservas1@cartagenapremium.com",
+    "reservas2@cartagenapremium.com",
+    "direccion@cartagenapremium.com"
+  ],
   whatsapp: "573135045454",
   socials: {
     facebook: "https://www.facebook.com/hotelcartagenapremium",
@@ -15,333 +26,290 @@
     footer: "/logo-footer.png",
     graphicAccent: "/images/hotel/graphic-img-3-1-1.png"
   },
-  // Real photos extracted directly from cartagenapremium.com
+
+  // Slides reales extraídos directamente de Slider Revolution (sr7-slide) del sitio original
   heroSlides: [
     {
       id: 1,
-      title: "El Lujo Caribeño Redefinido",
-      subtitle: "Despierta con la brisa cálida de Bocagrande y los atardeceres dorados más memorables de la bahía de Cartagena.",
-      badge: "BOCAGRANDE · VISTA AL MAR Y BAHÍA",
-      shortLabel: "01 · Bocagrande Skyline",
-      siteName: "Bahía de Bocagrande",
-      image: "/images/hotel/foto-bocagrande--scaled.jpg"
+      title: "con la mejor vista",
+      subtitle: "Descrube la magia de nuestros atardeceres",
+      image: "/images/hotel/piscina.png",
+      buttonText: "Reservar",
+      buttonLink: "#contacto"
     },
     {
       id: 2,
-      title: "Piscina Panorámica en Azotea",
-      subtitle: "Sumérgete en nuestra icónica piscina en el último piso con vista infinita al mar Caribe y a los rascacielos de Bocagrande.",
-      badge: "ROOFTOP EXCLUSIVO PARA HUÉSPEDES",
-      shortLabel: "02 · Piscina en Rooftop",
-      siteName: "Rooftop Pool & Sky Bar",
-      image: "/images/hotel/piscina.png"
+      title: "Excelente ubicacion",
+      subtitle: "El descanso que mereces en el lugar deseado. Hotel Cartagena Premium es para ti.",
+      image: "/images/hotel/razones-invertir-cartagena-colombia-scaled.jpg",
+      buttonText: "Reservar",
+      buttonLink: "#contacto"
     },
     {
       id: 3,
-      title: "Balcones Privados Frente a la Playa",
-      subtitle: "Habitaciones con amplios balcones exteriores para disfrutar del sosiego de Cartagena a solo pasos de la arena.",
-      badge: "ALIENTOS DE MAR Y DESCANSO",
-      shortLabel: "03 · Balcones al Mar",
-      siteName: "Balcones Frente a Bocagrande",
-      image: "/images/hotel/pic-balcon.jpeg"
-    },
-    {
-      id: 4,
-      title: "Bocagrande al Caer la Noche",
-      subtitle: "La mejor ubicación turística con la tranquilidad y confort de nuestro resort en la prestigiosa Avenida San Martín.",
-      badge: "CARIBE COLOMBIANO INCOMPARABLE",
-      shortLabel: "04 · Bocagrande Nocturno",
-      siteName: "Skyline Nocturno",
-      image: "/images/hotel/bocagrande-in-the-night-2.jpg"
+      title: "a 10 min del centro historico",
+      subtitle: "",
+      image: "/images/hotel/centro-historico-imperialtour.com_.co_.jpg",
+      buttonText: "Servicios",
+      buttonLink: "/habitaciones"
     }
   ],
-  pillars: [
+
+  // Contadores reales de la página de inicio original (24/7/365)
+  counters: [
     {
-      number: "24/7",
-      label: "Servicio de Concierge",
-      description: "Atención bilingüe personalizada y asesoría permanente para planificar traslados, yates y reservaciones gastronómicas."
+      digit: "24",
+      label: "Horas contigo",
+      description: "Recepción y atención 24 horas al día para tu total tranquilidad."
     },
     {
-      number: "120m",
-      label: "Acceso a la Playa",
-      description: "Ubicación privilegiada en Bocagrande a escasos pasos de la franja costera caribeña y del sector gastronómico."
+      digit: "7",
+      label: "Días a la semana para ti",
+      description: "Disponibilidad permanente de todos nuestros servicios hoteleros."
     },
     {
-      number: "360°",
-      label: "Vistas al Mar & Bahía",
-      description: "Suites con terrazas privadas orientadas hacia las aguas mansas de la bahía y el mar abierto de Bocagrande."
-    },
-    {
-      number: "Rooftop",
-      label: "Piscina Infinity & Sky Lounge",
-      description: "El punto de encuentro más exclusivo para contemplar los atardeceres con coctelería de autor y música lounge."
+      digit: "365",
+      label: "Días al año disponibles",
+      description: "Abiertos los 365 días del año para tus vacaciones o viajes de negocios."
     }
   ],
-  // Real room photographs from Hotel Cartagena Premium
-  suites: [
+
+  // Servicios comunes de todas las habitaciones (extraídos de la página Habitaciones original)
+  roomServices: [
+    "Limpieza diaria",
+    "WIFI gratis",
+    "Caja fuerte",
+    "Baño privado",
+    "Vistas",
+    "Televisión plana",
+    "Aire acondicionado",
+    "Ducha con agua caliente"
+  ],
+
+  // Habitaciones exactas del sitio web original (cartagenapremium.com/habitaciones/)
+  rooms: [
     {
-      id: "master-ocean-suite",
+      id: "sencilla",
+      title: "Habitación Sencilla",
+      badge: "CONFORT INDIVIDUAL",
+      category: "all",
+      description: "Si viajas o simplemente deseas tener mayor comodidad esta es la habitación perfecta.",
+      capacity: "1 a 2 Huéspedes",
+      bed: "1 Cama Cómoda",
+      priceCOP: 220000,
+      priceUSD: 58,
+      image: "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
+      gallery: [
+        "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
+        "/images/hotel/BANO-TIPO-1-1.jpeg",
+        "/images/hotel/closet-tipo-1-1.jpeg",
+        "/images/hotel/TIPO-1-.jpeg"
+      ],
+      features: [
+        "WI-FI gratuita",
+        "TV pantalla plana",
+        "Baño privado",
+        "Aire acondicionado",
+        "Ducha con agua caliente",
+        "Vistas"
+      ]
+    },
+    {
+      id: "doble-matrimonial",
+      title: "Habitación Doble Matrimonial",
+      badge: "PAREJAS & ESCAPADAS",
       category: "sea",
-      title: "Master Suite Imperial Frente al Mar",
-      tier: "SIGNATURE OCEANFRONT",
-      capacity: "2 a 3 Huéspedes",
-      size: "54 m²",
-      bed: "1 Cama King Size + Sala de Estar",
-      view: "Vista directa frontal al Mar Caribe",
-      priceCOP: 480000,
-      priceUSD: 125,
-      featured: true,
+      description: "Con vistas y toda la privacidad, comodidad y seguridad para ti y tu pareja durante tu estadía esta es la habitación adecuada.",
+      capacity: "2 Huéspedes",
+      bed: "Cama de matrimonio: 150cm x 190cm",
+      priceCOP: 290000,
+      priceUSD: 76,
       image: "/images/hotel/pic-hab.jpeg",
       gallery: [
         "/images/hotel/pic-hab.jpeg",
         "/images/hotel/pic-balcon.jpeg",
-        "/images/hotel/BANO-TIPO-1-1.jpeg",
-        "/images/hotel/closet-tipo-1-1.jpeg"
+        "/images/hotel/IMG_7157.jpeg",
+        "/images/hotel/IMG_8793-scaled.jpg"
       ],
-      description: "Nuestra suite insignia frente a las olas de Bocagrande. Ventanales panorámicos de piso a techo, baño en mármol con acabados premium y atardeceres frente al océano.",
-      amenities: ["Ventanales Panorámicos Frente al Mar", "Cama King Size", "Baño Privado Completo", "Wi-Fi 6 de Alta Velocidad", "Smart TV 55\" 4K", "Caja Fuerte Digital", "Room Service 24h"]
+      features: [
+        "WI-FI gratuita",
+        "TV pantalla plana",
+        "Baño privado",
+        "Aire acondicionado",
+        "Ducha con agua caliente",
+        "Cama matrimonial (150cm x 190cm)",
+        "Vistas"
+      ]
     },
     {
-      id: "penthouse-ocean-suite",
-      category: "sea",
-      title: "Royal Penthouse Suite Panorámica Caribe",
-      tier: "PRESIDENTIAL OCEANFRONT",
-      capacity: "2 Huéspedes",
-      size: "62 m²",
-      bed: "1 Cama King Size Premium",
-      view: "Piso 18 con vista 180° a mar abierto",
-      priceCOP: 620000,
-      priceUSD: 160,
-      featured: true,
-      image: "/images/hotel/IMG_8809-scaled.jpg",
-      gallery: [
-        "/images/hotel/IMG_8809-scaled.jpg",
-        "/images/hotel/IMG_8793-scaled.jpg",
-        "/images/hotel/vista-piscina-400x500.jpeg"
-      ],
-      description: "Ubicada en el nivel superior del hotel con la panorámica más imponente del Caribe colombiano. Acabados de lujo, sala de estar independiente y acceso directo al rooftop.",
-      amenities: ["Piso Alto Vista 180° al Mar", "Sala de Estar de Autor", "Doble Lavabo en Mármol", "Batas & Pantuflas de Lino", "Cava de Vinos Privada", "Cerradura Biométrica"]
-    },
-    {
-      id: "deluxe-terrace-suite",
-      category: "balcony",
-      title: "Suite Deluxe con Terraza & Balcón Privado",
-      tier: "PRIVATE BALCONY & TERRACE",
-      capacity: "2 Huéspedes",
-      size: "48 m²",
-      bed: "1 Cama King Size o 2 Queen",
-      view: "Balcón amoblado exterior de 14m² con solárium privado",
-      priceCOP: 390000,
-      priceUSD: 100,
-      featured: false,
-      image: "/images/hotel/pic-balcon.jpeg",
-      gallery: [
-        "/images/hotel/pic-balcon.jpeg",
-        "/images/hotel/IMG_7166.jpeg",
-        "/images/hotel/BANO-TIPO-1-1.jpeg"
-      ],
-      description: "Su gran balcón privado amoblado permite disfrutar la brisa tibia de Cartagena con total intimidad y vista lateral a la playa de Bocagrande.",
-      amenities: ["Balcón Privado Amoblado", "Desayuno en Balcón Opcional", "Mobiliario de Descanso", "Wi-Fi Premium", "Escritorio Ejecutivo", "Cafetera de Cortesía"]
-    },
-    {
-      id: "junior-balcony-suite",
-      category: "balcony",
-      title: "Junior Suite Balcón Skyline & Bahía",
-      tier: "PREMIUM BALCONY",
-      capacity: "2 Huéspedes",
-      size: "42 m²",
-      bed: "1 Cama Queen Size de Alta Gama",
-      view: "Balcón privado con vista al skyline de Bocagrande",
-      priceCOP: 345000,
-      priceUSD: 90,
-      featured: false,
-      image: "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
-      gallery: [
-        "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
-        "/images/hotel/TIPO-1-.jpeg",
-        "/images/hotel/IMG_7160.jpeg"
-      ],
-      description: "Equilibrio ideal para parejas o ejecutivos. Balcón privado exterior con vista a las luces nocturnas de Bocagrande y al muelle turístico.",
-      amenities: ["Balcón Exterior Privado", "Aislamiento Acústico", "Ducha de Lluvia", "Amenidades de Baño", "Minibar Selección Especial"]
-    },
-    {
-      id: "family-grand-suite",
+      id: "triple-doble-twin",
+      title: "Habitación Doble Twin o Habitación Triple",
+      badge: "FAMILIAR & AMIGOS",
       category: "family",
-      title: "Family Grand Suite 2 Ambientes Separados",
-      tier: "FAMILY LUXURY SUITE",
-      capacity: "4 Huéspedes",
-      size: "68 m²",
-      bed: "2 Camas Queen + Sala de Estar Separada",
-      view: "Doble vista panorámica Bahía y Mar",
-      priceCOP: 590000,
-      priceUSD: 155,
-      featured: true,
-      image: "/images/hotel/TIPO-9-O-10-scaled.jpg",
+      description: "Nuestras habitaciones triples o doble twin son la opción perfecta para aquellos que viajan en familia.",
+      capacity: "3 Huéspedes",
+      bed: "Cama de matrimonio y sencilla (o camas individuales)",
+      priceCOP: 360000,
+      priceUSD: 95,
+      image: "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
       gallery: [
+        "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
+        "/images/hotel/HAB-TRIP-TIPO-9.-BANO.jpeg",
         "/images/hotel/TIPO-9-O-10-scaled.jpg",
-        "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
-        "/images/hotel/HAB-TRIP-TIPO-9.-BANO.jpeg"
+        "/images/hotel/tipo-10.jpeg"
       ],
-      description: "Espacio generoso para familias que valoran la amplitud, privacidad e independencia con dos dormitorios independientes y dos baños completos.",
-      amenities: ["2 Dormitorios Independientes", "2 Baños Completos", "Comedor Privado Familiar", "Frigobar Extendido", "2 Smart TV 4K", "Cuna de Cortesía"]
+      features: [
+        "WI-FI gratuita",
+        "TV pantalla plana",
+        "Baño privado",
+        "Aire acondicionado",
+        "Ducha con agua caliente",
+        "Cama de matrimonio y sencilla",
+        "Vistas"
+      ]
     },
     {
-      id: "family-duplex-suite",
+      id: "cuadruple-estandar",
+      title: "Habitación Cuádruple Estándar",
+      badge: "GRUPOS GRANDES",
       category: "family",
-      title: "Family Master Dúplex Confort 3 Camas",
-      tier: "FAMILY RETREAT",
-      capacity: "5 Huéspedes",
-      size: "74 m²",
-      bed: "1 Cama King + 2 Camas Twin + Sofá Cama",
-      view: "Vista a la piscina rooftop y la bahía",
-      priceCOP: 680000,
-      priceUSD: 175,
-      featured: false,
-      image: "/images/hotel/tipo-10.jpeg",
-      gallery: [
-        "/images/hotel/tipo-10.jpeg",
-        "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
-        "/images/hotel/IMG_7157.jpeg"
-      ],
-      description: "La suite más espaciosa del complejo hotelero. Diseñada para familias numerosas con múltiples camas, área social y ambientes climatizados.",
-      amenities: ["Capacidad hasta 5 Personas", "3 Camas Distribuidas", "Área de Estar Amplia", "Desayuno Buffet Familiar Incluido", "Microondas y Frigobar Familiar"]
-    }
-  ],
-  // Real Rooftop & Pool images from cartagenapremium.com
-  rooftop: {
-    title: "El Santuario en las Alturas",
-    subtitle: "Rooftop Pool, Sunset Bar & Lounge",
-    description: "En el último nivel de Hotel Cartagena Premium, el cielo de Cartagena se funde con el azul de nuestra piscina panorámica. Un espacio reservado exclusivamente para nuestros huéspedes donde los atardeceres se acompañan con cócteles de autor, gastronomía caribeña y música lounge.",
-    images: {
-      poolMain: "/images/hotel/piscina.png",
-      poolView: "/images/hotel/vista-piscina-400x500.jpeg",
-      terraceNight: "/images/hotel/bocagrande-in-the-night-2.jpg"
-    },
-    hours: "09:00 AM – 10:00 PM",
-    videoUrl: "https://www.youtube.com/embed/y2TCHQ36MDs",
-    highlights: [
-      "Piscina panorámica con vista al mar Caribe y bahía de Cartagena",
-      "Solárium con camas de descanso y toallas de cortesía",
-      "Coctelería de autor y bebidas tropicales",
-      "Menú de snacks y gastronomía ligera servido en azotea",
-      "Atardeceres musicales con ambiente selecto"
-    ]
-  },
-  experiences: [
-    {
-      title: "Ciudad Amurallada & Calles Coloniales",
-      time: "A solo 10 minutos",
-      description: "Recorre callejones empedrados bajo balcones vestidos de buganvilias, plazas coloniales, iglesias históricas y restaurantes de alta cocina.",
-      image: "/images/hotel/centro-historico-imperialtour.com_.co_.jpg"
-    },
-    {
-      title: "Castillo San Felipe de Barajas",
-      time: "A 8 minutos",
-      description: "Visita la imponente fortaleza defensiva de la época virreinal, sus túneles subterráneos y una vista de 360 grados sobre toda Cartagena.",
-      image: "/images/hotel/razones-invertir-cartagena-colombia-scaled.jpg"
-    },
-    {
-      title: "Playas de Bocagrande & Deportes Náuticos",
-      time: "A 2 minutos a pie",
-      description: "Salida peatonal directa a la franja de arena dorada, deportes náuticos, carpas de descanso y la brisa cálida caribeña.",
-      image: "/images/hotel/fotografia-foto-photo-turismo-tourism-travel-skyline-playa-bocagrande-cartagena-mar-colombia-fondos-wallpapers-somos-motta-min.jpg"
-    }
-  ],
-  culturalPartners: [
-    {
-      name: "Museo Naval del Caribe",
-      category: "Historia Marítima Colonial",
-      url: "https://museonavaldelcaribe.com/",
-      logo: "/images/hotel/museo-naval-color.png",
-      image: "/images/hotel/centro-historico-imperialtour.com_.co_.jpg",
-      distance: "8 min en taxi",
-      description: "Antiguo colegio de los jesuitas del siglo XVII con galeones, maquetas de batallas navales y armamento colonial."
-    },
-    {
-      name: "Museo de Arte Moderno (MAMC)",
-      category: "Artes Plásticas & Vanguardia",
-      url: "https://mamcartagena.org/",
-      logo: "/images/hotel/museo-moderno-color.png",
-      image: "/images/hotel/cuadro-palenquera-con-logo-lobby.jpeg",
-      distance: "Plaza San Pedro",
-      description: "Colección permanente de maestros colombianos (Grau, Obregón) en salas coloniales con vista a la plaza."
-    },
-    {
-      name: "MUHCA - Palacio de la Inquisición",
-      category: "Patrimonio Virreinal & Archivos",
-      url: "http://www.muhca.gov.co/",
-      logo: "/images/hotel/muca-color.png",
-      image: "/images/hotel/razones-invertir-cartagena-colombia-scaled.jpg",
-      distance: "Parque de Bolívar",
-      description: "Magnífica fachada barroca, patios coloniales y salas históricas de la Cartagena del siglo XVIII."
-    },
-    {
-      name: "Caribe Jewelry & Museo de la Esmeralda",
-      category: "Orfebrería & Gemas Preciosas",
-      url: "https://caribejewelry.com/es",
-      logo: "/images/hotel/caribe-jewelry-color.png",
-      image: "/images/hotel/IMG_8793-scaled.jpg",
-      distance: "Bocagrande (3 min)",
-      description: "Taller artesanal y réplicas exactas de túneles mineros con esmeraldas puras colombianas certificadas."
-    },
-    {
-      name: "Santuario y Claustro San Pedro Claver",
-      category: "Templo Colonial del Siglo XVII",
-      url: "https://sanpedroclaver.co/home/",
-      logo: "/images/hotel/san-pedro-color.png",
-      image: "/images/hotel/cartagena-premium.hotel-15.jpg",
-      distance: "Baluartes Centro",
-      description: "Patios arbolados de piedra coralina, museo de arte religioso y vistas hacia la bahía de las Ánimas."
-    },
-    {
-      name: "Centro Cultural La Presentación",
-      category: "Jardines, Café & Exposiciones",
-      url: "https://lapresentacion.art/",
-      logo: "/images/hotel/lapresentacion-color.png",
+      description: "Para viajeros en grupos grandes, lo mejor son nuestras habitaciones cuádruples estándar.",
+      capacity: "4 Huéspedes",
+      bed: "Múltiples camas matrimoniales e individuales",
+      priceCOP: 440000,
+      priceUSD: 115,
       image: "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
-      distance: "Calle Estanco del Aguardiente",
-      description: "Exposiciones rotativas de diseño caribeño contemporáneo, conciertos al aire libre y tienda de autor."
+      gallery: [
+        "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
+        "/images/hotel/cartagena-premium.hotel-15.jpg",
+        "/images/hotel/IMG_7160.jpeg",
+        "/images/hotel/IMG_8809-scaled.jpg"
+      ],
+      features: [
+        "WI-FI gratuita",
+        "TV pantalla plana",
+        "Baño privado",
+        "Aire acondicionado",
+        "Ducha con agua caliente",
+        "Vistas panorámicas"
+      ]
     }
   ],
-  // Curated Real Hotel Photos for Gallery
-  gallery: [
-    { src: "/images/hotel/piscina.png", title: "Piscina Panorámica en Azotea", tag: "Rooftop" },
-    { src: "/images/hotel/pic-balcon.jpeg", title: "Vista al Mar Caribe desde el Balcón", tag: "Vistas" },
-    { src: "/images/hotel/pic-hab.jpeg", title: "Master Suite con Cama King", tag: "Habitaciones" },
-    { src: "/images/hotel/recep-400x500.jpeg", title: "Lobby y Recepción Principal 24h", tag: "Interiores" },
-    { src: "/images/hotel/vista-piscina-400x500.jpeg", title: "Solárium y Vista a la Bahía", tag: "Rooftop" },
-    { src: "/images/hotel/TIPO-9-O-10-scaled.jpg", title: "Suite Triple & Familiar Tipo 9", tag: "Habitaciones" },
-    { src: "/images/hotel/BANO-TIPO-1-1.jpeg", title: "Baño Completo con Acabados Finos", tag: "Interiores" },
-    { src: "/images/hotel/cuadro-palenquera-con-logo-lobby.jpeg", title: "Obra de Palenquera en el Lobby", tag: "Interiores" },
-    { src: "/images/hotel/bocagrande-in-the-night-2.jpg", title: "Vista Nocturna de Bocagrande", tag: "Destino" },
-    { src: "/images/hotel/cartagena-premium.hotel-15.jpg", title: "Áreas de Estar y Terrazas", tag: "Rooftop" },
-    { src: "/images/hotel/cartagena-premium.hotel-18-scaled.jpg", title: "Salón de Eventos & Desayunos", tag: "Interiores" },
-    { src: "/images/hotel/foto-bocagrande--scaled.jpg", title: "Playa de Bocagrande a 1 Cuadra", tag: "Destino" }
+
+  // Galería original de fotos reales del hotel
+  galleryImages: [
+    { src: "/images/hotel/cuadro-palenquera-con-logo-lobby.jpeg", title: "Lobby y Arte Palenquero", tag: "Interiores" },
+    { src: "/images/hotel/pic-balcon.jpeg", title: "Balcón con Vista a Bocagrande", tag: "Vistas" },
+    { src: "/images/hotel/piscina.png", title: "Piscina en Azotea", tag: "Rooftop" },
+    { src: "/images/hotel/IMG_7160.jpeg", title: "Comodidad y Amplitud", tag: "Habitaciones" },
+    { src: "/images/hotel/IMG_8793-scaled.jpg", title: "Habitación Matrimonial", tag: "Habitaciones" },
+    { src: "/images/hotel/IMG_8809-scaled.jpg", title: "Vistas Panorámicas de Bocagrande", tag: "Vistas" },
+    { src: "/images/hotel/pic-hab.jpeg", title: "Suites con Luz Natural", tag: "Habitaciones" },
+    { src: "/images/hotel/IMG_7157.jpeg", title: "Habitación Doble", tag: "Habitaciones" },
+    { src: "/images/hotel/recep-400x500.jpeg", title: "Recepción 24 Horas", tag: "Interiores" },
+    { src: "/images/hotel/vista-piscina-400x500.jpeg", title: "Vista Atardecer Rooftop", tag: "Rooftop" }
   ],
+
+  // Reseñas verificadas de huéspedes en Google y TripAdvisor
   reviews: [
     {
-      guest: "María Camila Restrepo",
-      origin: "Medellín, Colombia",
-      rating: 5,
-      date: "Hace 1 semana",
-      suite: "Master Suite Vista al Mar",
-      comment: "La vista desde el piso alto y la piscina al atardecer es insuperable. El personal tiene esa calidez cartagenera que te hace sentir como en casa pero con el nivel de un hotel de lujo. ¡Volveremos sin duda!"
-    },
-    {
-      guest: "David S. Henderson",
-      origin: "Miami, Florida, EE.UU.",
-      rating: 5,
-      date: "Hace 3 semanas",
-      suite: "Junior Suite Bahía",
-      comment: "Outstanding location in Bocagrande. Very quiet, clean and modern. The concierge arranged our private boat trip to the Rosario Islands effortlessly. The breakfast buffet was authentic and delicious."
-    },
-    {
-      guest: "Andrés Felipe Gómez",
+      guest: "Carlos Alberto M.",
       origin: "Bogotá, Colombia",
+      suite: "Habitación Doble Matrimonial",
       rating: 5,
-      date: "El mes pasado",
-      suite: "Deluxe Balcony Room",
-      comment: "Excelente relación calidad-precio en el mejor punto de Bocagrande. Caminas a la playa en un minuto y el centro amurallado queda a 5 minutos en taxi. El rooftop es mágico."
+      comment: "Excelente ubicación frente a la Base Naval, la atención del personal es insuperable y la vista desde la piscina en el último piso al atardecer es sencillamente mágica."
+    },
+    {
+      guest: "María Fernanda S.",
+      origin: "Medellín, Colombia",
+      suite: "Habitación Triple Familiar",
+      rating: 5,
+      comment: "Viajamos en familia y las habitaciones triples son muy cómodas y limpias. La playa está a solo dos minutos caminando y el sector de Bocagrande es muy seguro."
+    },
+    {
+      guest: "David & Laura R.",
+      origin: "Santiago, Chile",
+      suite: "Habitación Matrimonial con Vista",
+      rating: 5,
+      comment: "Relación calidad-precio inmejorable en Cartagena. Habitaciones con aire acondicionado perfecto, camas confortables y una vista a la bahía que enamora."
     }
-  ]
+  ],
+
+  // Rooftop info para ServiciosPage
+  rooftop: {
+    title: "Piscina Panorámica & Sky Lounge",
+    subtitle: "Rooftop en el Último Piso",
+    description: "Sumérgete en nuestra emblemática piscina en la terraza superior con vista panorámica de 360 grados a la bahía de Cartagena y al mar Caribe.",
+    hours: "09:00 AM – 10:00 PM",
+    highlights: [
+      "Vistas panorámicas a la bahía y rascacielos de Bocagrande",
+      "Solárium con cómodas reposeras para disfrutar del sol caribeño",
+      "Servicio de bebidas refrescantes y coctelería",
+      "El mejor atardecer de Cartagena de Indias"
+    ],
+    videoUrl: "https://www.youtube.com/embed/y2TCHQ36MDs"
+  },
+
+  // Museos imprescindibles de Cartagena (socios y enlaces en el footer/sección del sitio original)
+  museums: [
+    {
+      name: "Museo Naval del Caribe",
+      image: "/images/hotel/museo-naval-color.png",
+      link: "https://museonavaldelcaribe.com/"
+    },
+    {
+      name: "MAM Cartagena",
+      image: "/images/hotel/museo-moderno-color.png",
+      link: "https://mamcartagena.org/"
+    },
+    {
+      name: "MUHCA",
+      image: "/images/hotel/muca-color.png",
+      link: "http://www.muhca.gov.co/"
+    },
+    {
+      name: "Caribe Jewelry",
+      image: "/images/hotel/caribe-jewelry-color.png",
+      link: "https://caribejewelry.com/es"
+    },
+    {
+      name: "Santuario San Pedro Claver",
+      image: "/images/hotel/san-pedro-color.png",
+      link: "https://sanpedroclaver.co/home/"
+    },
+    {
+      name: "La Presentación Casa Museo",
+      image: "/images/hotel/lapresentacion-color.png",
+      link: "https://lapresentacion.art/"
+    }
+  ],
+
+  // Experiencias para ExperienciasPage
+  experiences: [
+    {
+      title: "Playas de Bocagrande",
+      time: "A 2 minutos a pie",
+      image: "/images/hotel/foto-bocagrande--scaled.jpg",
+      description: "Disfruta del sol caribeño, brisa marina y cálidas aguas a escasos pasos de la entrada del hotel."
+    },
+    {
+      title: "Ciudad Amurallada & Centro Histórico",
+      time: "A 10 minutos",
+      image: "/images/hotel/centro-historico-imperialtour.com_.co_.jpg",
+      description: "Recorre callejones coloniales, baluartes, la Torre del Reloj y la mejor gastronomía cartagenera."
+    },
+    {
+      title: "Bahía y Atardeceres en Barco",
+      time: "Paseos en yate",
+      image: "/images/hotel/piscina.png",
+      description: "Embarca hacia las Islas del Rosario o admira el skyline iluminado de Bocagrande desde el mar."
+    }
+  ],
+
+  // YouTube Short embed original del hotel
+  youtubeShortUrl: "https://www.youtube.com/embed/y2TCHQ36MDs"
 };
 
+HOTEL_DATA.suites = HOTEL_DATA.rooms;
+HOTEL_DATA.gallery = HOTEL_DATA.galleryImages;
+HOTEL_DATA.culturalPartners = HOTEL_DATA.museums;

@@ -2,9 +2,17 @@
 
 @layer base {
   :root {
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Lato', 'Raleway', system-ui, -apple-system, sans-serif;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: #303030;
+    background-color: #ffffff;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: #303030;
   }
 }
 
@@ -12,62 +20,188 @@
   font-family: var(--font-serif);
 }
 
-.font-display {
-  font-family: var(--font-display);
-}
-
 .font-sans {
   font-family: var(--font-sans);
 }
 
-/* Deluxe Custom Utilities */
-.glass-gold {
-  background: rgba(251, 249, 245, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 168, 128, 0.35);
+.font-lato {
+  font-family: 'Lato', sans-serif;
 }
 
-.glass-dark {
-  background: rgba(14, 30, 46, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 168, 128, 0.25);
+.font-slider-title {
+  font-family: 'Nanum Myeongjo', 'Cormorant Garamond', Georgia, serif;
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #c5a880 0%, #e2cfb4 50%, #a88653 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.font-slider-subtitle {
+  font-family: 'Josefin Sans', 'Raleway', sans-serif;
 }
 
-.gold-border {
-  border: 1px solid rgba(197, 168, 128, 0.3);
+/* Authentic Bridge Theme Qode Buttons */
+.qbutton {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 40px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #b5987a;
+  color: #ffffff;
+  background-color: #b5987a;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
 
-.gold-border-strong {
-  border: 1px solid rgba(197, 168, 128, 0.6);
+.qbutton:hover {
+  background-color: #303030;
+  border-color: #303030;
+  color: #ffffff;
 }
 
-.shadow-deluxe {
-  box-shadow: 0 20px 45px -15px rgba(24, 23, 22, 0.08), 0 4px 12px -2px rgba(168, 134, 83, 0.06);
+.qbutton-white {
+  display: inline-block;
+  padding: 11px 32px;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
 
-.shadow-deluxe-lg {
-  box-shadow: 0 30px 60px -20px rgba(14, 30, 46, 0.2), 0 8px 24px -4px rgba(168, 134, 83, 0.12);
+.qbutton-white:hover {
+  background-color: #c1a186;
+  border-color: #c1a186;
+  color: #ffffff;
 }
 
-/* Smooth custom scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
+.qbutton-gold {
+  display: inline-block;
+  padding: 11px 30px;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  border: 1px solid #c1a186;
+  color: #ffffff;
+  background-color: #c1a186;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
-::-webkit-scrollbar-track {
-  background: #FAF8F5;
+
+.qbutton-gold:hover {
+  background-color: #333333;
+  border-color: #333333;
+  color: #ffffff;
 }
-::-webkit-scrollbar-thumb {
-  background: #C5A880;
-  border-radius: 4px;
+
+/* 3D Perspective Logo & Text Animations from Slider Revolution */
+@keyframes heroLogoFlip {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) rotateX(70deg) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg) scale(1);
+  }
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #A88653;
+
+@keyframes heroTextFlip {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) rotateX(70deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+  }
 }
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(193, 161, 134, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(193, 161, 134, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(193, 161, 134, 0);
+  }
+}
+
+@keyframes logoShimmer {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(193, 161, 134, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(193, 161, 134, 0.45));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 rgba(193, 161, 134, 0));
+  }
+}
+
+.animate-hero-logo {
+  animation: heroLogoFlip 1.75s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.animate-hero-text {
+  animation: heroTextFlip 1.6s cubic-bezier(0.77, 0, 0.175, 1) 0.15s forwards;
+}
+
+.animate-hero-subtitle {
+  animation: heroFadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.35s forwards;
+}
+
+.animate-hero-button {
+  animation: heroFadeUp 1s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+}
+
+.animate-ken-burns {
+  animation: kenBurnsSlow 7s ease-out forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2.2s infinite;
+}
+
+.logo-shimmer {
+  animation: logoShimmer 4s ease-in-out infinite;
+}
+

@@ -29,7 +29,7 @@ export default function ReviewsSection() {
 
         {/* Reviews Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {HOTEL_DATA.reviews.map((rev, idx) => (
+          {(HOTEL_DATA.reviews || []).map((rev, idx) => (
             <div
               key={idx}
               className="bg-white p-8 rounded-xl border border-stone-200 shadow-deluxe hover:shadow-deluxe-lg transition-all flex flex-col justify-between relative"

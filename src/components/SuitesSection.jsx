@@ -1,267 +1,175 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { HOTEL_DATA } from '../data/hotelData';
-import { Users, Maximize2, Bed, Check, ArrowRight, Eye, ShieldCheck } from 'lucide-react';
+import { Check, ShieldCheck, ArrowRight, Eye, Wifi, Tv, Bath, Wind, Flame } from 'lucide-react';
 
 export default function SuitesSection({ onSelectSuite, currency }) {
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [previewSuite, setPreviewSuite] = useState(null);
+  const [previewRoom, setPreviewRoom] = useState(null);
 
-  const filters = [
-    { id: 'all', label: 'Todas las Suites' },
-    { id: 'sea', label: 'Vista al Mar' },
-    { id: 'balcony', label: 'Con Balcón Privado' },
-    { id: 'family', label: 'Suites Familiares' }
-  ];
-
-  const filteredSuites = HOTEL_DATA.suites.filter((s) => {
-    if (activeFilter === 'all') return true;
-    return s.category === activeFilter;
-  });
-
-  const formatPrice = (suite) => {
+  const formatPrice = (room) => {
     if (currency === 'USD') {
-      return `$${suite.priceUSD} USD`;
+      return `$${room.priceUSD} USD`;
     }
-    return `$${suite.priceCOP.toLocaleString('es-CO')} COP`;
+    return `$${room.priceCOP.toLocaleString('es-CO')} COP`;
   };
 
   return (
-    <section id="suites" className="py-20 bg-white relative">
+    <section id="habitaciones" className="py-20 bg-[#FAF8F5] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div className="max-w-2xl">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#A88653] font-semibold">
-              Alojamientos Exclusivos
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif text-[#0E1E2E] mt-2">
-              Suites de Lujo con Vista Panorámica
-            </h2>
-            <p className="text-stone-600 font-sans text-sm sm:text-base mt-3 leading-relaxed">
-              Diseñadas para fundir el confort contemporáneo con las vistas más hermosas de la bahía y el mar Caribe de Bocagrande.
-            </p>
-            <div className="mt-3">
-              <Link
-                to="/habitaciones"
-                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-bold text-[#A88653] hover:text-[#0E1E2E] transition-colors"
-              >
-                <span>Ver Catálogo con Paginación</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#A88653] font-semibold">
+            Hotel Cartagena Premium
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-serif text-[#0E1E2E] mt-2">
+            Nuestras Habitaciones
+          </h2>
+          <div className="w-16 h-0.5 bg-[#C5A880] mx-auto my-4" />
+          
+          {/* Services in all rooms - exact text from cartagenapremium.com/habitaciones */}
+          <div className="bg-white p-5 rounded-xl border border-[#C5A880]/30 shadow-sm mt-6">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#A88653] mb-3">
+              Todas las habitaciones disponen de los siguientes servicios:
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs font-sans text-stone-700">
+              {HOTEL_DATA.roomServices.map((service, idx) => (
+                <span key={idx} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF8F5] border border-stone-200">
+                  <Check className="w-3.5 h-3.5 text-[#A88653]" />
+                  {service}
+                </span>
+              ))}
             </div>
-          </div>
-
-          {/* Filter Pills with horizontal scroll on mobile */}
-          <div className="flex overflow-x-auto pb-2 md:pb-0 md:flex-wrap gap-2 mt-4 md:mt-0 max-w-full">
-            {filters.map((f) => (
-              <button
-                key={f.id}
-                onClick={() => setActiveFilter(f.id)}
-                className={`px-4 py-2 text-xs uppercase tracking-wider font-medium rounded transition-all ${
-                  activeFilter === f.id
-                    ? 'bg-[#0E1E2E] text-[#C5A880] border border-[#A88653] shadow-md'
-                    : 'bg-[#FAF8F5] text-stone-600 hover:text-stone-900 border border-stone-200'
-                }`}
-              >
-                {f.label}
-              </button>
-            ))}
           </div>
         </div>
 
-        {/* Suites Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {filteredSuites.map((suite) => (
+        {/* Room Cards Grid (The 4 Real Rooms) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {HOTEL_DATA.rooms.map((room) => (
             <div
-              key={suite.id}
-              className="group bg-[#FAF8F5] rounded-xl overflow-hidden border border-[#C5A880]/20 shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 flex flex-col"
+              key={room.id}
+              className="bg-white rounded-2xl overflow-hidden border border-[#C5A880]/30 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
             >
-              {/* Image Container with Luxury Badges */}
-              <div className="relative h-72 sm:h-80 overflow-hidden">
+              {/* Image & Badges */}
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
                 <img
-                  src={suite.image}
-                  alt={suite.title}
+                  src={room.image}
+                  alt={room.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                {/* Tier Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded bg-[#0E1E2E]/90 backdrop-blur-md text-[#C5A880] text-[10px] font-sans font-bold uppercase tracking-[0.2em] border border-[#C5A880]/40">
-                    {suite.tier}
+                  <span className="px-3 py-1 rounded-full bg-[#0E1E2E]/90 text-[#C5A880] text-[10px] uppercase font-bold tracking-wider backdrop-blur-sm border border-[#C5A880]/30">
+                    {room.badge}
                   </span>
                 </div>
-
-                {/* Quick View Button */}
                 <button
-                  onClick={() => setPreviewSuite(suite)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-[#0E1E2E] text-white backdrop-blur-md transition-colors"
-                  title="Ver fotos de la suite"
+                  type="button"
+                  onClick={() => setPreviewRoom(room)}
+                  className="absolute bottom-4 right-4 p-2.5 rounded-full bg-white/90 hover:bg-white text-[#0E1E2E] shadow-md backdrop-blur-sm transition-transform hover:scale-110 cursor-pointer flex items-center gap-1.5 text-xs font-medium"
                 >
-                  <Maximize2 className="w-4 h-4" />
+                  <Eye className="w-4 h-4 text-[#A88653]" />
+                  <span>Ver fotos ({room.gallery.length})</span>
                 </button>
-
-                {/* View Tag & Price in Image Footer */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
-                  <div>
-                    <span className="text-[11px] font-sans tracking-wider uppercase text-[#C5A880] block">
-                      {suite.view}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-serif font-medium">{suite.title}</h3>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-[10px] uppercase tracking-wider text-stone-300 block">
-                      Desde
-                    </span>
-                    <span className="text-xl sm:text-2xl font-serif font-bold text-[#FAF8F5]">
-                      {formatPrice(suite)}
-                    </span>
-                    <span className="text-[10px] text-stone-300 block">/ noche</span>
-                  </div>
-                </div>
               </div>
 
-              {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
-                {/* Specs Bar */}
-                <div className="grid grid-cols-3 gap-2 py-2.5 px-3 rounded bg-white border border-stone-200 text-center">
-                  <div>
-                    <span className="text-[10px] uppercase tracking-wider text-stone-400 block">
-                      Espacio
-                    </span>
-                    <span className="text-xs font-semibold text-stone-800">{suite.size}</span>
-                  </div>
-                  <div className="border-x border-stone-100">
-                    <span className="text-[10px] uppercase tracking-wider text-stone-400 block">
-                      Capacidad
-                    </span>
-                    <span className="text-xs font-semibold text-stone-800">{suite.capacity}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase tracking-wider text-stone-400 block">
-                      Cama
-                    </span>
-                    <span className="text-xs font-semibold text-stone-800 truncate block">
-                      {suite.bed.split('+')[0]}
-                    </span>
-                  </div>
-                </div>
+              {/* Content Body */}
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-serif text-[#0E1E2E] group-hover:text-[#A88653] transition-colors">
+                    {room.title}
+                  </h3>
+                  <p className="text-stone-600 font-sans text-xs sm:text-sm mt-2 leading-relaxed">
+                    {room.description}
+                  </p>
 
-                {/* Description */}
-                <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
-                  {suite.description}
-                </p>
+                  {/* Bed & Capacity */}
+                  <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-sans">
+                    <span>{room.bed}</span>
+                    <span className="font-medium text-[#0E1E2E]">{room.capacity}</span>
+                  </div>
 
-                {/* Key Amenities */}
-                <div className="space-y-2">
-                  <span className="text-[10px] uppercase tracking-[0.18em] font-bold text-[#745729]">
-                    Amenidades de Alta Gama Incluidas:
-                  </span>
-                  <div className="grid grid-cols-2 gap-1.5">
-                    {suite.amenities.slice(0, 6).map((item, i) => (
+                  {/* Amenities List */}
+                  <div className="grid grid-cols-2 gap-2 mt-4 pt-3 border-t border-stone-100">
+                    {room.features.slice(0, 4).map((feat, i) => (
                       <div key={i} className="flex items-center gap-1.5 text-xs text-stone-700">
                         <Check className="w-3.5 h-3.5 text-[#A88653] shrink-0" />
-                        <span className="truncate">{item}</span>
+                        <span className="truncate">{feat}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Card Actions */}
-                <div className="pt-4 border-t border-stone-200 flex items-center justify-between gap-3">
-                  <button
-                    onClick={() => setPreviewSuite(suite)}
-                    className="text-xs uppercase tracking-wider font-semibold text-stone-700 hover:text-[#A88653] flex items-center gap-1 transition-colors"
-                  >
-                    <span>Galería & Detalles</span>
-                  </button>
+                {/* Price & CTA Button */}
+                <div className="mt-6 pt-4 border-t border-[#C5A880]/20 flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider text-stone-400 block font-sans">Desde</span>
+                    <span className="text-lg sm:text-xl font-serif font-bold text-[#0E1E2E]">
+                      {formatPrice(room)}
+                    </span>
+                    <span className="text-[10px] text-stone-500 ml-1">/ noche</span>
+                  </div>
 
                   <button
-                    onClick={() => onSelectSuite(suite)}
-                    className="px-5 py-2.5 rounded bg-[#0E1E2E] hover:bg-[#A88653] text-[#FAF8F5] hover:text-[#0E1E2E] border border-[#A88653] text-xs uppercase tracking-[0.18em] font-bold transition-all duration-300 shadow-md flex items-center gap-2 group/btn"
+                    type="button"
+                    onClick={() => onSelectSuite(room)}
+                    className="px-6 py-2.5 rounded-full bg-[#0E1E2E] hover:bg-[#A88653] text-[#C5A880] hover:text-white text-xs uppercase tracking-wider font-semibold transition-all shadow-sm transform hover:-translate-y-0.5 cursor-pointer"
                   >
-                    <span>Reservar Suite</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#C5A880] group-hover/btn:text-[#0E1E2E] group-hover/btn:translate-x-1 transition-transform" />
+                    Reservar
                   </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Footer quote - exact from cartagenapremium.com/habitaciones */}
+        <div className="mt-14 text-center">
+          <p className="text-stone-600 font-serif italic text-base sm:text-lg max-w-2xl mx-auto">
+            "Las habitaciones del Hotel Cartagena Premium no dejan indiferente, por ello nuestros clientes son nuestra mejor publicidad."
+          </p>
+        </div>
       </div>
 
-      {/* Preview Suite Modal */}
-      {previewSuite && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#FAF8F5] rounded-xl max-w-3xl w-full overflow-hidden shadow-2xl border border-[#C5A880]/30 animate-in fade-in duration-200">
-            <div className="p-5 border-b border-stone-200 flex items-center justify-between bg-white">
-              <div>
-                <span className="text-[10px] uppercase tracking-widest text-[#A88653] font-bold">
-                  {previewSuite.tier}
-                </span>
-                <h3 className="text-xl sm:text-2xl font-serif text-[#0E1E2E]">{previewSuite.title}</h3>
-              </div>
+      {/* Room Gallery Lightbox */}
+      {previewRoom && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setPreviewRoom(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-3xl w-full p-6 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-4 border-b border-stone-100">
+              <h3 className="text-xl font-serif text-[#0E1E2E]">{previewRoom.title}</h3>
               <button
-                onClick={() => setPreviewSuite(null)}
-                className="text-stone-400 hover:text-stone-700 text-sm font-sans font-bold px-3 py-1"
+                onClick={() => setPreviewRoom(null)}
+                className="text-stone-400 hover:text-stone-700 text-sm font-bold p-1 cursor-pointer"
               >
-                Cerrar ✕
+                ✕
               </button>
             </div>
 
-            <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
-              {/* Photo Gallery Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {previewSuite.gallery.map((img, i) => (
-                  <img
-                    key={i}
-                    src={img}
-                    alt={`${previewSuite.title} foto ${i + 1}`}
-                    className="h-32 w-full object-cover rounded border border-stone-200"
-                  />
-                ))}
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="text-xs uppercase tracking-widest font-bold text-[#745729]">
-                  Descripción de la Suite
-                </h4>
-                <p className="text-sm text-stone-700 leading-relaxed">{previewSuite.description}</p>
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="text-xs uppercase tracking-widest font-bold text-[#745729]">
-                  Todas las Amenidades
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {previewSuite.amenities.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-stone-700">
-                      <Check className="w-3.5 h-3.5 text-[#A88653]" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+              {previewRoom.gallery.map((img, i) => (
+                <div key={i} className="h-56 rounded-lg overflow-hidden border border-stone-200">
+                  <img src={img} alt={`Foto ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="p-4 rounded-lg bg-[#0E1E2E] text-white flex items-center justify-between">
-                <div>
-                  <span className="text-[11px] text-stone-300 block">Tarifa por noche</span>
-                  <span className="text-2xl font-serif font-bold text-[#C5A880]">
-                    {formatPrice(previewSuite)}
-                  </span>
-                </div>
-                <button
-                  onClick={() => {
-                    const chosen = previewSuite;
-                    setPreviewSuite(null);
-                    onSelectSuite(chosen);
-                  }}
-                  className="px-6 py-2.5 rounded bg-gradient-to-r from-[#A88653] to-[#C5A880] text-[#0E1E2E] font-bold text-xs uppercase tracking-widest"
-                >
-                  Proceder a Reservar
-                </button>
-              </div>
+            <div className="mt-6 flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  const r = previewRoom;
+                  setPreviewRoom(null);
+                  onSelectSuite(r);
+                }}
+                className="px-6 py-2.5 rounded-full bg-[#0E1E2E] text-[#C5A880] hover:bg-[#A88653] hover:text-white text-xs uppercase tracking-wider font-semibold cursor-pointer"
+              >
+                Reservar esta habitación
+              </button>
             </div>
           </div>
         </div>

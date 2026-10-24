@@ -101,7 +101,7 @@ export default function BookingBar({ onSearch, defaultRoom = '' }) {
               className="w-full bg-white/95 border border-stone-200 focus:border-[#A88653] focus:ring-1 focus:ring-[#A88653] text-stone-800 text-sm rounded-lg px-3 py-2.5 font-medium outline-none transition-all shadow-sm truncate cursor-pointer"
             >
               <option value="all">Todas las Suites Disponibles</option>
-              {HOTEL_DATA.suites.map((s) => (
+              {(HOTEL_DATA.suites || HOTEL_DATA.rooms || []).map((s) => (
                 <option key={s.id} value={s.id}>
                   {s.title}
                 </option>

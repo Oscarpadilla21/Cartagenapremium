@@ -1,47 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
-import { Clock, MapPin, Eye, Waves } from 'lucide-react';
+
+function AnimatedCounter({ target, duration = 1800 }) {
+  const [count, setCount] = useState(0);
+  const targetNum = parseInt(target, 10) || 0;
+  const started = useRef(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !started.current) {
+          started.current = true;
+          const startTime = performance.now();
+
+          const update = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(ease * targetNum);
+            setCount(current);
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              setCount(targetNum);
+            }
+          };
+
+          requestAnimationFrame(update);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [targetNum, duration]);
+
+  return <span ref={elementRef}>{count}</span>;
+}
 
 export default function StatsPillars() {
-  const icons = [Clock, MapPin, Eye, Waves];
-
   return (
-    <section className="pt-24 pb-16 bg-[#FAF8F5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#A88653] font-semibold">
-            Distinción · Serenidad · Ubicación
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-serif text-[#0E1E2E] mt-2">
-            La Esencia del Caribe en Bocagrande
-          </h2>
-          <div className="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4" />
-        </div>
+    <section
+      className="relative pt-28 pb-36 bg-cover bg-center bg-fixed text-white overflow-hidden"
+      style={{ backgroundImage: `url('/images/hotel/bocagrande-in-the-night-2.jpg')` }}
+    >
+      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0 bg-black/55" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {HOTEL_DATA.pillars.map((pillar, idx) => {
-            const Icon = icons[idx];
-            return (
-              <div
-                key={idx}
-                className="bg-white p-6 sm:p-7 rounded-xl border border-[#C5A880]/20 shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 transform hover:-translate-y-1 relative group"
-              >
-                <div className="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#C5A880]/30 flex items-center justify-center text-[#A88653] mb-4 group-hover:bg-[#0E1E2E] group-hover:text-[#C5A880] transition-colors">
-                  <Icon className="w-5 h-5" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-serif font-semibold text-[#0E1E2E] mb-1">
-                  {pillar.number}
-                </div>
-                <h3 className="text-sm uppercase tracking-wider font-semibold text-[#745729] mb-2 font-sans">
-                  {pillar.label}
-                </h3>
-                <p className="text-xs text-stone-600 font-sans leading-relaxed">
-                  {pillar.description}
-                </p>
-                <div className="absolute bottom-0 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-[#C5A880]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+          {HOTEL_DATA.counters.map((c, idx) => (
+            <div key={idx} className="space-y-2">
+              {/* Counter number in elegant Cormorant Garamond: 60px / 60px line-height */}
+              <div className="text-[60px] leading-[60px] font-serif font-light text-white">
+                <AnimatedCounter target={c.digit} />
               </div>
-            );
-          })}
+
+              {/* Small Separator line */}
+              <div className="w-8 h-0.5 bg-white/70" />
+
+              {/* Counter label in Lato: 16px / 27px, tracking 1px, weight 600 */}
+              <p className="text-[16px] leading-[27px] font-lato font-semibold uppercase tracking-[1px] text-white pt-1">
+                {c.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

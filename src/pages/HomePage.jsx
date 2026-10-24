@@ -1,52 +1,43 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import BookingBar from '../components/BookingBar';
+import MediaTrioSection from '../components/MediaTrioSection';
 import StatsPillars from '../components/StatsPillars';
-import SuitesSection from '../components/SuitesSection';
-import RooftopSection from '../components/RooftopSection';
-import ExperiencesSection from '../components/ExperiencesSection';
+import BocagrandeSection from '../components/BocagrandeSection';
+import VideoSection from '../components/VideoSection';
 import GallerySection from '../components/GallerySection';
-import ReviewsSection from '../components/ReviewsSection';
+import CtaSection from '../components/CtaSection';
 import LocationSection from '../components/LocationSection';
-import { HOTEL_DATA } from '../data/hotelData';
+import MuseumsSection from '../components/MuseumsSection';
 
-export default function HomePage({ onOpenBooking, currency }) {
-  const handleSearchFromBar = (params) => {
-    const suite = HOTEL_DATA.suites.find((s) => s.id === params.suiteId) || null;
-    onOpenBooking(suite);
-  };
-
+export default function HomePage() {
   return (
-    <div>
-      {/* Hero with Dynamic Ken Burns Slides and Countdown Bar */}
-      <Hero onOpenBooking={() => onOpenBooking()} />
+    <div className="bg-white">
+      {/* 1. Hero with Slider Revolution 3 Slides */}
+      <Hero />
 
-      {/* Floating Coastal Glassmorphism Booking Bar */}
-      <BookingBar onSearch={handleSearchFromBar} />
+      {/* 2. Media Trio: Recepción, Video YouTube, Vista Piscina */}
+      <MediaTrioSection />
 
-      {/* Deluxe Architectural Pillars */}
+      {/* 3. Parallax Counters 24 / 7 / 365 */}
       <StatsPillars />
 
-      {/* Featured Suites Preview */}
-      <SuitesSection
-        onSelectSuite={(suite) => onOpenBooking(suite)}
-        currency={currency}
-      />
+      {/* 4 & 5. Bocagrande Skyline & Panoramic Experience */}
+      <BocagrandeSection />
 
-      {/* The Sanctuary: Rooftop Pool & Sunset Bar */}
-      <RooftopSection />
+      {/* 6. Video Banner with Lightbox Play */}
+      <VideoSection />
 
-      {/* Curated Cartagena Experiences & Cultural Circuit */}
-      <ExperiencesSection />
-
-      {/* Visual Gallery */}
+      {/* 7 & 8. Hotel Photo Gallery with Lightbox */}
       <GallerySection />
 
-      {/* Verified Guest Reviews */}
-      <ReviewsSection />
+      {/* 9. Experience Call-to-Action */}
+      <CtaSection />
 
-      {/* Prime Location & Map in Bocagrande */}
+      {/* 10. Location Map & Direct Contact Details */}
       <LocationSection />
+
+      {/* 11. Cultural Circuit & Museums of Cartagena */}
+      <MuseumsSection />
     </div>
   );
 }

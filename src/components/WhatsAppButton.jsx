@@ -10,27 +10,27 @@ export default function WhatsAppButton() {
 
   return (
     <div
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-3 select-none"
+      className="fixed bottom-20 right-6 z-40 flex items-center gap-3 select-none"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Floating Desktop Tooltip */}
       <div
-        className={`hidden md:flex flex-col text-right bg-[#0E1E2E]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#C5A880]/30 shadow-2xl transition-all duration-300 transform ${
+        className={`hidden md:flex flex-col text-right bg-[#333333]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#c1a186]/50 shadow-2xl transition-all duration-300 transform ${
           isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'
         }`}
       >
         <div className="flex items-center gap-1.5 justify-end">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
-            Concierge en Línea
+            Recepción en Línea
           </span>
         </div>
         <span className="text-xs font-serif text-white font-medium">
-          ¿Deseas atención personalizada?
+          Hotel Cartagena Premium
         </span>
         <span className="text-[10px] text-stone-300 font-sans">
-          Respuesta promedio: &lt; 3 minutos
+          Atención y reservas inmediatas
         </span>
       </div>
 

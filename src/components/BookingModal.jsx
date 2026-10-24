@@ -3,12 +3,11 @@ import { HOTEL_DATA } from '../data/hotelData';
 import { X, CheckCircle, Calendar, Users, ShieldCheck, Sparkles, Send, Award, Phone } from 'lucide-react';
 
 export default function BookingModal({ isOpen, onClose, initialSuite, currency }) {
-  if (!isOpen) return null;
-
   const today = new Date().toISOString().split('T')[0];
   const tomorrow = new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0];
 
-  const [selectedSuiteId, setSelectedSuiteId] = useState(initialSuite?.id || HOTEL_DATA.suites[0].id);
+  const suitesList = HOTEL_DATA.suites || HOTEL_DATA.rooms || [];
+  const [selectedSuiteId, setSelectedSuiteId] = useState(initialSuite?.id || suitesList[0]?.id || 'sencilla');
   const [checkIn, setCheckIn] = useState(today);
   const [checkOut, setCheckOut] = useState(tomorrow);
   const [guests, setGuests] = useState('2');
@@ -18,7 +17,9 @@ export default function BookingModal({ isOpen, onClose, initialSuite, currency }
   const [specialRequests, setSpecialRequests] = useState('');
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
-  const currentSuite = HOTEL_DATA.suites.find((s) => s.id === selectedSuiteId) || HOTEL_DATA.suites[0];
+  if (!isOpen) return null;
+
+  const currentSuite = suitesList.find((s) => s.id === selectedSuiteId) || suitesList[0] || {};
 
   // Calculate nights
   const calculateNights = () => {
@@ -134,7 +135,7 @@ export default function BookingModal({ isOpen, onClose, initialSuite, currency }
                     onChange={(e) => setSelectedSuiteId(e.target.value)}
                     className="w-full bg-white border border-stone-300 rounded p-2.5 text-sm font-medium text-stone-800 focus:border-[#A88653] outline-none"
                   >
-                    {HOTEL_DATA.suites.map((s) => (
+                    {(HOTEL_DATA.suites || HOTEL_DATA.rooms || []).map((s) => (
                       <option key={s.id} value={s.id}>
                         {s.title} — ${s.priceCOP.toLocaleString('es-CO')} COP / noche
                       </option>

@@ -1,10 +1,10 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Play, Sparkles, Utensils, Wine, Clock, Check, Coffee, Waves, ShieldCheck } from 'lucide-react';
 
 export default function ServiciosPage({ onOpenBooking }) {
   const [videoOpen, setVideoOpen] = useState(false);
-  const { rooftop } = HOTEL_DATA;
+  const rooftop = HOTEL_DATA.rooftop || {};
 
   const services = [
     {

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Landmark, Compass, ExternalLink, MapPin, Sparkles, Send } from 'lucide-react';
 
@@ -113,10 +113,10 @@ export default function ExperienciasPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {HOTEL_DATA.culturalPartners.map((partner, idx) => (
+            {(HOTEL_DATA.culturalPartners || HOTEL_DATA.museums || []).map((partner, idx) => (
               <a
                 key={idx}
-                href={partner.url}
+                href={partner.url || partner.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group rounded-xl overflow-hidden bg-[#FAF8F5] border border-stone-200/90 hover:border-[#C5A880] transition-all duration-300 hover:shadow-lg flex flex-col"

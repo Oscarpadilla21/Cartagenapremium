@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import WhatsAppButton from './components/WhatsAppButton';
+import BackToTop from './components/BackToTop';
+import LegalNotice from './components/LegalNotice';
 import ScrollToTop from './components/ScrollToTop';
 
 import HomePage from './pages/HomePage';
@@ -13,6 +15,7 @@ import ExperienciasPage from './pages/ExperienciasPage';
 import GaleriaPage from './pages/GaleriaPage';
 import UbicacionPage from './pages/UbicacionPage';
 import ContactoPage from './pages/ContactoPage';
+import ClubPremiumPage from './pages/ClubPremiumPage';
 import AvisoLegalPage from './pages/AvisoLegalPage';
 import PoliticaPrivacidadPage from './pages/PoliticaPrivacidadPage';
 
@@ -27,17 +30,17 @@ export default function App() {
   };
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-[#FAF8F5] text-[#1A1816] flex flex-col selection:bg-[#C5A880]/30 selection:text-[#0E1E2E] overflow-x-hidden max-w-full">
-        {/* Fixed Luxury Navigation Bar with Multi-Page Routing */}
+      <div className="min-h-screen bg-white text-[#333333] flex flex-col selection:bg-[#c1a186]/30 selection:text-[#333333] overflow-x-hidden max-w-full">
+        {/* Navigation Bar matching original site items */}
         <Navbar
           onOpenBooking={() => handleOpenBooking()}
           currency={currency}
           setCurrency={setCurrency}
         />
 
-        {/* Dynamic Multi-Page Content with Dedicated Pagination & Routes */}
+        {/* Dynamic Multi-Page Content */}
         <main className="flex-1 w-full overflow-hidden">
           <Routes>
             <Route
@@ -59,22 +62,6 @@ export default function App() {
               }
             />
             <Route
-              path="/servicios"
-              element={
-                <ServiciosPage
-                  onOpenBooking={handleOpenBooking}
-                />
-              }
-            />
-            <Route
-              path="/experiencias"
-              element={<ExperienciasPage />}
-            />
-            <Route
-              path="/galeria"
-              element={<GaleriaPage />}
-            />
-            <Route
               path="/ubicacion"
               element={
                 <UbicacionPage
@@ -91,6 +78,26 @@ export default function App() {
               }
             />
             <Route
+              path="/club-premium"
+              element={<ClubPremiumPage />}
+            />
+            <Route
+              path="/servicios"
+              element={
+                <ServiciosPage
+                  onOpenBooking={handleOpenBooking}
+                />
+              }
+            />
+            <Route
+              path="/experiencias"
+              element={<ExperienciasPage />}
+            />
+            <Route
+              path="/galeria"
+              element={<GaleriaPage />}
+            />
+            <Route
               path="/aviso-legal"
               element={<AvisoLegalPage />}
             />
@@ -98,13 +105,14 @@ export default function App() {
               path="/politica-privacidad"
               element={<PoliticaPrivacidadPage />}
             />
+            <Route
+              path="/politica-de-cookies"
+              element={<PoliticaPrivacidadPage />}
+            />
           </Routes>
         </main>
 
-        {/* Luxury Footer with Router Links */}
-        <Footer />
-
-        {/* Interactive Reservation Drawer / Modal */}
+        {/* Interactive Booking Modal */}
         <BookingModal
           isOpen={isBookingOpen}
           onClose={() => setIsBookingOpen(false)}
@@ -112,9 +120,18 @@ export default function App() {
           currency={currency}
         />
 
-        {/* Official Floating VIP WhatsApp Concierge Widget */}
+        {/* Direct WhatsApp Concierge Button */}
         <WhatsAppButton />
+
+        {/* Back to Top Button */}
+        <BackToTop />
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Authentic Cookie Notice Banner */}
+        <LegalNotice />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

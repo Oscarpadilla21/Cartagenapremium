@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -8,9 +8,10 @@ export default function GaleriaPage() {
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const itemsPerPage = 6;
 
-  const tags = ['Todas', 'Destino', 'Habitaciones', 'Rooftop', 'Vistas', 'Interiores'];
+  const tags = ['Todas', 'Habitaciones', 'Rooftop', 'Vistas', 'Interiores'];
+  const galleryList = HOTEL_DATA.gallery || HOTEL_DATA.galleryImages || [];
 
-  const filteredItems = HOTEL_DATA.gallery.filter((item) => {
+  const filteredItems = galleryList.filter((item) => {
     if (activeTag === 'Todas') return true;
     return item.tag === activeTag;
   });

@@ -1,133 +1,69 @@
 import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
-import { ExternalLink, Compass, Landmark } from 'lucide-react';
+import { ExternalLink, Landmark } from 'lucide-react';
 
-export default function ExperiencesSection() {
+export default function ExperiencesSection({ onOpenBooking }) {
   return (
-    <section id="experiencias" className="py-20 bg-[#FAF8F5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#A88653] font-semibold">
-            Destino Cartagena de Indias
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-serif text-[#0E1E2E] mt-2">
-            Experiencias & Entorno Privilegiado
+    <>
+      {/* Call to action Parallax Row (Row 10 from cartagenapremium.com) */}
+      <section 
+        className="relative py-24 bg-cover bg-center text-center text-white overflow-hidden"
+        style={{ backgroundImage: `url('/images/hotel/foto-bocagrande--scaled.jpg')` }}
+      >
+        <div className="absolute inset-0 bg-[#0E1E2E]/80 backdrop-blur-[1px]" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <h2 className="text-3xl sm:text-5xl font-serif text-white uppercase tracking-wider drop-shadow-md">
+            VIVE UNA EXPERIENCIA DE ENSUEÑO
           </h2>
-          <p className="text-stone-600 font-sans text-sm sm:text-base mt-3 leading-relaxed">
-            Desde la vitalidad cosmopolita de Bocagrande hasta la riqueza colonial del centro histórico, el hotel es el punto de partida perfecto.
+          <p className="text-stone-200 text-sm sm:text-base font-sans max-w-xl mx-auto">
+            Disfruta de las mejores vistas a la bahía y al mar Caribe en el sector más exclusivo de Cartagena de Indias.
           </p>
-        </div>
-
-        {/* 3 Main Experience Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {HOTEL_DATA.experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-xl overflow-hidden border border-[#C5A880]/20 shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 flex flex-col group"
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => onOpenBooking ? onOpenBooking() : window.location.href='#contacto'}
+              className="px-8 py-3.5 rounded-full bg-[#C5A880] hover:bg-white text-[#0E1E2E] font-semibold text-xs uppercase tracking-[0.2em] transition-all shadow-lg transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <div className="relative h-60 overflow-hidden">
-                <img
-                  src={exp.image}
-                  alt={exp.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-3 left-4">
-                  <span className="px-2.5 py-1 rounded bg-[#0E1E2E]/80 backdrop-blur-md text-[#C5A880] text-[10px] font-sans font-bold uppercase tracking-wider border border-[#C5A880]/30">
-                    {exp.time}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-xl font-serif text-[#0E1E2E] mb-2">{exp.title}</h3>
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
-                    {exp.description}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
-                  <span className="text-[11px] uppercase tracking-wider font-semibold text-[#A88653]">
-                    Concierge Recomendado
-                  </span>
-                  <Compass className="w-4 h-4 text-[#A88653]" />
-                </div>
-              </div>
-            </div>
-          ))}
+              Reservar habitación
+            </button>
+          </div>
         </div>
+      </section>
 
-        {/* Cultural Partners Circuit Banner */}
-        <div className="bg-white rounded-2xl p-8 sm:p-10 border border-[#C5A880]/30 shadow-deluxe">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-6 border-b border-stone-200">
-            <div>
-              <div className="flex items-center gap-2 text-[#A88653] mb-1">
-                <Landmark className="w-4 h-4" />
-                <span className="text-xs uppercase tracking-widest font-bold">Circuito Cultural</span>
-              </div>
-              <h3 className="text-2xl font-serif text-[#0E1E2E]">
-                Visita los Museos y Espacios Emblemáticos de Cartagena
-              </h3>
-            </div>
-            <p className="text-xs sm:text-sm text-stone-600 max-w-md font-sans">
-              Nuestros huéspedes disfrutan de asistencia de concierge y orientaciones personalizadas para explorar los tesoros artísticos e históricos de la ciudad.
-            </p>
+      {/* Partner Museums Section (Row 12 from cartagenapremium.com) */}
+      <section className="py-16 bg-white border-t border-[#eee9e3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-left mb-8">
+            <h3 className="text-xl sm:text-2xl font-serif text-[#333333] font-bold">
+              Visita los imprescindibles museos de Cartagena:
+            </h3>
+            <div className="w-12 h-0.5 bg-[#C5A880] mt-2" />
           </div>
 
-          {/* Partner Photographic Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {HOTEL_DATA.culturalPartners.map((partner, idx) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+            {HOTEL_DATA.museums.map((m, idx) => (
               <a
                 key={idx}
-                href={partner.url}
+                href={m.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-xl overflow-hidden bg-[#FAF8F5] border border-stone-200/90 hover:border-[#C5A880] transition-all duration-300 hover:shadow-lg flex flex-col"
+                className="p-4 rounded-xl border border-stone-100 hover:border-[#C5A880]/50 hover:shadow-md transition-all flex flex-col items-center justify-center group h-32 bg-[#FAF8F5]"
               >
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={partner.image}
-                    alt={partner.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  
-                  <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded bg-[#0E1E2E]/80 backdrop-blur-md text-[#C5A880] text-[10px] font-bold uppercase tracking-wider border border-[#C5A880]/30">
-                      {partner.category}
-                    </span>
-                  </div>
-
-                  <div className="absolute bottom-2.5 right-3">
-                    <span className="text-[10px] text-white/90 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded font-medium">
-                      {partner.distance}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h4 className="text-sm font-serif font-bold text-[#0E1E2E] group-hover:text-[#A88653] transition-colors flex items-center justify-between">
-                      <span>{partner.name}</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-[#A88653] shrink-0 opacity-70 group-hover:opacity-100" />
-                    </h4>
-                    <p className="text-xs text-stone-600 font-sans mt-1.5 leading-relaxed">
-                      {partner.description}
-                    </p>
-                  </div>
-                  
-                  <div className="pt-3 mt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-semibold text-[#A88653]">
-                    <span>Consultar con Concierge</span>
-                    <span className="text-[10px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">Ver Sitio →</span>
-                  </div>
-                </div>
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  className="max-h-14 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+                <span className="text-[10px] text-stone-500 group-hover:text-[#0E1E2E] text-center mt-2 font-sans line-clamp-1 flex items-center gap-1">
+                  {m.name}
+                  <ExternalLink className="w-2.5 h-2.5 shrink-0" />
+                </span>
               </a>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
