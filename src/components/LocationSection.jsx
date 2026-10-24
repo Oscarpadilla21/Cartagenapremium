@@ -25,7 +25,10 @@ export default function LocationSection() {
           </div>
 
           {/* Right Column: Contact Information (Card with Chevrons and Gold Icons) */}
-          <div className="p-8 sm:p-12 lg:p-14 bg-white flex flex-col justify-center space-y-4 text-left">
+          <div
+            className="p-8 sm:p-12 lg:p-14 bg-white flex flex-col justify-center space-y-4 text-left"
+            style={{ backgroundImage: `url('/images/hotel/background-img-5-2.png')`, backgroundRepeat: 'repeat' }}
+          >
             <h2 className="font-serif text-[38px] sm:text-[48px] lg:text-[55px] leading-[1.1] sm:leading-[55px] tracking-[-1px] font-semibold text-[#303030]">
               Contacta con nosotros
             </h2>

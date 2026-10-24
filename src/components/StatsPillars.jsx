@@ -48,7 +48,7 @@ export default function StatsPillars() {
   return (
     <section
       className="relative pt-28 pb-36 bg-cover bg-center bg-fixed text-white overflow-hidden"
-      style={{ backgroundImage: `url('/images/hotel/bocagrande-in-the-night-2.jpg')` }}
+      style={{ backgroundImage: `url('/images/hotel/8339dc8a-4030-4c42-971a-0481f1350403.jpg')` }}
     >
       {/* Dark overlay for contrast */}
       <div className="absolute inset-0 bg-black/55" />

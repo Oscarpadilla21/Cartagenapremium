@@ -23,7 +23,10 @@ export default function BocagrandeSection() {
 
           {/* Right Column: Hotel Experience Text Box Overlapping */}
           <div className="lg:col-span-6">
-            <div className="bg-white/95 backdrop-blur-sm p-8 sm:p-12 lg:p-16 shadow-lg border border-[#e5ded7] space-y-5 text-left">
+            <div
+              className="bg-white p-8 sm:p-12 lg:p-16 shadow-lg border border-[#e5ded7] space-y-5 text-left"
+              style={{ backgroundImage: `url('/images/hotel/background-bocagrande.png')`, backgroundRepeat: 'repeat' }}
+            >
               <h2 className="text-3xl sm:text-4xl lg:text-[55px] font-serif text-[#303030] font-semibold leading-tight lg:leading-[55px] tracking-[-1px]">
                 Nuestras habitaciones cuentan con vista al Mar y a la Bahia de Cartagena
               </h2>

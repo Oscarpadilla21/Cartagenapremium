@@ -8,22 +8,26 @@ export default function VideoSection() {
     <>
       <section
         className="relative py-28 sm:py-36 bg-cover bg-center text-center overflow-hidden"
-        style={{ backgroundImage: `url('/images/hotel/centro-historico-imperialtour.com_.co_.jpg')` }}
+        style={{ backgroundImage: `url('/images/hotel/5c804847-8b9e-4f22-b2c4-c0a05f2f7e47.webp')` }}
       >
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/15" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 flex flex-col items-center justify-center">
-          {/* Centered Video Card Frame */}
+          {/* Centered Video Card Frame (Authentic video-backgroud.png) */}
           <div
-            className="relative w-full max-w-[500px] h-[320px] bg-cover bg-center shadow-2xl overflow-hidden cursor-pointer group border-4 border-white/60"
-            style={{ backgroundImage: `url('/images/hotel/foto-bocagrande--scaled.jpg')` }}
+            className="relative w-full max-w-[500px] aspect-[500/333] shadow-2xl overflow-hidden cursor-pointer group"
             onClick={() => setIsPlaying(true)}
           >
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/15 transition-colors" />
+            <img
+              src="/images/hotel/video-backgroud.png"
+              alt="Video Hotel Cartagena Premium"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
 
             {/* Play Button Icon */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="w-18 h-18 sm:w-20 sm:h-20 rounded-full border-2 border-white bg-black/30 group-hover:bg-[#b5987a] text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-xl">
+              <span className="w-18 h-18 sm:w-20 sm:h-20 rounded-full border-2 border-white bg-black/35 group-hover:bg-[#b5987a] text-white flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 shadow-xl">
                 <Play className="w-8 h-8 ml-1 fill-white" />
               </span>
             </div>
