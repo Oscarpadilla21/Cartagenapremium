@@ -4,20 +4,31 @@ import { Link } from 'react-router-dom';
 export default function CtaSection() {
   return (
     <section
-      className="relative pt-36 pb-48 sm:pt-44 sm:pb-60 bg-cover bg-center bg-fixed text-center overflow-hidden"
+      className="relative py-32 sm:py-44 bg-cover bg-center bg-fixed text-center overflow-hidden"
       style={{ backgroundImage: `url('/images/hotel/foto-bocagrande--scaled.jpg')` }}
+      aria-label="Invitación a reservar"
     >
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <h2 className="text-3xl sm:text-5xl lg:text-[55px] font-serif text-[#303030] font-semibold leading-tight lg:leading-[55px] tracking-[-1px]">
-          VIVE UNA EXPERIENCIA DE ENSUEÑO
-        </h2>
-        <div className="pt-2">
-          <Link
-            to="/habitaciones"
-            className="inline-block bg-[#b5987a] hover:bg-[#303030] text-white h-[50px] leading-[50px] px-10 text-[12px] font-lato font-bold uppercase tracking-[3px] transition-colors shadow-md"
-          >
-            RESERVAR HABITACIÓN
-          </Link>
+      <div className="absolute inset-0 bg-black/25" />
+
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="glass-gold p-8 sm:p-14 shadow-deluxe-lg border border-[#c1a186]/40 rounded-2xl backdrop-blur-md space-y-6">
+          <span className="text-[11px] font-lato font-bold uppercase tracking-[0.25em] text-[#b5987a] block">
+            Tu próximo destino caribeño
+          </span>
+          <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-serif text-[#1f242e] font-semibold leading-tight tracking-[-0.5px]">
+            VIVE UNA EXPERIENCIA DE ENSUEÑO
+          </h2>
+          <p className="text-stone-600 font-sans text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            Despierta frente al mar Caribe, disfruta de los atardeceres en nuestra piscina en la azotea y vive el confort que mereces en Bocagrande.
+          </p>
+          <div className="pt-2">
+            <Link
+              to="/habitaciones"
+              className="qbutton focus-visible:ring-2 focus-visible:ring-[#b5987a]"
+            >
+              RESERVAR HABITACIÓN
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -16,13 +16,13 @@ export default function WhatsAppButton() {
     >
       {/* Floating Desktop Tooltip */}
       <div
-        className={`hidden md:flex flex-col text-right bg-[#333333]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#c1a186]/50 shadow-2xl transition-all duration-300 transform ${
-          isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'
+        className={`hidden md:flex flex-col text-right bg-[#1f242e]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-[#b5987a]/50 shadow-2xl transition-all duration-300 transform pointer-events-none ${
+          isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
         }`}
       >
         <div className="flex items-center gap-1.5 justify-end">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse motion-reduce:animate-none" />
+          <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 font-lato">
             Recepción en Línea
           </span>
         </div>
@@ -39,11 +39,11 @@ export default function WhatsAppButton() {
         href={`https://wa.me/${HOTEL_DATA.whatsapp}?text=${message}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative group w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-[0_6px_25px_rgba(37,211,102,0.45)] hover:shadow-[0_8px_32px_rgba(37,211,102,0.65)] transition-all duration-300 transform hover:scale-105 active:scale-95 border-2 border-white/90"
-        aria-label="Contactar a Concierge por WhatsApp"
+        className="relative group w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-[0_6px_25px_rgba(37,211,102,0.45)] hover:shadow-[0_8px_32px_rgba(37,211,102,0.65)] transition-all duration-300 transform hover:scale-105 active:scale-95 border-2 border-white/90 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400"
+        aria-label="Contactar a recepción por WhatsApp"
       >
         {/* Radar Pulse Effect */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping -z-10 group-hover:opacity-0" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-35 animate-ping motion-reduce:animate-none -z-10 group-hover:opacity-0" />
 
         {/* Authentic WhatsApp SVG Icon */}
         <svg
@@ -54,7 +54,7 @@ export default function WhatsAppButton() {
         </svg>
 
         {/* Online Indicator Badge */}
-        <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-300 border-2 border-[#0E1E2E] shadow" />
+        <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-300 border-2 border-[#1f242e] shadow" />
       </a>
     </div>
   );

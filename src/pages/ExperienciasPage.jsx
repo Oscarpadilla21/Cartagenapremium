@@ -1,6 +1,6 @@
 import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
-import { Landmark, Compass, ExternalLink, MapPin, Sparkles, Send } from 'lucide-react';
+import { Landmark, Compass, ExternalLink, Send } from 'lucide-react';
 
 export default function ExperienciasPage() {
   const iconicSites = [
@@ -25,7 +25,7 @@ export default function ExperienciasPage() {
     {
       title: "Bocagrande Nocturno & Terrazas",
       tag: "En el entorno del Hotel",
-      desc: "La vida nocturna, restaurantes de gastronomía caribeña e internacional y la vibrante iluminación de la bahía de Cartagena.",
+      desc: "La vibrante vida nocturna, restaurantes de gastronomía caribeña e internacional y la panorámica iluminación de la bahía de Cartagena.",
       image: "/images/hotel/bocagrande-in-the-night-2.jpg"
     }
   ];
@@ -33,7 +33,7 @@ export default function ExperienciasPage() {
   return (
     <div className="pt-24 sm:pt-28 pb-20 bg-[#FAF8F5]">
       {/* Banner */}
-      <div className="relative py-16 sm:py-24 bg-[#0E1E2E] text-white overflow-hidden mb-12">
+      <div className="relative py-16 sm:py-24 bg-[#1f242e] text-white overflow-hidden mb-12">
         <div className="absolute inset-0 opacity-25">
           <img
             src="/images/hotel/foto-bocagrande--scaled.jpg"
@@ -41,10 +41,10 @@ export default function ExperienciasPage() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1E2E] via-[#0E1E2E]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1f242e] via-[#1f242e]/80 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <span className="text-xs uppercase tracking-[0.25em] text-[#C5A880] font-semibold block mb-2">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#c1a186] font-semibold block mb-2 font-lato">
             La Magia de Cartagena de Indias
           </span>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-white">
@@ -62,22 +62,23 @@ export default function ExperienciasPage() {
           {iconicSites.map((site, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl overflow-hidden border border-[#C5A880]/20 shadow-deluxe flex flex-col group"
+              className="bg-white rounded-2xl overflow-hidden border border-[#e8dfd5] shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 flex flex-col group hover:-translate-y-1 text-left"
             >
-              <div className="relative h-64 sm:h-72 overflow-hidden">
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
                 <img
                   src={site.image}
                   alt={site.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded bg-[#0E1E2E]/90 text-[#C5A880] text-[10px] uppercase font-bold tracking-widest border border-[#C5A880]/40">
+                  <span className="px-3 py-1 rounded bg-[#1f242e]/90 text-[#c1a186] text-[10px] uppercase font-bold tracking-widest border border-[#b5987a]/40 font-lato">
                     {site.tag}
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-serif text-white">{site.title}</h3>
+                  <h3 className="text-2xl font-serif text-white font-medium">{site.title}</h3>
                 </div>
               </div>
 
@@ -86,9 +87,9 @@ export default function ExperienciasPage() {
                   {site.desc}
                 </p>
 
-                <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-[#A88653] font-semibold">
-                  <span>Coordinación de tours privados con Concierge</span>
-                  <Compass className="w-4 h-4 text-[#A88653]" />
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-[#8c6d4f] font-semibold font-lato">
+                  <span>Coordinación con Concierge</span>
+                  <Compass className="w-4 h-4 text-[#b5987a]" />
                 </div>
               </div>
             </div>
@@ -96,18 +97,18 @@ export default function ExperienciasPage() {
         </div>
 
         {/* Cultural Partners Circuit Banner */}
-        <div className="bg-white rounded-2xl p-8 sm:p-10 border border-[#C5A880]/30 shadow-deluxe mb-16">
+        <div className="bg-white rounded-2xl p-8 sm:p-10 border border-[#c1a186]/30 shadow-deluxe mb-16 text-left">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-6 border-b border-stone-200">
             <div>
-              <div className="flex items-center gap-2 text-[#A88653] mb-1">
-                <Landmark className="w-4 h-4" />
-                <span className="text-xs uppercase tracking-widest font-bold">Circuito Cultural Exclusivo</span>
+              <div className="flex items-center gap-2 text-[#8c6d4f] mb-1">
+                <Landmark className="w-4 h-4 text-[#b5987a]" />
+                <span className="text-xs uppercase tracking-widest font-bold font-lato">Circuito Cultural Exclusivo</span>
               </div>
-              <h3 className="text-2xl font-serif text-[#0E1E2E]">
+              <h3 className="text-2xl sm:text-3xl font-serif text-[#1f242e] font-semibold">
                 Visita los Museos y Galerías de Cartagena
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-stone-600 max-w-md font-sans">
+            <p className="text-xs sm:text-sm text-stone-600 max-w-md font-sans leading-relaxed">
               Convenios y accesos prioritarios con las instituciones artísticas e históricas de la ciudad para los huéspedes de Hotel Cartagena Premium.
             </p>
           </div>
@@ -119,24 +120,25 @@ export default function ExperienciasPage() {
                 href={partner.url || partner.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-xl overflow-hidden bg-[#FAF8F5] border border-stone-200/90 hover:border-[#C5A880] transition-all duration-300 hover:shadow-lg flex flex-col"
+                className="group rounded-xl overflow-hidden bg-[#FAF8F5] border border-stone-200 hover:border-[#b5987a] transition-all duration-300 hover:shadow-lg flex flex-col"
               >
-                <div className="relative h-44 overflow-hidden">
+                <div className="relative h-44 overflow-hidden bg-stone-100">
                   <img
                     src={partner.image}
                     alt={partner.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   
                   <div className="absolute top-3 left-3">
-                    <span className="px-2.5 py-1 rounded bg-[#0E1E2E]/80 backdrop-blur-md text-[#C5A880] text-[10px] font-bold uppercase tracking-wider border border-[#C5A880]/30">
+                    <span className="px-2.5 py-1 rounded bg-[#1f242e]/85 backdrop-blur-md text-[#c1a186] text-[10px] font-bold uppercase tracking-wider border border-[#b5987a]/30 font-lato">
                       {partner.category}
                     </span>
                   </div>
 
                   <div className="absolute bottom-2.5 right-3">
-                    <span className="text-[10px] text-white/90 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded font-medium">
+                    <span className="text-[10px] text-white/90 bg-black/60 backdrop-blur-xs px-2 py-0.5 rounded font-medium">
                       {partner.distance}
                     </span>
                   </div>
@@ -144,16 +146,16 @@ export default function ExperienciasPage() {
 
                 <div className="p-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="text-sm font-serif font-bold text-[#0E1E2E] group-hover:text-[#A88653] transition-colors flex items-center justify-between">
+                    <h4 className="text-sm font-serif font-bold text-[#1f242e] group-hover:text-[#b5987a] transition-colors flex items-center justify-between">
                       <span>{partner.name}</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-[#A88653] shrink-0 opacity-70 group-hover:opacity-100" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[#b5987a] shrink-0 opacity-70 group-hover:opacity-100" />
                     </h4>
                     <p className="text-xs text-stone-600 font-sans mt-1.5 leading-relaxed">
                       {partner.description}
                     </p>
                   </div>
                   
-                  <div className="pt-3 mt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-semibold text-[#A88653]">
+                  <div className="pt-3 mt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-semibold text-[#8c6d4f] font-lato">
                     <span>Asistencia en Concierge</span>
                     <span className="text-[10px] uppercase tracking-wider group-hover:translate-x-1 transition-transform">Ver Sitio →</span>
                   </div>
@@ -164,21 +166,21 @@ export default function ExperienciasPage() {
         </div>
 
         {/* Concierge Tour Booking Box */}
-        <div className="p-8 rounded-2xl bg-gradient-to-r from-[#0E1E2E] to-[#1A334B] text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#C5A880]/40 shadow-xl">
+        <div className="p-8 sm:p-10 rounded-2xl bg-[#1f242e] text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#b5987a]/40 shadow-xl text-left">
           <div className="space-y-2 text-center sm:text-left">
-            <span className="text-xs uppercase tracking-widest text-[#C5A880] font-bold">
+            <span className="text-xs uppercase tracking-widest text-[#c1a186] font-bold font-lato">
               Asistencia VIP Personalizada
             </span>
-            <h4 className="text-2xl font-serif">¿Deseas planificar un tour privado en yate o ciudad?</h4>
+            <h4 className="text-2xl font-serif text-white">¿Deseas planificar un tour privado en yate o ciudad?</h4>
             <p className="text-xs text-stone-300">
-              Nuestro concierge coordina transporte privado, guías bilingües y reservaciones prioritarias.
+              Nuestro concierge coordina transporte privado, guías bilingües y reservaciones prioritarias en Cartagena.
             </p>
           </div>
           <a
             href={`https://wa.me/${HOTEL_DATA.whatsapp}?text=Hola,%20deseo%20información%20sobre%20tours%20y%20experiencias%20en%20Cartagena`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest shrink-0 shadow-lg flex items-center gap-2"
+            className="min-h-[44px] px-8 py-3.5 rounded-sm bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-widest shrink-0 shadow-lg flex items-center gap-2 transition-all cursor-pointer font-lato active:scale-95"
           >
             <Send className="w-4 h-4" />
             <span>Hablar con Concierge</span>
@@ -188,4 +190,3 @@ export default function ExperienciasPage() {
     </div>
   );
 }
-

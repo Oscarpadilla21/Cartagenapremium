@@ -22,8 +22,10 @@ export const HOTEL_DATA = {
     tripadvisor: "https://www.tripadvisor.es/Hotel_Review-g297476-d1735999-Reviews-Cartagena_Premium_Hotel-Cartagena_Cartagena_District_Bolivar_Department.html?m=19905"
   },
   logos: {
-    gold: "/logo-gold.png",
-    footer: "/logo-footer.png",
+    hero: "/images/hotel/logo-white-intime-1.png",
+    white: "/images/hotel/logo-white-intime-1.png",
+    gold: "/images/hotel/logo-gold-intime-1.png",
+    footer: "/images/hotel/logo-footer-1.png",
     graphicAccent: "/images/hotel/graphic-img-3-1-1.png"
   },
 

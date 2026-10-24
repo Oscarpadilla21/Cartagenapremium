@@ -35,14 +35,14 @@ export default function HomePage({ onOpenBooking, currency }) {
       {/* 4. Parallax Counters 24 Horas / 7 Días / 365 Días */}
       <StatsPillars />
 
-      {/* 5. Featured Suites & Rooms Preview with Pricing & Amenities */}
+      {/* 5. Bocagrande Skyline & Panoramic Experience matching cartagenapremium.com */}
+      <BocagrandeSection />
+
+      {/* 6. Featured Suites & Rooms Preview with Pricing & Amenities */}
       <SuitesSection
         onSelectSuite={(suite) => onOpenBooking ? onOpenBooking(suite) : null}
         currency={currency}
       />
-
-      {/* 6. Bocagrande Skyline & Panoramic Experience with authentic background texture */}
-      <BocagrandeSection />
 
       {/* 7. Authentic Promotional Video Section with video-backgroud.png and video-2.mp4 */}
       <VideoSection />

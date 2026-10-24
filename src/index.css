@@ -4,15 +4,42 @@
   :root {
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Lato', 'Raleway', system-ui, -apple-system, sans-serif;
+    
+    /* Luxury Hospitality Color Tokens */
+    --color-primary: #1f242e;
+    --color-gold: #b5987a;
+    --color-gold-light: #c1a186;
+    --color-gold-dark: #96795b;
+    --color-bg-warm: #FCF9F6;
+    --color-bg-card: #FFFFFF;
+    --color-text-main: #303030;
+    --color-text-muted: #666666;
   }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     font-family: var(--font-sans);
-    color: #303030;
+    color: var(--color-text-main);
     background-color: #ffffff;
+    overflow-x: hidden;
   }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-    color: #303030;
+    color: var(--color-text-main);
+  }
+
+  /* Accessible focus indicators for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid #b5987a;
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
@@ -36,12 +63,35 @@
   font-family: 'Josefin Sans', 'Raleway', sans-serif;
 }
 
+/* Luxury Glassmorphism & Elevation */
+.glass-gold {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-dark {
+  background: rgba(14, 30, 46, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.shadow-deluxe {
+  box-shadow: 0 4px 20px -2px rgba(27, 38, 59, 0.05), 0 2px 6px -1px rgba(181, 152, 122, 0.08);
+}
+
+.shadow-deluxe-lg {
+  box-shadow: 0 16px 40px -8px rgba(27, 38, 59, 0.08), 0 6px 18px -3px rgba(181, 152, 122, 0.12);
+}
+
 /* Authentic Bridge Theme Qode Buttons */
 .qbutton {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 50px;
   line-height: 50px;
-  padding: 0 40px;
+  padding: 0 36px;
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -50,20 +100,30 @@
   border: 1px solid #b5987a;
   color: #ffffff;
   background-color: #b5987a;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-align: center;
+  user-select: none;
 }
 
 .qbutton:hover {
   background-color: #303030;
   border-color: #303030;
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.qbutton:active {
+  transform: translateY(0);
 }
 
 .qbutton-white {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 11px 32px;
+  min-height: 44px;
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 2.5px;
@@ -73,7 +133,7 @@
   border: 2px solid #ffffff;
   color: #ffffff;
   background-color: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-align: center;
 }
@@ -82,11 +142,16 @@
   background-color: #c1a186;
   border-color: #c1a186;
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(193, 161, 134, 0.35);
 }
 
 .qbutton-gold {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 11px 30px;
+  min-height: 44px;
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 2px;
@@ -96,7 +161,7 @@
   border: 1px solid #c1a186;
   color: #ffffff;
   background-color: #c1a186;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-align: center;
 }
@@ -105,6 +170,8 @@
   background-color: #333333;
   border-color: #333333;
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 /* 3D Perspective Logo & Text Animations from Slider Revolution */
@@ -203,5 +270,17 @@
 
 .logo-shimmer {
   animation: logoShimmer 4s ease-in-out infinite;
+}
+
+/* Accessibility: Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
