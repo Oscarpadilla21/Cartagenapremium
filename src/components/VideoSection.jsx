@@ -47,15 +47,15 @@ export default function VideoSection() {
           </button>
 
           <div
-            className="w-full max-w-4xl aspect-video bg-black shadow-2xl rounded-sm overflow-hidden"
+            className="w-full max-w-4xl aspect-video bg-black shadow-2xl rounded-sm overflow-hidden flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <iframe
-              src="https://www.youtube.com/embed/2BR7NJVqRTA?autoplay=1"
-              title="Hotel Cartagena Premium Video"
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+            <video
+              src="/videos/video-2.mp4"
+              controls
+              autoPlay
+              playsInline
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
