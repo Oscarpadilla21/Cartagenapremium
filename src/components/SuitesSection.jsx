@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Check, Eye, X, CalendarCheck, BedDouble, Users } from 'lucide-react';
+import RoomImageSlider from './RoomImageSlider';
 
 export default function SuitesSection({ onSelectSuite }) {
   const [previewRoom, setPreviewRoom] = useState(null);
@@ -63,29 +64,14 @@ export default function SuitesSection({ onSelectSuite }) {
               key={room.id}
               className="bg-white rounded-2xl overflow-hidden border border-[#e8dfd5] shadow-deluxe hover:shadow-deluxe-lg transition-all duration-300 flex flex-col group hover:-translate-y-1"
             >
-              {/* Image & Badges */}
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-stone-100">
-                <img
-                  src={room.image}
-                  alt={room.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3.5 py-1.5 rounded-full bg-[#1f242e]/90 text-[#e6d0bb] text-[10px] uppercase font-bold tracking-wider backdrop-blur-sm border border-[#b5987a]/40 shadow-sm">
-                    {room.badge}
-                  </span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setPreviewRoom(room)}
-                  className="absolute bottom-4 right-4 py-2 px-3.5 rounded-full bg-white/95 hover:bg-white text-[#303030] shadow-md backdrop-blur-sm transition-all hover:scale-105 cursor-pointer flex items-center gap-1.5 text-xs font-semibold min-h-[38px] focus-visible:ring-2 focus-visible:ring-[#b5987a]"
-                  aria-label={`Ver fotos de ${room.title}`}
-                >
-                  <Eye className="w-4 h-4 text-[#b5987a]" />
-                  <span>Ver fotos ({room.gallery ? room.gallery.length : 1})</span>
-                </button>
-              </div>
+              {/* Room Photo Slider with 5s Autoplay & Manual Arrows */}
+              <RoomImageSlider
+                images={room.gallery || [room.image]}
+                title={room.title}
+                badge={room.badge}
+                onOpenModal={() => setPreviewRoom(room)}
+                className="h-64 sm:h-72"
+              />
 
               {/* Content Body */}
               <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
@@ -183,16 +169,23 @@ export default function SuitesSection({ onSelectSuite }) {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-4">
-              {previewRoom.gallery.map((img, i) => (
-                <div key={i} className="h-60 rounded-xl overflow-hidden border border-stone-200 group bg-stone-100">
-                  <img
-                    src={img}
-                    alt={`${previewRoom.title} - Imagen ${i + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-              ))}
+            <div className="space-y-3.5 mt-4">
+              <RoomImageSlider
+                images={previewRoom.gallery || [previewRoom.image]}
+                title={previewRoom.title}
+                className="h-64 sm:h-[380px] rounded-xl overflow-hidden shadow-md"
+              />
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {(previewRoom.gallery || [previewRoom.image]).map((img, i) => (
+                  <div key={i} className="h-18 sm:h-20 rounded-lg overflow-hidden border border-stone-200 group bg-stone-100">
+                    <img
+                      src={img}
+                      alt={`${previewRoom.title} - Vista ${i + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">

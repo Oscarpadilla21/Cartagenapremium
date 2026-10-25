@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Wifi, Tv, Bath, Wind, Flame, Eye, Sparkles, Shield, Camera, Bed, CalendarCheck, X } from 'lucide-react';
+import RoomImageSlider from '../components/RoomImageSlider';
 
 export default function HabitacionesPage({ onOpenBooking }) {
   const [activeGalleryRoom, setActiveGalleryRoom] = useState(null);
@@ -83,33 +84,16 @@ export default function HabitacionesPage({ onOpenBooking }) {
             <div key={room.id} className="pt-2">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 
-                {/* Left Column: Room Photo with gallery trigger and Reservar Button */}
+                {/* Left Column: Room Photo Slider with 5s Autoplay & Manual Arrows */}
                 <div className="lg:col-span-6 space-y-6">
-                  <div 
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`Ver galería de fotos de ${room.title}`}
-                    className="overflow-hidden shadow-deluxe border border-[#e8dfd5] cursor-pointer group relative bg-stone-100 focus-visible:ring-2 focus-visible:ring-[#b5987a]"
-                    onClick={() => setActiveGalleryRoom(room)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        setActiveGalleryRoom(room);
-                      }
-                    }}
-                  >
-                    <img
-                      src={room.image}
-                      alt={room.title}
-                      className="w-full h-80 sm:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
+                  <div className="overflow-hidden shadow-deluxe border border-[#e8dfd5] rounded-xs bg-stone-100">
+                    <RoomImageSlider
+                      images={room.gallery || [room.image]}
+                      title={room.title}
+                      badge={room.badge}
+                      onOpenModal={() => setActiveGalleryRoom(room)}
+                      className="h-80 sm:h-96"
                     />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-5 py-2.5 bg-white/95 font-lato text-[12px] font-bold text-[#303030] uppercase tracking-[2px] shadow-md flex items-center gap-2">
-                        <Eye className="w-4 h-4 text-[#b5987a]" />
-                        <span>Ver fotos ({room.gallery ? room.gallery.length : 1})</span>
-                      </span>
-                    </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-1">
@@ -209,12 +193,20 @@ export default function HabitacionesPage({ onOpenBooking }) {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {(activeGalleryRoom.gallery || [activeGalleryRoom.image]).map((img, i) => (
-                <div key={i} className="h-64 overflow-hidden rounded-lg bg-stone-100 border border-stone-200">
-                  <img src={img} alt={`${activeGalleryRoom.title} - Foto ${i + 1}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
+            <div className="space-y-4">
+              <RoomImageSlider
+                images={activeGalleryRoom.gallery || [activeGalleryRoom.image]}
+                title={activeGalleryRoom.title}
+                className="h-72 sm:h-[440px] rounded-xl overflow-hidden shadow-md"
+              />
+              {/* Photo thumbnails */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                {(activeGalleryRoom.gallery || [activeGalleryRoom.image]).map((img, i) => (
+                  <div key={i} className="h-20 sm:h-24 overflow-hidden rounded-lg bg-stone-100 border border-stone-200">
+                    <img src={img} alt={`${activeGalleryRoom.title} - Vista ${i + 1}`} className="w-full h-full object-cover" />
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
               <span className="text-xs text-stone-600 font-sans font-medium">

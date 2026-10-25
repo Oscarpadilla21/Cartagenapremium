@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HOTEL_DATA } from '../data/hotelData';
-import { MapPin, Smartphone, Mail, CheckCircle2, ExternalLink } from 'lucide-react';
+import { MapPin, Smartphone, Mail, CheckCircle2, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const getInitialToday = () => new Date().toISOString().split('T')[0];
 const getInitialTomorrow = () => {
@@ -40,7 +41,7 @@ export default function ContactoPage() {
 
   return (
     <div className="pt-32 pb-24 bg-white text-left">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
         
         {/* Header */}
         <div>
@@ -48,78 +49,103 @@ export default function ContactoPage() {
             Atención Inmediata 24 Horas
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-semibold text-[#303030] mt-1">
-            Contacto & Ubicación
+            Contacto Directo
           </h1>
           <div className="w-16 h-0.5 bg-[#b5987a] mt-3" />
+          <p className="font-lato text-[15px] sm:text-[16px] text-[#555] font-light mt-3 max-w-2xl">
+            Comunícate directamente con nuestro equipo de recepción y reservas para cotizaciones inmediatas, consultas especiales o resolver cualquier inquietud antes de tu llegada.
+          </p>
         </div>
 
-        {/* Row 1: Map and Contact Info Box */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 border border-[#e8dfd5] shadow-deluxe overflow-hidden rounded-xs">
-          {/* Left: Google Map */}
-          <div className="w-full h-[450px] lg:h-[500px] relative">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15696.654941851935!2d-75.5509179!3d10.4085672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xeb4b3f6f061defea!2sHotel%20Cartagena%20Premium!5e0!3m2!1ses!2ses!4v1584271213206!5m2!1ses!2ses"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              title="Hotel Cartagena Premium Mapa"
-            />
-            <a
-              href="https://maps.google.com/?q=Hotel+Cartagena+Premium+Bocagrande"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute bottom-4 left-4 bg-white/95 hover:bg-white text-stone-800 px-3 py-1.5 rounded shadow text-xs font-semibold flex items-center gap-1.5 border border-stone-200"
-            >
-              <ExternalLink className="w-3.5 h-3.5 text-[#b5987a]" />
-              <span>Abrir en Google Maps</span>
-            </a>
-          </div>
-
-          {/* Right: Contact Info Box */}
-          <div className="p-8 sm:p-12 lg:p-14 bg-[#FAF8F5] flex flex-col justify-center space-y-4">
-            <h2 className="font-serif text-[30px] sm:text-[38px] leading-[1.1] font-semibold text-[#303030]">
-              Estamos para atenderte
-            </h2>
-
+        {/* Row 1: Contact Cards (Replaces map with direct contact channels) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          {/* Card 1: Dirección y Sede */}
+          <div className="bg-[#FAF8F5] p-7 sm:p-8 rounded-xl border border-[#e8dfd5] shadow-deluxe hover:shadow-deluxe-lg transition-all flex flex-col justify-between space-y-4">
             <div>
-              <img
-                src="/images/hotel/graphic-img-3-1-1.png"
-                alt="adorno"
-                className="w-18 h-3.5 object-contain"
-              />
-            </div>
-
-            <p className="font-lato text-[16px] leading-[27px] font-light text-[#383838]">
-              Reserva con antelación tu habitación y ven a descubrir la magia de Cartagena de Indias.
-            </p>
-
-            <div className="pt-2 space-y-3 font-lato text-[15px] sm:text-[16px] leading-[26px] font-light text-[#383838]">
-              <div className="flex items-start gap-3.5 min-h-[44px]">
-                <MapPin className="w-5 h-5 text-[#b5987a] shrink-0 mt-1" />
-                <span>Cra. 2 #11-113, Cartagena, Bolívar (frente a la Base Naval, Bocagrande)</span>
+              <div className="w-11 h-11 rounded-lg bg-white border border-[#ded5cb] text-[#b5987a] flex items-center justify-center mb-4 shadow-2xs">
+                <MapPin className="w-5 h-5" />
               </div>
-
-              {HOTEL_DATA.phones.map((phone, idx) => (
-                <div key={idx} className="flex items-center gap-3.5 min-h-[44px]">
-                  <Smartphone className="w-5 h-5 text-[#b5987a] shrink-0" />
-                  <a href={`tel:${HOTEL_DATA.rawPhones[idx]}`} className="hover:text-[#b5987a] font-normal transition-colors">
-                    {phone}
-                  </a>
-                </div>
-              ))}
-
-              {HOTEL_DATA.emails.map((email, idx) => (
-                <div key={idx} className="flex items-center gap-3.5 min-h-[44px]">
-                  <Mail className="w-5 h-5 text-[#b5987a] shrink-0" />
-                  <a href={`mailto:${email}`} className="hover:text-[#b5987a] font-normal transition-colors">
-                    {email}
-                  </a>
-                </div>
-              ))}
+              <h2 className="font-serif text-xl font-bold text-[#1f242e] mb-2">
+                Nuestra Ubicación
+              </h2>
+              <p className="text-xs sm:text-sm font-sans text-stone-600 leading-relaxed">
+                Cra. 2 #11-113, Bocagrande, Cartagena de Indias, Bolívar (frente a la Base Naval).
+              </p>
+            </div>
+            <div className="pt-4 border-t border-stone-200">
+              <Link
+                to="/ubicacion"
+                className="inline-flex items-center gap-1.5 text-xs font-bold font-lato uppercase tracking-wider text-[#8c6d4f] hover:text-[#1f242e] transition-colors"
+              >
+                <span>Ver mapa y cómo llegar</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
+
+          {/* Card 2: Teléfonos y WhatsApp */}
+          <div className="bg-[#FAF8F5] p-7 sm:p-8 rounded-xl border border-[#e8dfd5] shadow-deluxe hover:shadow-deluxe-lg transition-all flex flex-col justify-between space-y-4">
+            <div>
+              <div className="w-11 h-11 rounded-lg bg-white border border-[#ded5cb] text-[#b5987a] flex items-center justify-center mb-4 shadow-2xs">
+                <Smartphone className="w-5 h-5" />
+              </div>
+              <h2 className="font-serif text-xl font-bold text-[#1f242e] mb-2">
+                Líneas Telefónicas
+              </h2>
+              <p className="text-xs text-stone-500 font-sans mb-3">
+                Llamadas directas y atención personalizada:
+              </p>
+              <div className="space-y-1.5">
+                {HOTEL_DATA.phones.map((phone, idx) => (
+                  <div key={idx}>
+                    <a
+                      href={`tel:${HOTEL_DATA.rawPhones[idx]}`}
+                      className="text-xs sm:text-sm font-sans font-semibold text-stone-800 hover:text-[#b5987a] transition-colors block"
+                    >
+                      {phone}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="pt-4 border-t border-stone-200 flex items-center gap-1.5 text-xs text-emerald-700 font-medium font-sans">
+              <Clock className="w-3.5 h-3.5" />
+              <span>Recepción disponible 24/7</span>
+            </div>
+          </div>
+
+          {/* Card 3: Correos de Reservas */}
+          <div className="bg-[#FAF8F5] p-7 sm:p-8 rounded-xl border border-[#e8dfd5] shadow-deluxe hover:shadow-deluxe-lg transition-all flex flex-col justify-between space-y-4">
+            <div>
+              <div className="w-11 h-11 rounded-lg bg-white border border-[#ded5cb] text-[#b5987a] flex items-center justify-center mb-4 shadow-2xs">
+                <Mail className="w-5 h-5" />
+              </div>
+              <h2 className="font-serif text-xl font-bold text-[#1f242e] mb-2">
+                Correos Electrónicos
+              </h2>
+              <p className="text-xs text-stone-500 font-sans mb-3">
+                Cotizaciones formales y reservas corporativas:
+              </p>
+              <div className="space-y-2">
+                {HOTEL_DATA.emails.map((email, idx) => (
+                  <div key={idx}>
+                    <a
+                      href={`mailto:${email}`}
+                      className="text-xs sm:text-sm font-sans font-semibold text-stone-800 hover:text-[#b5987a] transition-colors block break-all"
+                    >
+                      {email}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="pt-4 border-t border-stone-200 flex items-center gap-1.5 text-xs text-[#8c6d4f] font-medium font-sans">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Respuesta en menos de 24 horas</span>
+            </div>
+          </div>
+
         </div>
 
         {/* Row 2: Contact Form and Photo */}
@@ -283,7 +309,7 @@ export default function ContactoPage() {
             />
             <div className="p-4 bg-white text-center border-t border-[#e8dfd5]">
               <span className="text-xs font-serif italic text-stone-600">
-                Atención personalizada las 24 horas del día
+                Atención personalizada las 24 horas del día en Bocagrande
               </span>
             </div>
           </div>
