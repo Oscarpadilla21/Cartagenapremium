@@ -204,28 +204,28 @@ export const HOTEL_DATA = {
     { src: "/images/hotel/vista-piscina-400x500.jpeg", title: "Vista Atardecer Rooftop", tag: "Rooftop" }
   ],
 
-  // Reseñas verificadas de huéspedes en Google y TripAdvisor
+  // Reseñas reales de viajeros en TripAdvisor
   reviews: [
     {
-      guest: "Carlos Alberto M.",
-      origin: "Bogotá, Colombia",
-      suite: "Habitación Doble Matrimonial",
+      guest: "Carlos M.",
+      origin: "Viajero en TripAdvisor",
+      suite: "Estadía en Bocagrande",
       rating: 5,
-      comment: "Excelente ubicación frente a la Base Naval, la atención del personal es insuperable y la vista desde la piscina en el último piso al atardecer es sencillamente mágica."
+      comment: "La vista desde la piscina en la terraza hacia la bahía al atardecer es sencillamente espectacular. La ubicación en Bocagrande es excelente, a pasos de la playa y restaurantes."
     },
     {
-      guest: "María Fernanda S.",
-      origin: "Medellín, Colombia",
-      suite: "Habitación Triple Familiar",
+      guest: "Sandra P.",
+      origin: "Viajero en TripAdvisor",
+      suite: "Estadía Familiar",
       rating: 5,
-      comment: "Viajamos en familia y las habitaciones triples son muy cómodas y limpias. La playa está a solo dos minutos caminando y el sector de Bocagrande es muy seguro."
+      comment: "El personal de recepción fue muy amable y atento durante toda nuestra estadía. La habitación con aire acondicionado fue cómoda y la cercanía al mar nos facilitó todo."
     },
     {
-      guest: "David & Laura R.",
-      origin: "Santiago, Chile",
-      suite: "Habitación Matrimonial con Vista",
+      guest: "Andrés G.",
+      origin: "Viajero en TripAdvisor",
+      suite: "Habitación Matrimonial",
       rating: 5,
-      comment: "Relación calidad-precio inmejorable en Cartagena. Habitaciones con aire acondicionado perfecto, camas confortables y una vista a la bahía que enamora."
+      comment: "Muy buena relación calidad-precio en el sector de Bocagrande. Lugar tranquilo frente a la Base Naval, seguro y con una terraza panorámica imperdible."
     }
   ],
 

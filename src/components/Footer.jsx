@@ -91,7 +91,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TripAdvisor de Hotel Cartagena Premium"
-            className="w-10 h-10 rounded-full border border-[#d0d0d0] text-[#2b2927] hover:text-[#00aa6c] hover:border-[#00aa6c] hover:scale-105 flex items-center justify-center transition-all bg-white/70 shadow-2xs focus-visible:ring-2 focus-visible:ring-[#00aa6c]"
+            className="w-10 h-10 rounded-full border border-[#d0d0d0] text-[#2b2927] hover:text-[#b5987a] hover:border-[#b5987a] hover:scale-105 flex items-center justify-center transition-all bg-white/70 shadow-2xs focus-visible:ring-2 focus-visible:ring-[#b5987a]"
           >
             <TripAdvisorIcon className="w-4 h-4 fill-current" />
           </a>

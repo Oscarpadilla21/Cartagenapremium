@@ -144,9 +144,9 @@ export default function Navbar({ onOpenBooking }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TripAdvisor de Hotel Cartagena Premium"
-                className="w-8.5 h-8.5 rounded-full border border-[#d0d0d0] text-[#2b2927] hover:border-[#00aa6c] hover:text-[#00aa6c] hover:scale-105 flex items-center justify-center transition-all bg-white/60 shadow-2xs focus-visible:ring-2 focus-visible:ring-[#00aa6c]"
+                className="w-8.5 h-8.5 rounded-full border border-[#d0d0d0] text-[#2b2927] hover:border-[#b5987a] hover:text-[#b5987a] hover:scale-105 flex items-center justify-center transition-all bg-white/60 shadow-2xs focus-visible:ring-2 focus-visible:ring-[#b5987a]"
               >
-                <TripAdvisorIcon className="w-4 h-4 fill-current" />
+                <TripAdvisorIcon className="w-3.5 h-3.5 fill-current" />
               </a>
             </div>
 
@@ -276,7 +276,7 @@ export default function Navbar({ onOpenBooking }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TripAdvisor"
-              className="text-[#666] hover:text-[#00aa6c] p-2 flex items-center justify-center transition-colors"
+              className="text-[#666] hover:text-[#b5987a] p-2 flex items-center justify-center transition-colors"
             >
               <TripAdvisorIcon className="w-5 h-5 fill-current" />
             </a>
