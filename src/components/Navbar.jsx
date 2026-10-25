@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Bed, MapPin, Phone, Sparkles, Menu, X, CalendarCheck, Image as ImageIcon, Award } from 'lucide-react';
+import TripAdvisorIcon from './icons/TripAdvisorIcon';
 
-export default function Navbar({ onOpenBooking, currency, setCurrency }) {
+export default function Navbar({ onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -110,38 +111,8 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
             })}
           </nav>
 
-          {/* Right Actions: Currency Toggle, Social Icons & Booking CTA */}
+          {/* Right Actions: Social Icons & Booking CTA */}
           <div className="hidden md:flex items-center space-x-3">
-            {/* Currency Switcher */}
-            {setCurrency && (
-              <div className="flex items-center bg-white/80 border border-[#ded5cb] rounded-full p-0.5 shadow-2xs">
-                <button
-                  type="button"
-                  onClick={() => setCurrency('COP')}
-                  className={`px-2.5 py-1 text-[11px] font-lato font-bold rounded-full transition-all cursor-pointer ${
-                    currency === 'COP'
-                      ? 'bg-[#b5987a] text-white shadow-xs'
-                      : 'text-[#666] hover:text-[#303030]'
-                  }`}
-                  aria-label="Moneda en Pesos Colombianos"
-                >
-                  COP
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setCurrency('USD')}
-                  className={`px-2.5 py-1 text-[11px] font-lato font-bold rounded-full transition-all cursor-pointer ${
-                    currency === 'USD'
-                      ? 'bg-[#b5987a] text-white shadow-xs'
-                      : 'text-[#666] hover:text-[#303030]'
-                  }`}
-                  aria-label="Moneda en Dólares Estadounidenses"
-                >
-                  USD
-                </button>
-              </div>
-            )}
-
             {/* Social Media Circular Icons */}
             <div className="flex items-center space-x-2">
               <a
@@ -173,9 +144,9 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TripAdvisor de Hotel Cartagena Premium"
-                className="w-8.5 h-8.5 rounded-full border border-[#d0d0d0] text-[#2b2927] hover:border-[#b5987a] hover:text-[#b5987a] hover:scale-105 flex items-center justify-center transition-all text-xs font-serif font-bold bg-white/60 shadow-2xs focus-visible:ring-2 focus-visible:ring-[#b5987a]"
+                className="w-8.5 h-8.5 rounded-full border border-[#d0d0d0] text-[#2b2927] hover:border-[#00aa6c] hover:text-[#00aa6c] hover:scale-105 flex items-center justify-center transition-all bg-white/60 shadow-2xs focus-visible:ring-2 focus-visible:ring-[#00aa6c]"
               >
-                TA
+                <TripAdvisorIcon className="w-4 h-4 fill-current" />
               </a>
             </div>
 
@@ -192,19 +163,8 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
             )}
           </div>
 
-          {/* Mobile Right Controls: Currency + Hamburger */}
+          {/* Mobile Right Controls: Hamburger */}
           <div className="md:hidden flex items-center gap-2">
-            {setCurrency && (
-              <button
-                type="button"
-                onClick={() => setCurrency(currency === 'COP' ? 'USD' : 'COP')}
-                className="px-2.5 py-1 text-[11px] font-lato font-bold border border-[#ded5cb] rounded-full bg-white text-[#303030] shadow-xs cursor-pointer"
-                aria-label={`Cambiar moneda, actual: ${currency}`}
-              >
-                {currency}
-              </button>
-            )}
-
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -316,9 +276,9 @@ export default function Navbar({ onOpenBooking, currency, setCurrency }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TripAdvisor"
-              className="text-[#666] hover:text-[#b5987a] p-2 text-xs font-serif font-bold"
+              className="text-[#666] hover:text-[#00aa6c] p-2 flex items-center justify-center transition-colors"
             >
-              TA
+              <TripAdvisorIcon className="w-5 h-5 fill-current" />
             </a>
           </div>
         </div>

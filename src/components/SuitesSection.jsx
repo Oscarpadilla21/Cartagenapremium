@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Check, Eye, X, CalendarCheck, BedDouble, Users } from 'lucide-react';
 
-export default function SuitesSection({ onSelectSuite, currency }) {
+export default function SuitesSection({ onSelectSuite }) {
   const [previewRoom, setPreviewRoom] = useState(null);
 
   useEffect(() => {
@@ -22,13 +22,6 @@ export default function SuitesSection({ onSelectSuite, currency }) {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [previewRoom]);
-
-  const formatPrice = (room) => {
-    if (currency === 'USD') {
-      return `$${room.priceUSD} USD`;
-    }
-    return `$${room.priceCOP.toLocaleString('es-CO')} COP`;
-  };
 
   return (
     <section id="habitaciones" className="py-20 bg-[#FAF8F5] relative" aria-label="Habitaciones y suites">
@@ -127,18 +120,15 @@ export default function SuitesSection({ onSelectSuite, currency }) {
                   </div>
                 </div>
 
-                {/* Price & CTA Button */}
+                {/* Direct Booking & Best Rate Guaranteed CTA */}
                 <div className="mt-6 pt-4 border-t border-[#e8dfd5] flex items-center justify-between gap-3">
                   <div>
-                    <span className="text-[10px] uppercase tracking-wider text-stone-500 block font-sans font-semibold">
-                      Tarifa directa desde
+                    <span className="text-[10px] uppercase tracking-wider text-[#8c6d4f] block font-sans font-bold">
+                      Reserva Directa
                     </span>
-                    <div className="flex items-baseline">
-                      <span className="text-xl sm:text-2xl font-serif font-bold text-[#1f242e]">
-                        {formatPrice(room)}
-                      </span>
-                      <span className="text-[11px] text-stone-500 ml-1.5">/ noche</span>
-                    </div>
+                    <span className="text-base sm:text-lg font-serif font-bold text-[#1f242e] block">
+                      Mejor Tarifa Garantizada
+                    </span>
                   </div>
 
                   <button

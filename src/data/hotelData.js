@@ -98,8 +98,6 @@ export const HOTEL_DATA = {
       description: "Si viajas o simplemente deseas tener mayor comodidad esta es la habitación perfecta.",
       capacity: "1 a 2 Huéspedes",
       bed: "1 Cama Cómoda",
-      priceCOP: 220000,
-      priceUSD: 58,
       image: "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
       gallery: [
         "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
@@ -124,8 +122,6 @@ export const HOTEL_DATA = {
       description: "Con vistas y toda la privacidad, comodidad y seguridad para ti y tu pareja durante tu estadía esta es la habitación adecuada.",
       capacity: "2 Huéspedes",
       bed: "Cama de matrimonio: 150cm x 190cm",
-      priceCOP: 290000,
-      priceUSD: 76,
       image: "/images/hotel/pic-hab.jpeg",
       gallery: [
         "/images/hotel/pic-hab.jpeg",
@@ -151,8 +147,6 @@ export const HOTEL_DATA = {
       description: "Nuestras habitaciones triples o doble twin son la opción perfecta para aquellos que viajan en familia.",
       capacity: "3 Huéspedes",
       bed: "Cama de matrimonio y sencilla (o camas individuales)",
-      priceCOP: 360000,
-      priceUSD: 95,
       image: "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
       gallery: [
         "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
@@ -178,8 +172,6 @@ export const HOTEL_DATA = {
       description: "Para viajeros en grupos grandes, lo mejor son nuestras habitaciones cuádruples estándar.",
       capacity: "4 Huéspedes",
       bed: "Múltiples camas matrimoniales e individuales",
-      priceCOP: 440000,
-      priceUSD: 115,
       image: "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
       gallery: [
         "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",

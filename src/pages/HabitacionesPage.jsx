@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { Wifi, Tv, Bath, Wind, Flame, Eye, Sparkles, Shield, Camera, Bed, CalendarCheck, X } from 'lucide-react';
 
-export default function HabitacionesPage({ onOpenBooking, currency = 'COP' }) {
+export default function HabitacionesPage({ onOpenBooking }) {
   const [activeGalleryRoom, setActiveGalleryRoom] = useState(null);
 
   useEffect(() => {
@@ -22,13 +22,6 @@ export default function HabitacionesPage({ onOpenBooking, currency = 'COP' }) {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [activeGalleryRoom]);
-
-  const formatPrice = (room) => {
-    if (currency === 'USD') {
-      return `$${room.priceUSD} USD`;
-    }
-    return `$${room.priceCOP.toLocaleString('es-CO')} COP`;
-  };
 
   const getFeatureIcon = (feature) => {
     const f = feature.toLowerCase();
@@ -121,13 +114,12 @@ export default function HabitacionesPage({ onOpenBooking, currency = 'COP' }) {
 
                   <div className="flex items-center justify-between pt-1">
                     <div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500 block">
-                        Tarifa directa desde
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#8c6d4f] block font-lato">
+                        Reserva Directa
                       </span>
-                      <span className="font-serif text-2xl font-bold text-[#1f242e]">
-                        {formatPrice(room)}
+                      <span className="font-serif text-lg sm:text-xl font-bold text-[#1f242e] block">
+                        Mejor Tarifa Garantizada
                       </span>
-                      <span className="text-xs text-stone-500 ml-1">/ noche</span>
                     </div>
 
                     <button
@@ -225,8 +217,8 @@ export default function HabitacionesPage({ onOpenBooking, currency = 'COP' }) {
               ))}
             </div>
             <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
-              <span className="text-xs text-stone-500 font-sans">
-                Tarifa directa: {formatPrice(activeGalleryRoom)} / noche
+              <span className="text-xs text-stone-600 font-sans font-medium">
+                Garantía de mejor tarifa en reserva directa
               </span>
               <button
                 type="button"

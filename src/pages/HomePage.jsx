@@ -9,11 +9,10 @@ import VideoSection from '../components/VideoSection';
 import GallerySection from '../components/GallerySection';
 import ReviewsSection from '../components/ReviewsSection';
 import CtaSection from '../components/CtaSection';
-import LocationSection from '../components/LocationSection';
 import MuseumsSection from '../components/MuseumsSection';
 import { HOTEL_DATA } from '../data/hotelData';
 
-export default function HomePage({ onOpenBooking, currency }) {
+export default function HomePage({ onOpenBooking }) {
   const handleSearchFromBar = (params) => {
     const suite = HOTEL_DATA.rooms?.find((s) => s.id === params.suiteId) || null;
     if (onOpenBooking) {
@@ -38,10 +37,9 @@ export default function HomePage({ onOpenBooking, currency }) {
       {/* 5. Bocagrande Skyline & Panoramic Experience matching cartagenapremium.com */}
       <BocagrandeSection />
 
-      {/* 6. Featured Suites & Rooms Preview with Pricing & Amenities */}
+      {/* 6. Featured Suites & Rooms Preview without public prices */}
       <SuitesSection
         onSelectSuite={(suite) => onOpenBooking ? onOpenBooking(suite) : null}
-        currency={currency}
       />
 
       {/* 7. Authentic Promotional Video Section with video-backgroud.png and video-2.mp4 */}
@@ -50,16 +48,13 @@ export default function HomePage({ onOpenBooking, currency }) {
       {/* 8. Giant 366px "Gallery" Watermark & Interactive Lightbox Carousel */}
       <GallerySection />
 
-      {/* 9. Verified Guest Reviews & Travellers' Choice */}
+      {/* 9. Verified Guest Reviews & Official TripAdvisor Travellers' Choice */}
       <ReviewsSection />
 
       {/* 10. Experience Call-to-Action: "VIVE UNA EXPERIENCIA DE ENSUEÑO" */}
       <CtaSection />
 
-      {/* 11. Location Map & Direct Contact Details with authentic pattern */}
-      <LocationSection />
-
-      {/* 12. Cultural Circuit & Museums of Cartagena with official logos */}
+      {/* 11. Cultural Circuit & Museums of Cartagena with official logos */}
       <MuseumsSection />
     </div>
   );

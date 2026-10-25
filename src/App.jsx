@@ -22,7 +22,6 @@ import PoliticaPrivacidadPage from './pages/PoliticaPrivacidadPage';
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedSuite, setSelectedSuite] = useState(null);
-  const [currency, setCurrency] = useState('COP');
 
   const handleOpenBooking = (suite = null) => {
     setSelectedSuite(suite);
@@ -36,8 +35,6 @@ export default function App() {
         {/* Navigation Bar matching original site items */}
         <Navbar
           onOpenBooking={() => handleOpenBooking()}
-          currency={currency}
-          setCurrency={setCurrency}
         />
 
         {/* Dynamic Multi-Page Content */}
@@ -48,7 +45,6 @@ export default function App() {
               element={
                 <HomePage
                   onOpenBooking={handleOpenBooking}
-                  currency={currency}
                 />
               }
             />
@@ -57,7 +53,6 @@ export default function App() {
               element={
                 <HabitacionesPage
                   onOpenBooking={handleOpenBooking}
-                  currency={currency}
                 />
               }
             />
@@ -117,7 +112,6 @@ export default function App() {
           isOpen={isBookingOpen}
           onClose={() => setIsBookingOpen(false)}
           initialSuite={selectedSuite}
-          currency={currency}
         />
 
         {/* Direct WhatsApp Concierge Button */}

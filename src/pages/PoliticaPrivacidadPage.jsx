@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { ShieldCheck, Lock, Eye, FileText, Mail, Phone, MapPin, Database, ChevronRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -161,7 +161,7 @@ export default function PoliticaPrivacidadPage() {
             </h2>
           </div>
           <p className="text-xs text-stone-600 leading-relaxed">
-            Nuestro portal web utiliza cookies técnicas y analíticas necesarias para permitir la navegación fluida, almacenar la preferencia de moneda (COP o USD) y medir el tráfico de forma agregada y anónima. Usted puede en cualquier momento configurar o restringir el uso de cookies desde las preferencias de su navegador web sin que ello impida consultar la información del hotel.
+            Nuestro portal web utiliza cookies técnicas y analíticas necesarias para permitir la navegación fluida, almacenar las preferencias de navegación y medir el tráfico de forma agregada y anónima. Usted puede en cualquier momento configurar o restringir el uso de cookies desde las preferencias de su navegador web sin que ello impida consultar la información del hotel.
           </p>
         </section>
 

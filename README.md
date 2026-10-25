@@ -36,8 +36,7 @@ El código de este repositorio incluye:
 1. **Header Sticky con Glassmorphism:**
    - Logotipo dorado original de alta resolución (`logo-gold-intime-1.png`).
    - Navegación fluida por anclas a todas las secciones.
-   - Selector de moneda dinámico (**COP / USD**).
-   - Acceso telefónico directo y botón de reserva.
+   - Acceso telefónico directo y botón de reserva directa.
    - Menú móvil desplegable de alta costura.
 
 2. **Hero Cinematográfico con Transición Suave:**

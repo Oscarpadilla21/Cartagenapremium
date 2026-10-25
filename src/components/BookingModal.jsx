@@ -60,8 +60,6 @@ export default function BookingModal({ isOpen, onClose, initialSuite }) {
   };
 
   const nights = calculateNights();
-  const totalPriceCOP = (currentSuite.priceCOP || 220000) * nights;
-  const totalPriceUSD = (currentSuite.priceUSD || 58) * nights;
 
   const handleCheckInChange = (e) => {
     const val = e.target.value;
@@ -78,7 +76,7 @@ export default function BookingModal({ isOpen, onClose, initialSuite }) {
       `*Suite:* ${currentSuite.title}%0A` +
       `*Fechas:* ${checkIn} hasta ${checkOut} (${nights} noche${nights > 1 ? 's' : ''})%0A` +
       `*Huéspedes:* ${guests}%0A` +
-      `*Total estimado:* $${totalPriceCOP.toLocaleString('es-CO')} COP / $${totalPriceUSD} USD%0A` +
+      `*Solicitud:* Cotización y confirmación de disponibilidad inmediata%0A` +
       `*Email:* ${guestEmail || 'N/A'}%0A` +
       `*Teléfono:* ${guestPhone || 'N/A'}%0A` +
       `*Peticiones especiales:* ${specialRequests || 'Ninguna'}`;
@@ -151,9 +149,9 @@ export default function BookingModal({ isOpen, onClose, initialSuite }) {
                 <span className="font-semibold text-stone-800">{nights} noche(s)</span>
               </div>
               <div className="flex justify-between pt-1">
-                <span className="font-bold text-stone-700">Total Estimado:</span>
-                <span className="font-bold text-[#b5987a] text-sm">
-                  ${totalPriceCOP.toLocaleString('es-CO')} COP (${totalPriceUSD} USD)
+                <span className="font-bold text-stone-700">Modalidad:</span>
+                <span className="font-bold text-[#b5987a] text-xs uppercase tracking-wider">
+                  Cotización directa garantizada
                 </span>
               </div>
             </div>
@@ -187,7 +185,7 @@ export default function BookingModal({ isOpen, onClose, initialSuite }) {
                   >
                     {suitesList.map((s) => (
                       <option key={s.id} value={s.id}>
-                        {s.title} — ${(s.priceCOP || 220000).toLocaleString('es-CO')} COP / noche
+                        {s.title} — {s.bed}
                       </option>
                     ))}
                   </select>
@@ -331,9 +329,9 @@ export default function BookingModal({ isOpen, onClose, initialSuite }) {
 
                   <div className="mt-4 pt-3 border-t border-stone-100 space-y-2 text-xs">
                     <div className="flex justify-between text-stone-600">
-                      <span>Tarifa por noche:</span>
-                      <span className="font-semibold text-stone-900">
-                        ${(currentSuite.priceCOP || 220000).toLocaleString('es-CO')} COP
+                      <span>Tarifa directa:</span>
+                      <span className="font-semibold text-emerald-700">
+                        Mejor precio garantizado
                       </span>
                     </div>
                     <div className="flex justify-between text-stone-600">
@@ -351,17 +349,20 @@ export default function BookingModal({ isOpen, onClose, initialSuite }) {
                   </div>
                 </div>
 
-                {/* Total Price Box */}
+                {/* Direct Booking Guarantee Box */}
                 <div className="pt-3 border-t border-stone-200">
-                  <div className="flex items-baseline justify-between mb-3">
-                    <span className="text-xs uppercase font-bold tracking-wider text-stone-700 font-lato">
-                      Total Estimado:
-                    </span>
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      <span className="text-xs uppercase font-bold tracking-wider text-stone-700 font-lato block">
+                        Cotización Directa
+                      </span>
+                      <span className="text-[11px] text-stone-500">Sin intermediarios ni comisiones</span>
+                    </div>
                     <div className="text-right">
-                      <div className="text-2xl font-serif font-bold text-[#b5987a]">
-                        ${totalPriceCOP.toLocaleString('es-CO')} COP
+                      <div className="text-xs font-bold text-[#8c6d4f] uppercase tracking-wider font-lato">
+                        Atención Personalizada
                       </div>
-                      <div className="text-[11px] text-stone-500">Aprox. ${totalPriceUSD} USD</div>
+                      <div className="text-[11px] text-emerald-700 font-medium">Respuesta inmediata</div>
                     </div>
                   </div>
 

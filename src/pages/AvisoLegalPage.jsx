@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { HOTEL_DATA } from '../data/hotelData';
 import { ShieldAlert, FileText, Scale, Phone, Mail, MapPin, CheckCircle2, ChevronRight, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -127,7 +127,7 @@ export default function AvisoLegalPage() {
             </div>
 
             <p>
-              <strong>Tarifas e Impuestos:</strong> Las tarifas publicadas en moneda nacional (COP) o dólares (USD) especifican si incluyen los impuestos de ley vigentes en Colombia (IVA del alojamiento conforme a las regulaciones de la DIAN para residentes nacionales y extranjeros exentos bajo sello PIP-5).
+              <strong>Tarifas e Impuestos:</strong> Las cotizaciones y confirmaciones de estadía especifican los impuestos de ley vigentes en Colombia (IVA del alojamiento conforme a las regulaciones de la DIAN para residentes nacionales y exenciones para turistas extranjeros bajo sello PIP-5).
             </p>
             <p>
               <strong>Política de Cancelación & No Show:</strong> Salvo promociones no reembolsables debidamente informadas, las cancelaciones recibidas con más de 48 horas de anticipación a la fecha de llegada no causan penalidad. Cancelaciones posteriores o la no presentación (No-Show) facultan el cobro de la primera noche de estancia.
