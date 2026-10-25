@@ -88,7 +88,7 @@ export const HOTEL_DATA = {
     "Ducha con agua caliente"
   ],
 
-  // Habitaciones exactas del sitio web original (cartagenapremium.com/habitaciones/)
+  // Habitaciones exactas y fotos reales extraídas de cartagenapremium.com/habitaciones/
   rooms: [
     {
       id: "sencilla",
@@ -101,9 +101,12 @@ export const HOTEL_DATA = {
       image: "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
       gallery: [
         "/images/hotel/HAB-SENCILLA-TIPO-1-2.jpeg",
+        "/images/hotel/TIPO-1-.jpeg",
         "/images/hotel/BANO-TIPO-1-1.jpeg",
         "/images/hotel/closet-tipo-1-1.jpeg",
-        "/images/hotel/TIPO-1-.jpeg"
+        "/images/hotel/cartagena-premium.hotel-15.jpg",
+        "/images/hotel/cartagena-premium.hotel-13.jpg",
+        "/images/hotel/cartagena-premium.hotel-16.jpg"
       ],
       features: [
         "WI-FI gratuita",
@@ -122,12 +125,17 @@ export const HOTEL_DATA = {
       description: "Con vistas y toda la privacidad, comodidad y seguridad para ti y tu pareja durante tu estadía esta es la habitación adecuada.",
       capacity: "2 Huéspedes",
       bed: "Cama de matrimonio: 150cm x 190cm",
-      image: "/images/hotel/pic-hab.jpeg",
+      image: "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
       gallery: [
-        "/images/hotel/pic-hab.jpeg",
-        "/images/hotel/pic-balcon.jpeg",
-        "/images/hotel/IMG_7157.jpeg",
-        "/images/hotel/IMG_8793-scaled.jpg"
+        "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
+        "/images/hotel/cartagena-premium.hotel-17.jpg",
+        "/images/hotel/cartagena-premium.hotel-19.jpg",
+        "/images/hotel/cartagena-premium.hotel-20.jpg",
+        "/images/hotel/cartagena-premium.hotel-21.jpg",
+        "/images/hotel/TIPO-9-O-10-scaled.jpg",
+        "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
+        "/images/hotel/HAB-TRIP-TIPO-9.-BANO.jpeg",
+        "/images/hotel/tipo-10.jpeg"
       ],
       features: [
         "WI-FI gratuita",
@@ -147,12 +155,14 @@ export const HOTEL_DATA = {
       description: "Nuestras habitaciones triples o doble twin son la opción perfecta para aquellos que viajan en familia.",
       capacity: "3 Huéspedes",
       bed: "Cama de matrimonio y sencilla (o camas individuales)",
-      image: "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
+      image: "/images/hotel/cartagena-premium.hotel1_.jpg",
       gallery: [
-        "/images/hotel/HAB-TRIPLE-TIPO-9.jpeg",
-        "/images/hotel/HAB-TRIP-TIPO-9.-BANO.jpeg",
-        "/images/hotel/TIPO-9-O-10-scaled.jpg",
-        "/images/hotel/tipo-10.jpeg"
+        "/images/hotel/cartagena-premium.hotel1_.jpg",
+        "/images/hotel/cartagena-premium.hotel8_.jpg",
+        "/images/hotel/cartagena-premium.hotel3_.jpg",
+        "/images/hotel/cartagena-premium.hotel2_.jpg",
+        "/images/hotel/cartagena-premium.hotel6_.jpg",
+        "/images/hotel/cartagena-premium.hotel7_.jpg"
       ],
       features: [
         "WI-FI gratuita",
@@ -172,12 +182,13 @@ export const HOTEL_DATA = {
       description: "Para viajeros en grupos grandes, lo mejor son nuestras habitaciones cuádruples estándar.",
       capacity: "4 Huéspedes",
       bed: "Múltiples camas matrimoniales e individuales",
-      image: "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
+      image: "/images/hotel/cartagena-premium.hotel-8-1.jpg",
       gallery: [
-        "/images/hotel/cartagena-premium.hotel-18-scaled.jpg",
-        "/images/hotel/cartagena-premium.hotel-15.jpg",
-        "/images/hotel/IMG_7160.jpeg",
-        "/images/hotel/IMG_8809-scaled.jpg"
+        "/images/hotel/cartagena-premium.hotel-8-1.jpg",
+        "/images/hotel/cartagena-premium.hotel-9-1.jpg",
+        "/images/hotel/cartagena-premium.hotel-10-1.jpg",
+        "/images/hotel/cartagena-premium.hotel-11-1.jpg",
+        "/images/hotel/cartagena-premium.hotel-12-1.jpg"
       ],
       features: [
         "WI-FI gratuita",
